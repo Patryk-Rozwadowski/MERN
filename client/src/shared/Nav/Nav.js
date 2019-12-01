@@ -43,6 +43,10 @@ const Nav = (props) => {
                             <Links> Images </Links>
                         </NavLink>
 
+                        <NavLink to='/addimage' className={classes.title}>
+                            <Links> Add image </Links>
+                        </NavLink>
+
                     </Typography>
 
                     <Button color="inherit">Login</Button>
