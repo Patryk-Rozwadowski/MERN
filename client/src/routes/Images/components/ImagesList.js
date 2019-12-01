@@ -3,6 +3,15 @@ import { NavLink } from 'react-router-dom';
 
 import UserImage from './UserImage';
 
+// Todo: seperate into css files
+const styles = {
+    listContainer: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    }
+};
+
 const ImagesList = props => {
     if(props.usersImages.length === 0) {
         return (
@@ -14,7 +23,7 @@ const ImagesList = props => {
     } else {
         return (
             <div>
-                <ul>
+                <ul style={styles.listContainer}>
                     {props.usersImages.map(image => <UserImage 
                         key={image.id}
                         author={image.author}

@@ -1,9 +1,7 @@
 import React from 'react';
 import UsersItems from './UserItems';
 
-import { makeStyles } from '@material-ui/core/styles';
-
-// Todo: change usersitems
+// Todo: seperate into css files
 const styles = {
     listContainer: {
         display: 'flex',
