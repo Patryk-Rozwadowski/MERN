@@ -1,6 +1,17 @@
 import React from 'react';
 import UsersItems from './UserItems';
 
+import { makeStyles } from '@material-ui/core/styles';
+
+// Todo: change usersitems
+const styles = {
+    listContainer: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+    }
+};
+
 const UsersList = (props) => {
     if (!props.items.length) {
         return (
@@ -12,7 +23,7 @@ const UsersList = (props) => {
 
     if (props.items.length) {
         return (
-            <ul>
+            <ul style={styles.listContainer}>
                 {props.items.map(user =>
                     <UsersItems
                         key={user.id}

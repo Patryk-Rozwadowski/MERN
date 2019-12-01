@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
         color: 'white',
     },
 }));
-
+//Todo: add active class for navigation
 const Nav = (props) => {
     const classes = useStyles();
 

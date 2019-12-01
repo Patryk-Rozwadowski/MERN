@@ -52,7 +52,7 @@ const UserItems = props => {
                 </Link>
                 
                 <Link to={`/${props.id}/profile`}>
-                    <Button size='small' color='primary'> Profile </Button>
+                    <Button size='small' color='primary'>  </Button>
                 </Link>
 
             </CardActions>
