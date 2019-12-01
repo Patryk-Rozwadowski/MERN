@@ -43,14 +43,18 @@ const UserItems = props => {
 
             <CardActions>
 
-                <Link to={`/${props.id}/profile`}> 
-                    <Button size='small' color='primary'> Check profile </Button>
+                <Link to={`/${props.id}/images`}> 
+                    <Button size='small' color='primary'> Check images </Button>
                 </Link>
             
                 <Link to={`/${props.id}/places`}>
                     <Button size='small' color='primary'> Check places </Button>
                 </Link>
                 
+                <Link to={`/${props.id}/profile`}>
+                    <Button size='small' color='primary'> Profile </Button>
+                </Link>
+
             </CardActions>
 
         </Card>

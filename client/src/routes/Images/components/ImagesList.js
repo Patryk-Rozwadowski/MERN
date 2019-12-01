@@ -17,6 +17,7 @@ const ImagesList = props => {
                 <ul>
                     {props.usersImages.map(image => <UserImage 
                         key={image.id}
+                        author={image.author}
                         id={image.id}
                         title={image.title}
                         name={image.name}

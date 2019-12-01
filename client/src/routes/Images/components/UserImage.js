@@ -15,6 +15,9 @@ const useStyles = makeStyles({
     media: {
         height: 140,
     },
+    title: {
+        padding: 0,
+    }
 });
 
 const UserImage = props => {
@@ -29,8 +32,14 @@ const UserImage = props => {
             />
 
             <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                    {props.name ? props.name : 'unknown'}
+                <Typography className={classes.title} gutterBottom variant="h5" component="h5">
+                    Title: {props.name ? props.name : 'unknown'}
+                </Typography>
+            </CardContent>
+
+            <CardContent>
+                <Typography className={classes.title}  component="p">
+                    Author: {props.author ? props.author : 'unknown'}
                 </Typography>
             </CardContent>
 
