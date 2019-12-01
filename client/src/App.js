@@ -6,9 +6,9 @@ import {
   Switch
 } from 'react-router-dom';
 
-import Users from './routes/Users/Users';
 import Home from './routes/Home/Home';
-import SignUp from './routes/SignUp/SignUp'
+import SignUp from './routes/SignUp/SignUp';
+import Users from './modules/Users/Users';
 
 const App = () => {
   return (
