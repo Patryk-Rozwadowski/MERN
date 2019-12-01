@@ -6,6 +6,7 @@ import {
   Switch
 } from 'react-router-dom';
 
+import Nav from './shared/Nav/Nav';
 import Home from './routes/Home/Home';
 import SignUp from './routes/SignUp/SignUp';
 import Users from './modules/Users/Users';
@@ -13,6 +14,7 @@ import Users from './modules/Users/Users';
 const App = () => {
   return (
     <Router>
+      <Nav />
       <Switch>
         <Route path='/' exact component={Home} />
         <Route path='/users' exact component={Users} />
