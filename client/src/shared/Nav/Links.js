@@ -22,7 +22,7 @@ const Links = (props) => {
             className={classes.title}
         >
             {props.children}
-    </Link>
+        </Link>
     );
 }
 

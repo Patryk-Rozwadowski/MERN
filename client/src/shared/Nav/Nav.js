@@ -7,7 +7,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
-import Links from './NavLink';
+import Links from './Links';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -31,16 +31,16 @@ const Nav = (props) => {
                 <Toolbar color='secondary'>
                     <Typography variant="h6" className={classes.title}>
 
-                        <NavLink className={classes.title} to='/'>
-                            <Links to='/'> Home </Links>
+                        <NavLink to='/' className={classes.title} >
+                            <Links> Home </Links>
                         </NavLink>
 
-                        <NavLink to='/users' className={classes.title} to='/'>
-                            <Links> Users </Links>
+                        <NavLink to='/users' className={classes.title}>
+                            <Links> Users </Links> 
                         </NavLink>
 
-                        <NavLink className={classes.title} to='/'>
-                            <Links to='/'> xx </Links>
+                        <NavLink to='/images' className={classes.title}>
+                            <Links> Images </Links>
                         </NavLink>
 
                     </Typography>
