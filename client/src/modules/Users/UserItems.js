@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -41,9 +43,14 @@ const UserItems = props => {
 
             <CardActions>
 
-                <Button size='small' color='primary'> Check profile </Button>
-                <Button size='small' color='primary'> Share </Button>
-
+                <Link to={`/${props.id}/profile`}> 
+                    <Button size='small' color='primary'> Check profile </Button>
+                </Link>
+            
+                <Link to={`/${props.id}/places`}>
+                    <Button size='small' color='primary'> Check places </Button>
+                </Link>
+                
             </CardActions>
 
         </Card>
