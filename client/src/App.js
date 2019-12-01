@@ -1,13 +1,22 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch
+} from 'react-router-dom';
 
 import Users from './routes/Users/Users';
+import Home from './routes/Home/Home';
 
 const App = () => {
   return (
     <Router>
-      <Route path='/' exact component={Users} />
-      <Redirect to='/' />
+      <Switch>
+        <Route path='/' exact component={Home} />
+        <Route path='/users' component={Users} />
+        <Redirect to='/' />
+      </Switch>
     </Router>
   );
 }
