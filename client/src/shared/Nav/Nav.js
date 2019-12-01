@@ -1,9 +1,13 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+
+import Links from './NavLink';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -14,6 +18,7 @@ const useStyles = makeStyles(theme => ({
     },
     title: {
         flexGrow: 1,
+        color: 'white',
     },
 }));
 
@@ -23,10 +28,23 @@ const Nav = (props) => {
     return (
         <div className={classes.root}>
             <AppBar position="static">
-                <Toolbar>
+                <Toolbar color='secondary'>
                     <Typography variant="h6" className={classes.title}>
-                        News
+
+                        <NavLink className={classes.title} to='/'>
+                            <Links to='/'> Home </Links>
+                        </NavLink>
+
+                        <NavLink to='/users' className={classes.title} to='/'>
+                            <Links> Users </Links>
+                        </NavLink>
+
+                        <NavLink className={classes.title} to='/'>
+                            <Links to='/'> xx </Links>
+                        </NavLink>
+
                     </Typography>
+
                     <Button color="inherit">Login</Button>
                 </Toolbar>
             </AppBar>
