@@ -26,17 +26,20 @@ const UserImage = props => {
 
                 <CardMedia
                     className={classes.media}
-                    image="/static/images/cards/contemplative-reptile.jpg"
-
+                    image={props.imageUrl}
+                    title={props.title}
                 />
-                
-                <CardContent>
 
+                <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
                         {props.name ? props.name : 'unknown'}
                     </Typography>
-
                 </CardContent>
+
+                <Typography variant="body2" color="textSecondary" component="p">
+                   {props.description ? props.description : 'No description'}
+                </Typography>
+
             </CardActionArea>
             <CardActions>
 
@@ -44,7 +47,7 @@ const UserImage = props => {
                     Share
                 </Button>
                 <Button size="small" color="primary">
-                            Learn More
+                    Learn More
                 </Button>
 
             </CardActions>
