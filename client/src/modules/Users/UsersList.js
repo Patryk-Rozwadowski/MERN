@@ -19,7 +19,8 @@ const UsersList = (props) => {
                         id={user.id}
                         places={user.places}
                         name={user.name}
-                        image={user.image} />)}
+                        image={user.image}
+                        description={user.description} />)}
             </ul>
         )
     }
