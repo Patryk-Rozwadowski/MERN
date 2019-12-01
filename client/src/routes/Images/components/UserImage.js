@@ -22,25 +22,23 @@ const UserImage = props => {
 
     return (
         <Card className={classes.card}>
-            <CardActionArea>
+            <CardMedia
+                className={classes.media}
+                image={props.imageUrl}
+                title={props.title}
+            />
 
-                <CardMedia
-                    className={classes.media}
-                    image={props.imageUrl}
-                    title={props.title}
-                />
-
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                        {props.name ? props.name : 'unknown'}
-                    </Typography>
-                </CardContent>
-
-                <Typography variant="body2" color="textSecondary" component="p">
-                   {props.description ? props.description : 'No description'}
+            <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                    {props.name ? props.name : 'unknown'}
                 </Typography>
+            </CardContent>
 
-            </CardActionArea>
+            <CardContent>
+                <Typography variant="body2" color="textSecondary" component="p">
+                    {props.description ? props.description : 'No description'}
+                </Typography>
+            </CardContent>
             <CardActions>
 
                 <Button size="small" color="primary">
