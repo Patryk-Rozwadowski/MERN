@@ -8,6 +8,7 @@ import {
 
 import Users from './routes/Users/Users';
 import Home from './routes/Home/Home';
+import SignUp from './routes/SignUp/SignUp'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <Switch>
         <Route path='/' exact component={Home} />
         <Route path='/users' exact component={Users} />
+        <Route path='/signup' exact component={SignUp} />
         <Redirect to='/' />
       </Switch>
     </Router>
