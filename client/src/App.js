@@ -20,7 +20,7 @@ const App = () => {
         <Route path='/' exact component={Home} />
         <Route path='/users' exact component={Users} />
         <Route path='/signup' exact component={SignUp} />
-        <Route path='/:userId/images' exact component={Images} />
+        <Route path='/images' exact component={Images} />
         <Redirect to='/' />
       </Switch>
     </Router>

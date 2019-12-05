@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import UserImage from './UserImage';
-
 // Todo: seperate into css files
 const styles = {
     listContainer: {
@@ -23,7 +22,7 @@ const ImagesList = props => {
     } else {
         return (
             <div>
-                <ul style={styles.listContainer}>
+                <ul >
                     {props.usersImages.map(image => <UserImage 
                         key={image.id}
                         author={image.author}
