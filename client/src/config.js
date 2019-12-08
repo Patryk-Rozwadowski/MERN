@@ -1,4 +1,3 @@
-import { port } from '../../server/server';
+const API_URL = `localhost:8000/api`;
 
-export const API_URL = `localhost:${port}/api`;
-
+export default API_URL;

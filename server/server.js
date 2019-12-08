@@ -6,7 +6,7 @@ app.use(cors());
 app.use(express.urlencoded( { extended: false }));
 app.use(express.json());
 
-export const port = 8000;
+const port = 8000;
 
 app.get('/api/images', (req, res) => {
     const data = [
