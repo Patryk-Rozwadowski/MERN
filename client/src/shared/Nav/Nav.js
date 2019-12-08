@@ -49,7 +49,9 @@ const Nav = (props) => {
 
                     </Typography>
 
-                    <Button color="inherit">Login</Button>
+                    <NavLink to='/signup'>
+                        <Links>Login </Links>
+                    </NavLink>
                 </Toolbar>
             </AppBar>
         </div>
