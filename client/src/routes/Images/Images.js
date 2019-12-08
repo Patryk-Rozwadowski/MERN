@@ -1,21 +1,13 @@
 import React from 'react';
-import axios from 'axios';
-
 import { NavLink } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux'
+import { fetchImagesRequest } from '../../redux/reducers/images.reducer';
 
-import { fetchImagesRequest, imagesFetched } from '../../redux/reducers/images.reducer';
-
+import './styles/Images.scss';
 import UserImage from './components/UserImage';
-// Todo: seperate into css files
-const styles = {
-    listContainer: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-    }
-};
+
+
 
 class Images extends React.Component {
 
@@ -28,20 +20,21 @@ class Images extends React.Component {
 
     render() {
         const { imagesData, isMounted, isLoaded } = this.props
-        
+
         return (
-            <React.Fragment>
-                {isMounted === true && isLoaded === true ?
-                    <div>
-                        {imagesData.map(image => <UserImage
-                            key={image.id}
-                            author={image.author}
-                            id={image.id}
-                            title={image.title}
-                            name={image.name}
-                            imageUrl={image.imageUrl}
-                            description={image.description} />)}
-                    </div> : []
+            <div className='images__container'>
+                {
+                    isMounted === true && isLoaded === true ?
+                        <React.Fragment>
+                            {imagesData.map(image => <UserImage
+                                key={image.id}
+                                author={image.author}
+                                id={image.id}
+                                title={image.title}
+                                name={image.name}
+                                imageUrl={image.imageUrl}
+                                description={image.description} />)}
+                        </React.Fragment> : []
                 }
 
                 {
@@ -59,8 +52,9 @@ class Images extends React.Component {
                         </div> : []
                 }
 
-            </React.Fragment>
-        )}
+            </div>
+        )
+    }
 }
 
 

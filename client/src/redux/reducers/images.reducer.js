@@ -39,7 +39,6 @@ export const fetchImagesRequest = () => {
     .then(res => {
         dispatch(requestImagesFetch());
                 dispatch(imagesFetched(res.data))
-                console.log(res.data);
             })
             .catch(err => {
                     console.log(err.message);
