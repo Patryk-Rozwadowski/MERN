@@ -5,7 +5,7 @@ import UsersList from './UsersList';
 
 const Users = props => {
     const testUsers = useSelector(state => state.users);
-    debugger
+    
     //return <UsersList items={testUsers} />
     return (
         <div>

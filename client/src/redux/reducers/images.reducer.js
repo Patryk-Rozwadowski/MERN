@@ -13,7 +13,9 @@ export const imagesFetched = (images) => ({
 });
 
 const initialState = {
-    mount: false,
+    mounted: false,
+    loaded: false,
+    images: []
 };
 
 export function imagesReducer(state = initialState, { type, payload }) {
@@ -23,7 +25,7 @@ export function imagesReducer(state = initialState, { type, payload }) {
                 ...state,
                 images: payload,
                 mounted: true,
-
+                loaded: true
             }
 
         default:

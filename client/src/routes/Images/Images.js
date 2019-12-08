@@ -28,7 +28,7 @@ class Images extends React.Component {
 
     render() {
         const { imagesData, isMounted, isLoaded } = this.props
-
+        
         return (
             <React.Fragment>
                 {isMounted === true && isLoaded === true ?
@@ -58,23 +58,21 @@ class Images extends React.Component {
                             <h2>Loading...</h2>
                         </div> : []
                 }
-                
+
             </React.Fragment>
         )}
 }
 
 
 const mapDispatchToProps = dispatch => {
-    debugger
     return {
         images: () => dispatch(fetchImagesRequest())
     }
 }
 
 const mapStateToProps = state => {
-    debugger
     return {
-        imagesData: state.imagesReducer,
+        imagesData: state.imagesReducer.images,
         isMounted: state.imagesReducer.mounted,
         isLoaded: state.imagesReducer.loaded
     }
