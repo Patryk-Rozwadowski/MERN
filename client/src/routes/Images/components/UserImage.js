@@ -1,14 +1,14 @@
 import React from 'react';
 
-import '../styles/UserImage.css';
+import '../styles/UserImage.scss';
 
 const UserImage = props => {
     return (
-        <div>
+        <div className='userImage__container'>
             <h2 className='userImage__author'>Author: {props.author ? props.author : 'unknown'}</h2>
-            <img src={props.imageUrl} alt={props.title} />
-            <h2>Title: {props.name ? props.name : 'unknown'}</h2>
-            <p>{props.description ? props.description : 'No description'}</p>
+            <img className='userImage__image' src={props.imageUrl} alt={props.title} />
+            <h2 className='userImage__title'>{props.title ? props.title : 'unknown'}</h2>
+            <p className='userImage__description'>{props.description ? props.description : 'No description'}</p>
         </div>
     );
 };
