@@ -7,11 +7,13 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 
+import './index.scss';
+
 const root = document.getElementById('root');
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <App className='app' />
     </Provider>,
     root);
 

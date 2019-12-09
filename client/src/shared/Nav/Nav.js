@@ -5,7 +5,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 
 import Links from './Links';
 
@@ -19,6 +18,8 @@ const useStyles = makeStyles(theme => ({
     title: {
         flexGrow: 1,
         color: 'white',
+        underline: 'none',
+        fontSize: 3
     },
 }));
 //Todo: add active class for navigation
@@ -31,7 +32,7 @@ const Nav = (props) => {
                 <Toolbar color='secondary'>
                     <Typography variant="h6" className={classes.title}>
 
-                        <NavLink to='/' className={classes.title} >
+                        <NavLink underline='none' to='/' className={classes.title} >
                             <Links> Home </Links>
                         </NavLink>
 
