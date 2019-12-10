@@ -9,8 +9,6 @@ import SpinnerBuffer from '../../../../components/Spinner/SpinnerBuffer';
 import './styles/Images.scss';
 import UserImage from '../UserImage/UserImage';
 
-
-
 class Images extends React.Component {
 
     //const userId = useParams().userId;

@@ -4,6 +4,9 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 import spinnerStyles from './styles/Spinner-material';
 
 const SpinnerBuffer = ({ variant = 'container', ...props }) => {
+
+	const classes = spinnerStyles();
+
 	const [ completed, setCompleted ] = React.useState(0);
 	const [ buffer, setBuffer ] = React.useState(10);
 
@@ -39,7 +42,7 @@ const SpinnerBuffer = ({ variant = 'container', ...props }) => {
 			case 'container':
 				return (
 					<div className={`spinner_${variant}`}>
-						<div className={spinnerStyles.root}>
+						<div className={classes.root}>
 							<LinearProgress variant="buffer" value={completed} valueBuffer={buffer} />
 							<LinearProgress variant="buffer" value={completed} valueBuffer={buffer} color="secondary" />
 						</div>
@@ -48,7 +51,7 @@ const SpinnerBuffer = ({ variant = 'container', ...props }) => {
 
 			default:
 				return (
-					<div className={spinnerStyles.root}>
+					<div className={classes.root}>
 						<LinearProgress variant="buffer" value={completed} valueBuffer={buffer} />
 						<LinearProgress variant="buffer" value={completed} valueBuffer={buffer} color="secondary" />
 					</div>

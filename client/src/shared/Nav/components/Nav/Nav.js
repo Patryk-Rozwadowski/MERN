@@ -6,7 +6,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
-import Links from './Links';
+import Links from '../Links/Links';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -17,13 +17,14 @@ const useStyles = makeStyles(theme => ({
     },
     title: {
         flexGrow: 1,
-        color: 'white',
+        color: '#fff',
         underline: 'none',
         fontSize: 3
     },
 }));
+
 //Todo: add active class for navigation
-const Nav = (props) => {
+const Nav = () => {
     const classes = useStyles();
 
     return (
