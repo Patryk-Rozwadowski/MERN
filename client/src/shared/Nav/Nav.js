@@ -27,7 +27,7 @@ const Nav = (props) => {
     const classes = useStyles();
 
     return (
-        <div className={classes.root}>
+        <nav className={classes.root}>
             <AppBar position="static">
                 <Toolbar color='secondary'>
                     <Typography variant="h6" className={classes.title}>
@@ -55,7 +55,7 @@ const Nav = (props) => {
                     </NavLink>
                 </Toolbar>
             </AppBar>
-        </div>
+        </nav>
     );
 };
 

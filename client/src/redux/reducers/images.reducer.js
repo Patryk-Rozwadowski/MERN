@@ -35,7 +35,7 @@ export function imagesReducer(state = initialState, { type, payload }) {
 
 export const fetchImagesRequest = () => {
     return (dispatch) =>
-    axios.get(`http://localhost:8443/api/images`)
+    axios.get(`http://localhost:8000/api/images`)
     .then(res => {
         dispatch(requestImagesFetch());
                 dispatch(imagesFetched(res.data))
