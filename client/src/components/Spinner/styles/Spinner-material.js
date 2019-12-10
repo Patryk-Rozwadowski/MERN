@@ -9,5 +9,4 @@ const spinnerStyles = makeStyles((theme) => ({
 	}
 }));
 
-
 export default spinnerStyles;

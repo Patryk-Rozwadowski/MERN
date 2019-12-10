@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux'
 import { fetchImagesRequest } from '../../../../redux/reducers/images.reducer';
 
-import LinearBuffer from '../../../../components/Spinner/Spinner';
+import SpinnerBuffer from '../../../../components/Spinner/SpinnerBuffer';
 
 import './styles/Images.scss';
 import UserImage from '../UserImage/UserImage';
@@ -50,7 +50,7 @@ class Images extends React.Component {
                 {
                     isMounted === false && isLoaded === false ?
                         <div>
-                            <LinearBuffer />
+                            <SpinnerBuffer variant='container' />
                         </div> : []
                 }
 
