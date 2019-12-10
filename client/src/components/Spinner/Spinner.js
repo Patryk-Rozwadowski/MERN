@@ -1,18 +1,10 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import LinearProgress from '@material-ui/core/LinearProgress';
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    width: '100%',
-    '& > * + *': {
-      marginTop: theme.spacing(2),
-    },
-  },
-}));
+import spinnerStyles from './styles/Spinner-material';
 
 export default function LinearBuffer() {
-  const classes = useStyles();
+
   const [completed, setCompleted] = React.useState(0);
   const [buffer, setBuffer] = React.useState(10);
 
@@ -32,7 +24,7 @@ export default function LinearBuffer() {
   });
 
   React.useEffect(() => {
-    function tick() {
+    const tick = () => {
       progress.current();
     }
     const timer = setInterval(tick, 500);
@@ -43,7 +35,7 @@ export default function LinearBuffer() {
   }, []);
 
   return (
-    <div className={classes.root}>
+    <div className={spinnerStyles.root}>
       <LinearProgress variant="buffer" value={completed} valueBuffer={buffer} />
       <LinearProgress variant="buffer" value={completed} valueBuffer={buffer} color="secondary" />
     </div>
