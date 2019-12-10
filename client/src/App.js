@@ -8,7 +8,7 @@ import {
 
 import Nav from './shared/Nav/Nav';
 import HomeRoute from './routes/Home/index';
-import SignUp from './routes/SignUp/SignUp';
+import SignUpRoute from './routes/SignUp/index';
 import Users from './modules/Users/Users';
 import ImagesRoute from './routes/Images/index';
 
@@ -19,7 +19,7 @@ const App = () => {
       <Switch>
         <Route path='/' exact component={HomeRoute} />
         <Route path='/users' exact component={Users} />
-        <Route path='/signup' exact component={SignUp} />
+        <Route path='/signup' exact component={SignUpRoute} />
         <Route path='/images' exact component={ImagesRoute} />
         <Redirect to='/' />
       </Switch>
