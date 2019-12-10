@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../styles/UserImage.scss';
+import './styles/UserImage.scss';
 
 const UserImage = props => {
     return (

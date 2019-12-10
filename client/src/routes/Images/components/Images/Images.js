@@ -2,10 +2,10 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux'
-import { fetchImagesRequest } from '../../../redux/reducers/images.reducer';
+import { fetchImagesRequest } from '../../../../redux/reducers/images.reducer';
 
-import '../styles/Images.scss';
-import UserImage from './UserImage';
+import './styles/Images.scss';
+import UserImage from '../UserImage/UserImage';
 
 
 
