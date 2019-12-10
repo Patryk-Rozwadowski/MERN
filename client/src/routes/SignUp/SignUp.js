@@ -12,7 +12,7 @@ import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
-import useStyles from './styles/SignUp';
+import useStyles from './styles/SignUp-material.styles';
 import Copyright from './components/Copyright';
 
 

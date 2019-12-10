@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 
 import Nav from './shared/Nav/Nav';
-import Home from './routes/Home/Home';
+import HomeRoute from './routes/Home/index';
 import SignUp from './routes/SignUp/SignUp';
 import Users from './modules/Users/Users';
 import Images from './routes/Images/Images';
@@ -17,7 +17,7 @@ const App = () => {
     <Router>
       <Nav />
       <Switch>
-        <Route path='/' exact component={Home} />
+        <Route path='/' exact component={HomeRoute} />
         <Route path='/users' exact component={Users} />
         <Route path='/signup' exact component={SignUp} />
         <Route path='/images' exact component={Images} />
