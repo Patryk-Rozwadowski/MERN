@@ -5,7 +5,7 @@ import API_URL from '../../config';
 
 const requestImagesFetch = () => ({
     type: REQUEST_FETCH_IMAGES
-})
+});
 
 export const imagesFetched = (images) => ({
     type: IMAGES_FETCHED,
@@ -26,16 +26,16 @@ export function imagesReducer(state = initialState, { type, payload }) {
                 images: payload,
                 mounted: true,
                 loaded: true
-            }
+            };
 
         default:
             return state
     }
-};
+}
 
 export const fetchImagesRequest = () => {
     return (dispatch) =>
-    axios.get(`http://localhost:8000/api/images`)
+    axios.get(`${API_URL}/images`)
     .then(res => {
         dispatch(requestImagesFetch());
                 dispatch(imagesFetched(res.data))

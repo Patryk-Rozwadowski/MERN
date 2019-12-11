@@ -19,7 +19,7 @@ class Images extends React.Component {
     }
 
     render() {
-        const { imagesData, isMounted, isLoaded } = this.props
+        const { imagesData, isMounted, isLoaded } = this.props;
 
         return (
             <div className='images__container'>
@@ -62,7 +62,7 @@ const mapDispatchToProps = dispatch => {
     return {
         images: () => dispatch(fetchImagesRequest())
     }
-}
+};
 
 const mapStateToProps = state => {
     return {
@@ -70,6 +70,6 @@ const mapStateToProps = state => {
         isMounted: state.imagesReducer.mounted,
         isLoaded: state.imagesReducer.loaded
     }
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Images);

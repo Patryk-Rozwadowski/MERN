@@ -1,10 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Overpass:200,400,900&display=swap');
 .home__ {
 
   &container {
-    height: 900px;
+    display: flex;
+    height: 950px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
   }
 
   &title {
-    font-size: 3em;
+    font:{
+      family: 'Overpass', sans-serif;
+      weight: 900;
+      size: 3em;
+    }
+    margin: 15px;
+    color: #fff;
+
+    &-wrapper {
+      text-align: center;
+    }
+  }
+
+  &subtitle {
+    @extend .home__title;
+    font-weight: 200;
   }
 }

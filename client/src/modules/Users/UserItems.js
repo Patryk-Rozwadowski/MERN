@@ -59,6 +59,6 @@ const UserItems = props => {
 
         </Card>
     );
-}
+};
 
 export default UserItems;
