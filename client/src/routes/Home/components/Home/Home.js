@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './styles/Home.scss';
+import ContainedButtons from '../../../../shared/Buttons/Buttons';
 
 const HomeContainer = {
     HomeImage: {
@@ -12,13 +13,14 @@ const HomeContainer = {
     },
 };
 
-const Home = props => {
+const Home = () => {
     return (
         <React.Fragment>
             <section style={HomeContainer.HomeImage} className='home__container'>
                 <div className='home__title-wrapper'>
                     <h1 className='home__title'>Share your photos</h1>
-                    <h2 className='home__subtitle'> Not yet, but i'm working on it! </h2>
+                    <h2 className='home__subtitle'> Ok, not yet, but i'm working on it! </h2>
+                    <ContainedButtons />
                 </div>
             </section>
         </React.Fragment>
