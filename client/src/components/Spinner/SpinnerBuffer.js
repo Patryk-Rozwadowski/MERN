@@ -37,7 +37,6 @@ const SpinnerBuffer = ({ variant = 'container', ...props }) => {
 	}, []);
 
 	const spinner = () => {
-		debugger;
 		switch (variant) {
 			case 'container':
 				return (
