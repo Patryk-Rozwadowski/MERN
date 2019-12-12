@@ -22,11 +22,12 @@
     }
     margin: 15px;
     color: #fff;
+
+    &-wrapper {
+      text-align: center;
+    }
   }
 
-  &-wrapper {
-    text-align: center;
-  }
 
   &subtitle {
     @extend .home__title;
