@@ -2,24 +2,35 @@ import React from 'react';
 
 import './styles/Home.scss';
 import ContainedButtons from '../../../../shared/Buttons/Buttons';
+import image1 from '../../../../assets/randomImg/photo1.jpg';
+import image2 from '../../../../assets/randomImg/photo2.jpg';
+import image3 from '../../../../assets/randomImg/photo3.jpg';
+import image4 from '../../../../assets/randomImg/photo4.jpg';
+import image5 from '../../../../assets/randomImg/photo5.jpg';
+import image6 from '../../../../assets/randomImg/photo6.jpg';
+import image7 from '../../../../assets/randomImg/photo7.jpg';
+import image8 from '../../../../assets/randomImg/photo8.jpg';
+
 
 class Home extends React.Component {
 
     constructor() {
         super();
         this.state = {
-                   backgroundImage: 'url(https://source.unsplash.com/random/1600x900/?dark,space,moon,grey',
-                   overflow: 'hidden',
-                   flex: 1,
-                   backgroundSize: 'cover',
-                   backgroundRepeat: 'no-repeat',
-            }
+            backgroundImage: `url(${image1})`,
+            overflow: 'hidden',
+            flex: 1,
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            animation: 'homeBackgroundImageFade 1s backwards',
+            transition: 'all 1s ease'
         }
+    }
 
     componentDidMount = () => {
-        this.interval = setInterval(() =>  this.setState({
-            backgroundImage: `url(https://source.unsplash.com/random/1600x900/?${this.randomPic()})`
-        }), 8000);
+        this.interval = setInterval(() => this.setState({
+            backgroundImage: `url(${this.randomPic()})`
+        }), 9000);
     };
 
     componentWillUnmount() {
@@ -28,7 +39,7 @@ class Home extends React.Component {
 
     // TODO replace request to unsplash with pictures from mongoDB
     randomPic = () => {
-        const arr = ['moon', 'space', 'dark', 'grey', 'building', 'stars', 'sky'];
+        const arr = [image1, image2, image3, image4, image5, image6, image7, image8];
         return arr[Math.floor(arr.length * Math.random())]
     }
 
@@ -39,7 +50,7 @@ class Home extends React.Component {
                     <div className='home__title-wrapper'>
                         <h1 className='home__title'>Share your photos</h1>
                         <h2 className='home__subtitle'> Ok, not yet, but i'm working on it! </h2>
-                        <ContainedButtons />
+                        <ContainedButtons/>
                     </div>
                 </section>
             </React.Fragment>

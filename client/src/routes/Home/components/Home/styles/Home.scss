@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Overpass:200,400,900&display=swap');
+
 .home__ {
 
   &container {
@@ -7,12 +8,13 @@
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
-    transition: all 2s ease;
-    animation: homeBackgroundImageFade 1s 0s;
+    opacity: 1;
+    transition: all 1s ease;
+    animation: homeBackgroundImageFade 1s;
   }
 
   &title {
-    font:{
+    font: {
       family: 'Overpass', sans-serif;
       weight: 900;
       size: 3em;
@@ -20,10 +22,10 @@
     }
     margin: 15px;
     color: #fff;
+  }
 
-    &-wrapper {
-      text-align: center;
-    }
+  &-wrapper {
+    text-align: center;
   }
 
   &subtitle {
@@ -33,7 +35,7 @@
 }
 
 @keyframes homeBackgroundImageFade {
-  0%   {opacity: 0;}
-  70%  {opacity: 0.5;}
-  100% {opacity: 1;-webkit-transform: translateY(-30px);}
+  0%   {width: 0}
+  70%  {width: 50%;}
+  100% {width:100%;}
 }
