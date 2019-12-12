@@ -17,16 +17,16 @@ class Home extends React.Component {
         }
 
     componentDidMount = () => {
-        debugger;
         this.interval = setInterval(() =>  this.setState({
             backgroundImage: `url(https://source.unsplash.com/random/1600x900/?${this.randomPic()})`
-        }), 5000);
+        }), 8000);
     };
 
     componentWillUnmount() {
         clearInterval(this.interval);
     }
 
+    // TODO replace request to unsplash with pictures from mongoDB
     randomPic = () => {
         const arr = ['moon', 'space', 'dark', 'grey', 'building', 'stars', 'sky'];
         return arr[Math.floor(arr.length * Math.random())]
