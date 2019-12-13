@@ -18,19 +18,16 @@ class Home extends React.Component {
         super();
         this.state = {
             backgroundImage: `url(${image1})`,
-            overflow: 'hidden',
-            flex: 1,
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
-            animation: 'homeBackgroundImageFade 1s backwards',
-            transition: 'all 1s ease'
+            className: 'fadeout',
         }
     }
 
     componentDidMount = () => {
         this.interval = setInterval(() => this.setState({
             backgroundImage: `url(${this.randomPic()})`
-        }), 9000);
+        }), 6000);
     };
 
     componentWillUnmount() {

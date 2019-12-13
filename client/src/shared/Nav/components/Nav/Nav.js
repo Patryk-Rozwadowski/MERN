@@ -1,7 +1,7 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -11,9 +11,7 @@ import Links from '../Links/Links';
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
-    },
-    menuButton: {
-        marginRight: theme.spacing(0),
+        backgroundColor: 'rgba(0,0,0,.25)'
     },
     title: {
         flexGrow: 1,
@@ -21,6 +19,9 @@ const useStyles = makeStyles(theme => ({
         underline: 'none',
         fontSize: 3
     },
+    navBar: {
+        backgroundColor: 'rgba(0,0,0,0.5)'
+    }
 }));
 
 //Todo: add active class for navigation
@@ -29,16 +30,16 @@ const Nav = () => {
 
     return (
         <nav className={classes.root}>
-            <AppBar position="static">
+            <AppBar className={classes.navBar} position="static">
                 <Toolbar color='secondary'>
                     <Typography variant="h6" className={classes.title}>
 
-                        <NavLink underline='none' to='/' className={classes.title} >
+                        <NavLink underline='none' to='/' className={classes.title}>
                             <Links> Home </Links>
                         </NavLink>
 
                         <NavLink to='/users' className={classes.title}>
-                            <Links> Users </Links> 
+                            <Links> Users </Links>
                         </NavLink>
 
                         <NavLink to='/images' className={classes.title}>
