@@ -20,7 +20,9 @@ const useStyles = makeStyles(theme => ({
         fontSize: 3
     },
     navBar: {
-        backgroundColor: 'rgba(0,0,0,0.5)'
+        backgroundColor: 'rgba(0,0,0,0.25)',
+        position: 'fixed',
+        top: '0',
     }
 }));
 
