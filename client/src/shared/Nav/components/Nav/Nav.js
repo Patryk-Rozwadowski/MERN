@@ -11,7 +11,7 @@ import Links from '../Links/Links';
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
-        backgroundColor: 'rgba(0,0,0,.25)'
+        backgroundColor: 'rgba(0,0,0,.25)',
     },
     title: {
         flexGrow: 1,
