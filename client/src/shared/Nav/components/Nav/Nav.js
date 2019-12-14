@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 
 import Links from '../Links/Links';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles({
     root: {
         flexGrow: 1,
         backgroundColor: 'rgba(0,0,0,.25)',
@@ -24,14 +24,14 @@ const useStyles = makeStyles(theme => ({
         position: 'fixed',
         top: '0',
     }
-}));
+});
 
 //Todo: add active class for navigation
-const Nav = () => {
+const Nav = ({...props}) => {
     const classes = useStyles();
 
     return (
-        <nav className={classes.root}>
+        <nav {...props} className={classes.root}>
             <AppBar className={classes.navBar} position="static">
                 <Toolbar color='secondary'>
                     <Typography variant="h6" className={classes.title}>

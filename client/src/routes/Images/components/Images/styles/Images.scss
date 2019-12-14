@@ -1,8 +1,8 @@
+//noinspection CssOverwrittenProperties,CssOverwrittenProperties
 .images__container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 0px;
     grid-column-gap: 6em;
     padding: 50px;
 }

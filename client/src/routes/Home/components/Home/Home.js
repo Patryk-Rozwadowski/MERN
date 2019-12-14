@@ -38,7 +38,7 @@ class Home extends React.Component {
     randomPic = () => {
         const arr = [image1, image2, image3, image4, image5, image6, image7, image8];
         return arr[Math.floor(arr.length * Math.random())]
-    }
+    };
 
     render() {
         return (

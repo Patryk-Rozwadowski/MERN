@@ -22,6 +22,6 @@ const ComponentContainer = ({variant = '', ...props}) => {
             </Container>
         </ThemeProvider>
     );
-}
+};
 
 export default ComponentContainer;

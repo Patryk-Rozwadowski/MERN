@@ -1,5 +1,5 @@
 import React from 'react';
-import UsersItems from './UserItems';
+import UsersItems from './UserItems/UserItems';
 
 // Todo: seperate into css files
 const styles = {
