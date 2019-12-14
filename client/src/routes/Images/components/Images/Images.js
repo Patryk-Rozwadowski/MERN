@@ -1,9 +1,8 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
-import { connect } from 'react-redux'
-import { fetchImagesRequest } from '../../../../redux/reducers/images.reducer';
+import {NavLink} from 'react-router-dom';
+import {connect} from 'react-redux'
 
+import {fetchImagesRequest} from '../../../../redux/reducers/images.reducer';
 import SpinnerBuffer from '../../../../components/Spinner/SpinnerBuffer';
 
 import './styles/Images.scss';
@@ -19,21 +18,23 @@ class Images extends React.Component {
     }
 
     render() {
-        const { imagesData, isMounted, isLoaded } = this.props;
+        const {imagesData, isMounted, isLoaded} = this.props;
 
         return (
             <div className='images__container'>
                 {
                     isMounted === true && isLoaded === true ?
                         <React.Fragment>
-                            {imagesData.map(image => <UserImage
-                                key={image.id}
-                                author={image.author}
-                                id={image.id}
-                                title={image.title}
-                                name={image.name}
-                                imageUrl={image.imageUrl}
-                                description={image.description} />)}
+                            {
+                                imagesData.map(image => <UserImage
+                                    key={image.id}
+                                    author={image.author}
+                                    id={image.id}
+                                    title={image.title}
+                                    name={image.name}
+                                    imageUrl={image.imageUrl}
+                                    description={image.description}/>)
+                            }
                         </React.Fragment> : []
                 }
 
@@ -48,7 +49,7 @@ class Images extends React.Component {
                 {
                     isMounted === false && isLoaded === false ?
                         <div>
-                            <SpinnerBuffer variant='container' />
+                            <SpinnerBuffer variant='container'/>
                         </div> : []
                 }
 

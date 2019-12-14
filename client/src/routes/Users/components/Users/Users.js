@@ -1,29 +1,60 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import {connect} from 'react-redux';
 
-import UsersList from '../UsersList';
-//return <UsersList items={testUsers} />
+import UserItems from '../UserItems/UserItems';
+import {fetchUsersRequest} from "../../../../redux/reducers/users.reducer";
+import SpinnerBuffer from "../../../../components/Spinner/SpinnerBuffer";
 
-class Users extends React.Component  {
-    
+import './styles/Users.scss';
+class Users extends React.Component {
+
+    componentDidMount() {
+        this.props.users();
+    }
+
     render() {
+        const {usersData, isMounted, isLoaded} = this.props;
+
         return (
-            <React.Fragment>
-                <UsersList />
-            </React.Fragment>
+            <section className='users__container'>
+                {
+                    isMounted === true && isLoaded === true ?
+                        <React.Fragment>
+                            {
+                                usersData.map(user => <UserItems
+                                    key={user.id}
+                                    id={user.id}
+                                    places={user.places}
+                                    name={user.name}
+                                    image={user.image}
+                                    description={user.description}
+                                />)
+                            }
+                        </React.Fragment> : []
+                }
+
+                {
+                    isMounted === false && isLoaded === false ?
+                        <React.Fragment>
+                            <SpinnerBuffer variant='container'/>
+                        </React.Fragment> : []
+                }
+            </section>
         )
     }
 };
 
-const mapStateToProps = state => {
+const mapDispatchToProps = dispatch => {
     return {
-
+        users: () => dispatch(fetchUsersRequest())
     }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapStateToProps = state => {
     return {
-
+        usersData: state.usersReducer.users,
+        isMounted: state.usersReducer.mounted,
+        isLoaded: state.usersReducer.loaded
     }
 }
 

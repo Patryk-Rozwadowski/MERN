@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 app.use(cors());
-app.use(express.urlencoded( { extended: false }));
+app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
 const port = 8000;
@@ -34,6 +34,28 @@ app.get('/api/images', (req, res) => {
                 lat: 51.702372,
                 lng: 19.414996
             }
+        }
+    ];
+
+    res.json(data);
+});
+
+app.get('/api/users', (req, res) => {
+    const data = [
+        {
+            id: 1,
+            name: 'Patryk',
+            places: ['Poland', 'USA'],
+            image: 'https://images.pexels.com/photos/3095521/pexels-photo-3095521.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+            description: 'Hello! I am new here',
+        },
+
+        {
+            id: 1,
+            name: 'Peter',
+            places: ['Vietnam', 'USA'],
+            image: 'https://images.pexels.com/photos/3095521/pexels-photo-3095521.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+            description: 'Check out my profile!',
         }
     ];
 

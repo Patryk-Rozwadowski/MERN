@@ -13,7 +13,7 @@ const theme = createMuiTheme({
     },
 });
 
-const ComponentContainer = ({variant = '', ...props}) => {
+const ComponentContainer = ({variant = 'xl', ...props}) => {
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline/>

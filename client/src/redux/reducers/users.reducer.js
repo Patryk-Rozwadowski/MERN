@@ -1,7 +1,7 @@
 import {REQUEST_FETCH_USERS, USERS_FETCHED} from '../constants';
 
-import API_URL from '../../config';
 import axios from 'axios';
+import API_URL from '../../config';
 
 const requestUsersFetch = () => ({
     type: REQUEST_FETCH_USERS
