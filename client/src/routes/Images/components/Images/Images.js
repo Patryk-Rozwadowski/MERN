@@ -10,8 +10,8 @@ import UserImage from '../UserImage/UserImage';
 
 class Images extends React.Component {
 
-    //const userId = useParams().userId;
-    //const loadedImages = TEST_IMAGES.filter(image => image.creator === userId);
+    // const userId = useParams().userId;
+    // const loadedImages = TEST_IMAGES.filter(image => image.creator === userId);
 
     componentDidMount() {
         this.props.images();
@@ -39,7 +39,7 @@ class Images extends React.Component {
                 }
 
                 {
-                    imagesData.length === 0 && isMounted === true || imagesData.length === undefined && isMounted === true ?
+                    imagesData.length === 0 && isMounted === true ?
                         <div>
                             <h2>Not found any images yet!</h2>
                             <NavLink to='/addimage'>Maybe add one?</NavLink>

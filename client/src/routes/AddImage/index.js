@@ -5,6 +5,6 @@ const AddImageRoute = () => {
     return (
         <AddImage/>
     )
-};;
+};
 
 export default AddImageRoute;

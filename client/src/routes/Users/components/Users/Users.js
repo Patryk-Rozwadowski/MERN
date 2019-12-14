@@ -42,13 +42,13 @@ class Users extends React.Component {
             </section>
         )
     }
-};
+}
 
 const mapDispatchToProps = dispatch => {
     return {
         users: () => dispatch(fetchUsersRequest())
     }
-}
+};
 
 const mapStateToProps = state => {
     return {
@@ -56,6 +56,6 @@ const mapStateToProps = state => {
         isMounted: state.usersReducer.mounted,
         isLoaded: state.usersReducer.loaded
     }
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Users);

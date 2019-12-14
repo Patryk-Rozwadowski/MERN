@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux'
 
 import UsersItems from '../UserItems/UserItems';
 
@@ -13,16 +12,16 @@ const styles = {
 };
 
 const UsersList = (props) => {
-    if (!props.items.length) {
-        return (
+
+    {
+        !props.items.length ?
             <div>
                 <h2>No users found.</h2>
-            </div> 
-        )
+            </div> : []
     }
 
-    if (props.items.length) {
-        return (
+    {
+        props.items.length ?
             <ul style={styles.listContainer}>
                 {props.items.map(user =>
                     <UsersItems
@@ -31,9 +30,8 @@ const UsersList = (props) => {
                         places={user.places}
                         name={user.name}
                         image={user.image}
-                        description={user.description} />)}
-            </ul>
-        )
+                        description={user.description}/>)}
+            </ul> : []
     }
 };
 
