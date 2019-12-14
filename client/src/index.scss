@@ -1,3 +1,8 @@
+$blackTransition: rgba(0, 0, 0, 0.25);
+$lowBlackTransition: rgba(0, 0, 0, 0.05);
+$whiteTransition: rgba(255, 255, 255, 0.75);
+$fullWidth: 100vw;
+$fullHeight: 100vh;
 body {
     background-color: #F3F5F6;
     margin: 0;
@@ -5,4 +10,15 @@ body {
 
 a {
     text-decoration: none;
+}
+
+.spinner__container {
+    position: fixed;
+    top:0;
+    background-color: $lowBlackTransition;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
 }

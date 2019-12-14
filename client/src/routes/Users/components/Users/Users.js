@@ -17,10 +17,10 @@ class Users extends React.Component {
         const {usersData, isMounted, isLoaded} = this.props;
 
         return (
-            <section className='users__container'>
+            <React.Fragment>
                 {
                     isMounted === true && isLoaded === true ?
-                        <React.Fragment>
+                        <div className='users__container'>
                             {
                                 usersData.map(user => <UserItems
                                     key={user.id}
@@ -31,7 +31,7 @@ class Users extends React.Component {
                                     description={user.description}
                                 />)
                             }
-                        </React.Fragment> : []
+                        </div> : []
                 }
 
                 {
@@ -40,7 +40,7 @@ class Users extends React.Component {
                             <SpinnerBuffer variant='container'/>
                         </React.Fragment> : []
                 }
-            </section>
+            </React.Fragment>
         )
     }
 }
