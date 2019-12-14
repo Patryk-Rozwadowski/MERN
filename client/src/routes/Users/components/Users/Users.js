@@ -6,6 +6,7 @@ import {fetchUsersRequest} from "../../../../redux/reducers/users.reducer";
 import SpinnerBuffer from "../../../../components/Spinner/SpinnerBuffer";
 
 import './styles/Users.scss';
+
 class Users extends React.Component {
 
     componentDidMount() {
