@@ -51,7 +51,7 @@ app.get('/api/users', (req, res) => {
         },
 
         {
-            id: 1,
+            id: 2,
             name: 'Peter',
             places: ['Vietnam', 'USA'],
             image: 'https://images.pexels.com/photos/3095521/pexels-photo-3095521.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
