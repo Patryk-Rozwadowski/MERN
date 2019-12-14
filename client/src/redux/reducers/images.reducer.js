@@ -1,4 +1,4 @@
-import { IMAGES_FETCHED, REQUEST_FETCH_IMAGES } from '../constants';
+import {IMAGES_FETCHED, REQUEST_FETCH_IMAGES} from '../constants';
 import axios from 'axios';
 
 import API_URL from '../../config';
@@ -18,7 +18,7 @@ const initialState = {
     images: []
 };
 
-export function imagesReducer(state = initialState, { type, payload }) {
+export function imagesReducer(state = initialState, {type, payload}) {
     switch (type) {
         case IMAGES_FETCHED:
             return {
@@ -35,13 +35,13 @@ export function imagesReducer(state = initialState, { type, payload }) {
 
 export const fetchImagesRequest = () => {
     return (dispatch) =>
-    axios.get(`${API_URL}/images`)
-    .then(res => {
-        dispatch(requestImagesFetch());
+        axios.get(`${API_URL}/images`)
+            .then(res => {
+                dispatch(requestImagesFetch());
                 dispatch(imagesFetched(res.data))
             })
             .catch(err => {
-                    console.log(err.message);
+                console.log(err.message);
             })
 
 };

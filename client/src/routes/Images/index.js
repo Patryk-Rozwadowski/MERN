@@ -8,7 +8,7 @@ const ImagesRoute = () => {
     return (
         <React.Fragment>
             <NavShared />
-            <ComponentContainer variant='xl'>
+            <ComponentContainer style={{marginTop: '100px'}} variant='xl'>
                 <Images/>
             </ComponentContainer>
         </React.Fragment>

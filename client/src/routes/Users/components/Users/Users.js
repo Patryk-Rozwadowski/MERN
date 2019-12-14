@@ -4,12 +4,27 @@ import { useSelector } from 'react-redux';
 import UsersList from '../UsersList';
 //return <UsersList items={testUsers} />
 
-const Users = props => {
-    return (
-        <React.Fragment>
-            <UsersList />
-        </React.Fragment>
-    )
+class Users extends React.Component  {
+    
+    render() {
+        return (
+            <React.Fragment>
+                <UsersList />
+            </React.Fragment>
+        )
+    }
 };
 
-export default Users;
+const mapStateToProps = state => {
+    return {
+
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Users);
