@@ -5,7 +5,7 @@ import SignUp from './components/SignUp/SignUp';
 const SignUpRoute = () => {
     return (
         <React.Fragment>
-            <SignUp />
+            <SignUp/>
         </React.Fragment>
     )
 };

@@ -19,14 +19,14 @@ const useStyles = makeStyles({
         fontSize: 3
     },
     navBar: {
-        backgroundColor: 'rgba(0,0,0,0.15)',
+        backgroundColor: 'rgba(0, 0, 0, .75)',
         position: 'fixed',
         top: '0',
     }
 });
 
 //Todo: add active class for navigation
-const Nav = ({...props}) => {
+const NavBlack = ({...props}) => {
     const classes = useStyles();
 
     return (
@@ -62,4 +62,4 @@ const Nav = ({...props}) => {
     );
 };
 
-export default Nav;
+export default NavBlack;

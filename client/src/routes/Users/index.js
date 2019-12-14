@@ -6,7 +6,7 @@ import ComponentContainer from "../../shared/Container/Container";
 const UsersRoute = () => {
     return (
         <React.Fragment>
-            <NavShared/>
+            <NavShared variant='black' />
             <ComponentContainer>
                 <Users/>
             </ComponentContainer>

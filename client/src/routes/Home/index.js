@@ -7,7 +7,7 @@ import NavShared from '../../shared/Nav/index';
 const HomeRoute = () => {
     return (
         <React.Fragment>
-            <NavShared />
+            <NavShared variant='transition' />
                 <ComponentContainer variant='xl'>
                     <Home/>
                 </ComponentContainer>

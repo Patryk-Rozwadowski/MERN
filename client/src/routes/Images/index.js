@@ -7,7 +7,7 @@ import NavShared from '../../shared/Nav/index';
 const ImagesRoute = () => {
     return (
         <React.Fragment>
-            <NavShared />
+            <NavShared variant='black' />
             <ComponentContainer style={{marginTop: '100px'}} variant='xl'>
                 <Images/>
             </ComponentContainer>
