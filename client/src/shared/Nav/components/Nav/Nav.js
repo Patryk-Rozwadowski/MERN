@@ -25,8 +25,7 @@ const useStyles = makeStyles({
     }
 });
 
-//Todo: add active class for navigation
-const Nav = ({...props}) => {
+const Nav = () => {
     const classes = useStyles();
 
     return (
@@ -53,8 +52,11 @@ const Nav = ({...props}) => {
 
                     </Typography>
 
+                    <NavLink to='/signin'>
+                        <Links>Login</Links>
+                    </NavLink>
                     <NavLink to='/signup'>
-                        <Links>Login </Links>
+                        <Links>Register</Links>
                     </NavLink>
                 </Toolbar>
             </AppBar>

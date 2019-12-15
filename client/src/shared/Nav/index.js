@@ -2,19 +2,18 @@ import React from 'react';
 import Nav from './components/Nav/Nav';
 import NavBlack from "./components/NavBlack/NavBlack";
 
-const NavShared = ({variant = '', ...props}) => {
+const NavShared = ({variant = ''}) => {
 
         switch (variant) {
             case 'transition':
-                return <Nav />
+                return <Nav/>;
 
             case 'black':
-                return <NavBlack />
+                return <NavBlack/>;
 
             default:
                 return <Nav/>
         }
-    }
-;
+    };
 
 export default NavShared;
