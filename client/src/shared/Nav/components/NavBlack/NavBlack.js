@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 
 import Links from '../Links/Links';
 import NavBlackMaterialStyles from "./styles/NavBlack-material.styles";
+import Logo from '../../../Logo/Logo';
 
 const NavBlack = () => {
     const classes = NavBlackMaterialStyles();
@@ -16,6 +17,10 @@ const NavBlack = () => {
             <AppBar className={classes.navBar} position="static">
                 <Toolbar color='secondary'>
                     <Typography variant="h6" className={classes.title}>
+
+                        <NavLink underline='none' to='/' className={classes.title}>
+                            <Links> <Logo/> </Links>
+                        </NavLink>
 
                         <NavLink underline='none' to='/' className={classes.title}>
                             <Links> Home </Links>
