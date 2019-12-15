@@ -3,9 +3,9 @@ import './styles/Logo.scss';
 
 const Logo = () => {
     return (
-        <React.Fragment>
-            <h1 className='app__logo'>ToToo</h1>
-        </React.Fragment>
+        <div>
+            <h2 className='app__logo'>ToToo</h2>
+        </div>
     )
 };
 

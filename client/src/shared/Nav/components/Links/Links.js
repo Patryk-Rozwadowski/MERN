@@ -10,7 +10,7 @@ const Links = (props) => {
 
 	return (
 		<Button className={LinksStyles.linkButton} color='inherit'>
-			<Link component='p' underline='none' variant='body2' className={classes.link}>
+			<Link component='h2' underline='none' variant='body2' className={classes.link}>
 				{props.children}
 			</Link>
 		</Button>

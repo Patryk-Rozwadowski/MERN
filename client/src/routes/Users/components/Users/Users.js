@@ -27,7 +27,7 @@ class Users extends React.Component {
                                     id={user.id}
                                     places={user.places}
                                     name={user.name}
-                                    image={user.image}
+                                    avatar={user.avatar}
                                     description={user.description}
                                 />)
                             }

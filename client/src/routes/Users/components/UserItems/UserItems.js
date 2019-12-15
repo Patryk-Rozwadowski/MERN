@@ -10,6 +10,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
+import './styles/UserItems.scss';
+
 const useStyles = makeStyles({
     card: {
         maxWidth: 345,
@@ -25,15 +27,15 @@ const UserItems = props => {
             <CardActionArea>
                 <CardMedia
                     component='img'
-                    alt={props.image.toString()}
+                    alt={props.avatar.toString()}
                     height='200'
-                    image={props.image}
-                    title='Contemplative Reptile'
+                    image={props.avatar}
+                    title={props.name}
                 />
 
                 <CardContent>
                     <Typography gutterBottom variant='h5' component='h2'>
-                        <p>{props.name}</p>
+                        <p className='user__name'>{props.name}</p>
                     </Typography>
                     <Typography variant='body2' color='textSecondary' component='p'>
                         {props.description ? props.description : 'No description provided!'}
@@ -43,14 +45,14 @@ const UserItems = props => {
 
             <CardActions>
 
-                <Link to={`/${props.id}/images`}> 
+                <Link to={`/${props.id}/images`}>
                     <Button size='small' color='primary'> Images </Button>
                 </Link>
-            
+
                 <Link to={`/${props.id}/places`}>
-                    <Button size='small' color='primary'>  Places </Button>
+                    <Button size='small' color='primary'> Places </Button>
                 </Link>
-                
+
                 <Link to={`/${props.id}/profile`}>
                     <Button size='small' color='primary'> Profile </Button>
                 </Link>
