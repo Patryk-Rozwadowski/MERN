@@ -18,7 +18,7 @@ const initialState = {
     images: []
 };
 
-export function imagesReducer(state = initialState, {type, payload}) {
+export function images(state = initialState, {type, payload}) {
     switch (type) {
         case IMAGES_FETCHED:
             return {

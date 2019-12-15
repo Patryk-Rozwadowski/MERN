@@ -53,9 +53,9 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = state => {
     return {
-        usersData: state.usersReducer.users,
-        isMounted: state.usersReducer.mounted,
-        isLoaded: state.usersReducer.loaded
+        usersData: state.users.users,
+        isMounted: state.users.mounted,
+        isLoaded: state.users.loaded
     }
 };
 

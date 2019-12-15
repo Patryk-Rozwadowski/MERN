@@ -18,7 +18,7 @@ const initialState = {
     users: []
 };
 
-export function usersReducer(state = initialState, {type, payload}) {
+export function users(state = initialState, {type, payload}) {
     switch (type) {
         case USERS_FETCHED:
             return {

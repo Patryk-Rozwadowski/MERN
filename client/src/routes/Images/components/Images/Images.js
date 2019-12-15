@@ -67,9 +67,9 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = state => {
     return {
-        imagesData: state.imagesReducer.images,
-        isMounted: state.imagesReducer.mounted,
-        isLoaded: state.imagesReducer.loaded
+        imagesData: state.images.images,
+        isMounted: state.images.mounted,
+        isLoaded: state.images.loaded
     }
 };
 
