@@ -1,33 +1,15 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 
-import {makeStyles} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
 import Links from '../Links/Links';
+import NavBlackMaterialStyles from "./styles/NavBlack-material.styles";
 
-const useStyles = makeStyles({
-    root: {
-        flexGrow: 1,
-    },
-    title: {
-        flexGrow: 1,
-        color: '#fff',
-        underline: 'none',
-        fontSize: 3
-    },
-    navBar: {
-        backgroundColor: 'rgba(0, 0, 0, .75)',
-        position: 'fixed',
-        top: '0',
-    }
-});
-
-//Todo: add active class for navigation
-const NavBlack = ({...props}) => {
-    const classes = useStyles();
+const NavBlack = () => {
+    const classes = NavBlackMaterialStyles();
 
     return (
         <nav className={classes.root}>
@@ -53,8 +35,11 @@ const NavBlack = ({...props}) => {
 
                     </Typography>
 
+                    <NavLink to='/signin'>
+                        <Links>Login</Links>
+                    </NavLink>
                     <NavLink to='/signup'>
-                        <Links>Login </Links>
+                        <Links>Register</Links>
                     </NavLink>
                 </Toolbar>
             </AppBar>

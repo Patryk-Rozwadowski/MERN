@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -52,7 +52,7 @@ const UserItems = props => {
                 </Link>
                 
                 <Link to={`/${props.id}/profile`}>
-                    <Button size='small' color='primary'>  </Button>
+                    <Button size='small' color='primary'> Profile </Button>
                 </Link>
 
             </CardActions>

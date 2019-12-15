@@ -1,32 +1,14 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-
-import {makeStyles} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
 import Links from '../Links/Links';
-
-const useStyles = makeStyles({
-    root: {
-        flexGrow: 1,
-    },
-    title: {
-        flexGrow: 1,
-        color: '#fff',
-        underline: 'none',
-        fontSize: 3
-    },
-    navBar: {
-        backgroundColor: 'rgba(0,0,0,0.15)',
-        position: 'fixed',
-        top: '0',
-    }
-});
+import NavMaterialStyles from "./styles/Nav-material.styles";
 
 const Nav = () => {
-    const classes = useStyles();
+    const classes = NavMaterialStyles();
 
     return (
         <nav className={classes.root}>
