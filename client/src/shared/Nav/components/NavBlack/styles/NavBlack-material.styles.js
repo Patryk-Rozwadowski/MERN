@@ -3,6 +3,7 @@ import {makeStyles} from "@material-ui/core/styles";
 const NavBlackMaterialStyles = makeStyles({
     root: {
         flexGrow: 1,
+        marginBottom: '200px'
     },
     title: {
         flexGrow: 1,

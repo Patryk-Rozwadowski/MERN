@@ -8,6 +8,7 @@ const theme = createMuiTheme({
         MuiContainer: {
             maxWidthXl: {
                 padding: '0',
+                maxWidth: '100% !important'
             }
         }
     },
