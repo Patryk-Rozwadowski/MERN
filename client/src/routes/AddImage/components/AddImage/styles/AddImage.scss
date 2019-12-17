@@ -1,6 +1,6 @@
 .form__container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 200px;
   margin-left: 100px;
 }
@@ -8,4 +8,9 @@
 .input__addImage {
   width: 300px;
   margin: 50px;
+}
+
+// TODO title section
+.title__section {
+  font-size: 3em;
 }

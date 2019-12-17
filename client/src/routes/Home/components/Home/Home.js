@@ -1,7 +1,9 @@
 import React from 'react';
 
+import MButtons from "../../../../shared/Buttons/Buttons";
+
 import './styles/Home.scss';
-import ContainedButtons from '../../../../shared/Buttons/Buttons';
+
 import image1 from '../../../../assets/randomImg/photo1.jpg';
 import image2 from '../../../../assets/randomImg/photo2.jpg';
 import image3 from '../../../../assets/randomImg/photo3.jpg';
@@ -10,7 +12,6 @@ import image5 from '../../../../assets/randomImg/photo5.jpg';
 import image6 from '../../../../assets/randomImg/photo6.jpg';
 import image7 from '../../../../assets/randomImg/photo7.jpg';
 import image8 from '../../../../assets/randomImg/photo8.jpg';
-
 
 class Home extends React.Component {
 
@@ -47,7 +48,7 @@ class Home extends React.Component {
                     <div className='home__title-wrapper'>
                         <h2 className='home__title'>Share your photos</h2>
                         <h3 className='home__subtitle'> Ok, not yet, but i'm working on it! </h3>
-                        <ContainedButtons/>
+                        <MButtons>Register</MButtons>
                     </div>
                 </section>
             </React.Fragment>
