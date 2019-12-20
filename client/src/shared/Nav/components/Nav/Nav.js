@@ -5,35 +5,47 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
 import Links from '../Links/Links';
-import NavMaterialStyles from "./styles/Nav-material.styles";
 import Logo from "../../../Logo/Logo";
 
+import {createMuiTheme, ThemeProvider} from '@material-ui/core/styles';
+import {fade} from "@material-ui/core/styles/colorManipulator";
+
+const muiTheme = createMuiTheme({
+    palette: {
+        primary: {
+            main: '#37474f',
+            transparent: fade('#37474f', 0.5)
+        },
+        secondary: {
+            main: fade('#313131', 0.1)
+        }
+    }
+});
+
 const Nav = () => {
-    const classes = NavMaterialStyles();
-
     return (
-        <nav className={classes.root}>
-            <AppBar className={classes.navBar} position="static">
+        <ThemeProvider theme={muiTheme}>
+            <AppBar  color='secondary'>
                 <Toolbar color='secondary'>
-                    <Typography variant="h6" className={classes.title}>
+                    <Typography variant="h6">
 
-                        <NavLink underline='none' to='/' className={classes.title}>
-                            <Links> <Logo /> </Links>
+                        <NavLink underline='none' to='/'>
+                            <Links> <Logo/> </Links>
                         </NavLink>
 
-                        <NavLink underline='none' to='/' className={classes.title}>
+                        <NavLink underline='none' to='/'>
                             <Links> Home </Links>
                         </NavLink>
 
-                        <NavLink to='/users' className={classes.title}>
+                        <NavLink to='/users'>
                             <Links> Users </Links>
                         </NavLink>
 
-                        <NavLink to='/images' className={classes.title}>
+                        <NavLink to='/images'>
                             <Links> Images </Links>
                         </NavLink>
 
-                        <NavLink to='/addimage' className={classes.title}>
+                        <NavLink to='/addimage'>
                             <Links> Add image </Links>
                         </NavLink>
 
@@ -47,7 +59,7 @@ const Nav = () => {
                     </NavLink>
                 </Toolbar>
             </AppBar>
-        </nav>
+        </ThemeProvider>
     );
 };
 

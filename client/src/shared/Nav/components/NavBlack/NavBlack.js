@@ -6,35 +6,31 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
 import Links from '../Links/Links';
-import NavBlackMaterialStyles from "./styles/NavBlack-material.styles";
 import Logo from '../../../Logo/Logo';
 
 const NavBlack = () => {
-    const classes = NavBlackMaterialStyles();
-
     return (
-        <nav className={classes.root}>
-            <AppBar className={classes.navBar} position="static">
-                <Toolbar color='secondary'>
-                    <Typography variant="h6" className={classes.title}>
-
-                        <NavLink underline='none' to='/' className={classes.title}>
+        <nav>
+            <AppBar position="static">
+                <Toolbar>
+                    <Typography variant="h6">
+                        <NavLink underline='none' to='/'>
                             <Links> <Logo/> </Links>
                         </NavLink>
 
-                        <NavLink underline='none' to='/' className={classes.title}>
+                        <NavLink underline='none' to='/'>
                             <Links> Home </Links>
                         </NavLink>
 
-                        <NavLink to='/users' className={classes.title}>
+                        <NavLink to='/users'>
                             <Links> Users </Links>
                         </NavLink>
 
-                        <NavLink to='/images' className={classes.title}>
+                        <NavLink to='/images'>
                             <Links> Images </Links>
                         </NavLink>
 
-                        <NavLink to='/addimage' className={classes.title}>
+                        <NavLink to='/addimage'>
                             <Links> Add image </Links>
                         </NavLink>
 
