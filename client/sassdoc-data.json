@@ -1,0 +1,45 @@
+[
+  {
+    "description": "Rem output with px fallback.\n\n",
+    "commentRange": {
+      "start": 1,
+      "end": 12
+    },
+    "context": {
+      "type": "mixin",
+      "name": "font-size",
+      "code": "\n  font-size: ($sizeValue * 16) * 1px;\n  font-size: $sizeValue * 1rem;\n",
+      "line": {
+        "start": 13,
+        "end": 16
+      }
+    },
+    "group": [
+      "typography"
+    ],
+    "author": [
+      "Adam Laki"
+    ],
+    "parameter": [
+      {
+        "type": "Number",
+        "name": "sizeValue",
+        "description": "Element's font size"
+      }
+    ],
+    "output": "`font-size` with fallback",
+    "example": [
+      {
+        "type": "scss",
+        "code": ".foo {\n    @include font-size(1.2);\n}",
+        "description": "Set rem font-size to `.foo`"
+      }
+    ],
+    "access": "public",
+    "require": [],
+    "file": {
+      "path": "main.scss",
+      "name": "main.scss"
+    }
+  }
+]
