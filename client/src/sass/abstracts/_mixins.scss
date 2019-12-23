@@ -20,44 +20,15 @@
   transform: translate(-50%, -50%);
 }
 
-/// BUTTON GENERATOR
-@mixin button($bg, $color: null, $border: darken($bg, 7)) {
-  background: $bg;
-  @if ($border != 0) {
-    border: 1px solid $border;
-  }
-  @if (lightness($bg) < 50% and $color == null) {
-    color: white;
-  } @else if ($color == null) {
-    color: black;
-  } @else {
-    color: $color;
-  }
-  &:hover {
-    background: darken($bg, 7%);
-    transition: all 250ms ease;
-  }
-  &:active {
-    background: darken($bg, 15%);
-  }
-}
-
 /// LINK STYLE GENERATOR
 // USAGE: @include link-style(yellow, $hover: blue) {};
-@mixin link-style($link, $visited: darken($link,10), $hover: lighten($link,10), $active: $hover) {
+@mixin link-style() {
   a {
-    color: $link;
+    font-family: 'Roboto', sans-serif;
+    color: totoo-color('text-primary');
 
     &:visited {
-      color: $visited;
-    }
-
-    &:hover {
-      color: $hover;
-    }
-
-    &:active {
-      color: $active;
+      font-weight: bold;
     }
   }
 }

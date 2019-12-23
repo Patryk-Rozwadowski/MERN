@@ -1,0 +1,17 @@
+@for $i from 1 through 4 {
+  h#{$i} {
+    font-family: 'Overpass', sans-serif;
+    font-size: ($i * $golden-ratio);
+    color: totoo-colors('text-primary');
+  }
+}
+
+a {
+  @include link-style();
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  color: totoo-colors('text-primary');
+}

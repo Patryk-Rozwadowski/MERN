@@ -6,17 +6,26 @@ $grid-columns: 12;
 $grid-gap: 10px;
 
 $golden-ratio: 1.618;
-$base-fs: 1rem;
 
 // =========================
 // COLORS
 // =========================
 $totoo-colors: (
+
         'primary': #000,
         'secondary': #fff,
+        'text-primary': #fff,
+        'text-secondary': #000,
+
+        'background': #F3F5F6,
+
         'accent': #ff0084,
-        'background': #F3F5F6
+        'warning': #F44336,
+        'info': #3F51B5,
+        'transparent': rgba(0, 0, 0, 0.20)
 );
+
+$color-interval: 20% !global;
 
 // =========================
 // FONTS
@@ -38,7 +47,6 @@ $breakpoints: (
 // =========================
 // Z-INDEX LAYERS
 // =========================
-
 $layers: (
         modal: 2000,
         overlay: 1000,
