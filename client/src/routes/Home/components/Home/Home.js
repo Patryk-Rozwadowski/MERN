@@ -44,8 +44,8 @@ class Home extends React.Component {
             <React.Fragment>
                 <section style={this.state} className='home__container'>
                     <div className='home__title-wrapper'>
-                        <h2 className='home__title'>Share your photos</h2>
-                        <h3 className='home__subtitle'> Ok, not yet, but i'm working on it! </h3>
+                        <h2 className='homepage__title'>Share your photos</h2>
+                        <h3 className='homepage__subtitle'> Ok, not yet, but i'm working on it! </h3>
                         <button className='btn btn__register'>Register</button>
                     </div>
                 </section>

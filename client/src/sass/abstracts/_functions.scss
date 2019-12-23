@@ -1,6 +1,5 @@
 /// Function for easy extracting colors from map
 /// @param {String} $key
-/// @param
 @function totoo-color($key: 'primary' , $level: null) {
   @if map-has-key($totoo-colors, $key) {
     @return map-get($totoo-colors, $key);
@@ -10,10 +9,21 @@
   }
 }
 
+/// Function for easy extracting font family from map
+/// @param {String} $key
+@function font-pick($key: 'primary') {
+  @if map-has-key($fonts-stack, $key) {
+    @return map-get($fonts-stack, $key);
+  } @else {
+    @warn 'Color #{$key} undefined';
+    @return null;
+  }
+}
+
 /// Function for easy extracting z-index value from map
 /// @param {String} $layer-name
 @function z($layer-name) {
-  @if map-has-key($layers, $layer-name)ą {
+  @if map-has-key($layers, $layer-name) {
     @return map-get($layersm $layer-name)
   } @else {
     @warn 'Layer #{$layer-name} undefined';

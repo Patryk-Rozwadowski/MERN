@@ -5,12 +5,17 @@
 $grid-columns: 12;
 $grid-gap: 10px;
 
-$golden-ratio: 1.618;
-
 $btn-border-radius: 3px;
 
-$btn-register-weight: 600;
-$btn-register-font-size: 1.5em;
+$font-size-btn: 1.5em;
+
+$golden-ratio: 1.618;
+
+$font-weight-title: 900;
+$font-weight-subtitle: 400;
+$font-weight-text: 400;
+$font-weight-btn-register: 600;
+
 // =========================
 // COLORS
 // =========================
@@ -31,7 +36,7 @@ $color-interval: 20% !global;
 // =========================
 // FONTS
 // =========================
-$font-stack: (
+$fonts-stack: (
         primary: #{'Overpass', sans-serif},
         secondary: #{'Roboto', sans-serif}
 );
