@@ -1,0 +1,20 @@
+/// Function for easy extracting colors from map
+@function totoo-color($key: 'primary') {
+  @if map-has-key($key) {
+    @return map-get($totoo-colors, $key);
+  } @else {
+    @warn 'Color #{$key} undefined';
+    @return null;
+  }
+}
+
+/// Function for easy extracting z-index value from map
+/// @param {String} $layer-name
+@function z($layer-name) {
+  @if map-has-key($layers, $layer-name) {
+    @return map-get($layersm $layer-name)
+  } @else {
+    @warn 'Layer #{$layer-name} undefined';
+    @return null;
+  }
+}

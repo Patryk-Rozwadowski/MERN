@@ -1,7 +1,5 @@
 import React from 'react';
 
-import MButtons from "../../../../shared/Buttons/Buttons";
-
 import './styles/Home.scss';
 
 import image1 from '../../../../assets/randomImg/photo1.jpg';
@@ -48,7 +46,7 @@ class Home extends React.Component {
                     <div className='home__title-wrapper'>
                         <h2 className='home__title'>Share your photos</h2>
                         <h3 className='home__subtitle'> Ok, not yet, but i'm working on it! </h3>
-                        <MButtons>Register</MButtons>
+                        <button className='btn-default'>Register</button>
                     </div>
                 </section>
             </React.Fragment>
