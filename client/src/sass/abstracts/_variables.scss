@@ -7,18 +7,19 @@ $grid-gap: 10px;
 
 $golden-ratio: 1.618;
 
+$btn-border-radius: 3px;
+
+$btn-register-weight: 600;
+$btn-register-font-size: 1.5em;
 // =========================
 // COLORS
 // =========================
 $totoo-colors: (
-
         'primary': #000,
         'secondary': #fff,
         'text-primary': #fff,
         'text-secondary': #000,
-
         'background': #F3F5F6,
-
         'accent': #ff0084,
         'warning': #F44336,
         'info': #3F51B5,

@@ -49,7 +49,7 @@
 }
 
 @mixin size($width, $height: $width) {
-  widtH: $width;
+  width: $width;
   height: $height;
 }
 

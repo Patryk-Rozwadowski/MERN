@@ -13,7 +13,7 @@
 /// Function for easy extracting z-index value from map
 /// @param {String} $layer-name
 @function z($layer-name) {
-  @if map-has-key($layers, $layer-name) {
+  @if map-has-key($layers, $layer-name)ą {
     @return map-get($layersm $layer-name)
   } @else {
     @warn 'Layer #{$layer-name} undefined';
