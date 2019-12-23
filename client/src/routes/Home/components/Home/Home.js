@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './styles/Home.scss';
-
 import image1 from '../../../../assets/randomImg/photo1.jpg';
 import image2 from '../../../../assets/randomImg/photo2.jpg';
 import image3 from '../../../../assets/randomImg/photo3.jpg';
@@ -42,8 +40,8 @@ class Home extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <section style={this.state} className='home__container'>
-                    <div className='home__title-wrapper'>
+                <section style={this.state} className='home'>
+                    <div className='f-center'>
                         <h2 className='homepage__title'>Share your photos</h2>
                         <h3 className='homepage__subtitle'> Ok, not yet, but i'm working on it! </h3>
                         <button className='btn btn__register'>Register</button>

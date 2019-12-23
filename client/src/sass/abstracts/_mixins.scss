@@ -7,6 +7,7 @@
   }
 }
 
+/// CENTERERS
 @mixin center-block {
   display: block;
   margin-left: auto;
@@ -20,9 +21,18 @@
   transform: translate(-50%, -50%);
 }
 
+@mixin flex-centerer($direction: null) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @if ($direction) {
+    flex-direction: column;
+  } @else {}
+}
+
 /// LINK STYLE GENERATOR
 // USAGE: @include link-style(yellow, $hover: blue) {};
-@mixin link-style() {
+@mixin link-style {
   a {
     font-family: 'Roboto', sans-serif;
     color: totoo-color('text-primary');
@@ -48,6 +58,8 @@
   left: $left;
 }
 
+// @param {String} $width
+// @param {String} $height
 @mixin size($width, $height: $width) {
   width: $width;
   height: $height;
@@ -67,9 +79,18 @@
   padding: $pd;
 }
 
+/// CREATORS
 @mixin create-font($family: 'Overpass', $size: 1em, $weight: $font-weight-text) {
   font-family: $family;
   font-size: $size;
   font-weight: $weight;
   color: totoo-color('text-primary');
+}
+
+@mixin create-container($display: 'block', $width: null, $height: $width, $center: false) {
+  @include size($width, $height);
+  @if ($display == 'flex' and $center) {
+    @include flex-centerer;
+    display: $display;
+  }
 }

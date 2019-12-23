@@ -1,0 +1,7 @@
+.home {
+  @include create-container('flex', $vw-100, $vh-100, true);
+
+  &__title-wrapper {
+    @include flex-centerer;
+  }
+}
