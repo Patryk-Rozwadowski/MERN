@@ -8,16 +8,12 @@
 
 
 ##### For better understanding SASS folder you can check sassdoc for documentation
-### Available Scripts
-
-In the project directory, you can run:
-
+### Available Scripts:
+- ##### In the project directory, you can run: yarn start for easy start dev server and backend server.
+````
 yarn start
 ````
-For easy start dev server and backend server.
-
-````
+- ##### Compile comments from sass folder into documentation.
+```
 yarn sassdoc:save
-````
-Compile comments from sass folder into documentation.
 ````
