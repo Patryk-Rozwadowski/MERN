@@ -1,0 +1,15 @@
+{
+  "name": "mern-serwis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"yarn start:react\" \"yarn run start:server\" ",
+    "start:react": "cd client & yarn start",
+    "start:server": "cd server & nodemon server.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "concurrently": "^5.0.2"
+  }
+}
