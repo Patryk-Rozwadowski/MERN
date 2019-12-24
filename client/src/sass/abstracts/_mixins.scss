@@ -1,19 +1,32 @@
 /// Mixin for easy breakpoint manipulation
-/// @param {String} $breakpoint
-/// Usage: @include for-device(small) {}
-@mixin for-device($breakpoint) {
+/// @group RWD
+/// @param {String} $breakpoint key from breakpoints map
+/// @example scss - Basic usage
+/// .foo {
+///   font-size: 16px;
+///   @include for-device(small) {
+///     font-size: 14px;
+/// }
+@mixin for-device($breakpoint: 'lg') {
   @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
     @content;
   }
 }
 
-/// CENTERERS
-@mixin center-block {
+/// Helper mixin to center element horizontally
+/// @group centerer's
+/// @author Patryk Rozwadowski
+@mixin margin-auto {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
+/// Helper mixin to center container by
+/// position absolute. The parent should
+/// have position relative in this situation.
+/// @group centerer's
+/// @author Patryk Rozwadowski
 @mixin abs-centerer {
   position: absolute;
   top: 50%;
@@ -21,35 +34,32 @@
   transform: translate(-50%, -50%);
 }
 
+/// Helper mixin to center elements by using flex
+/// @group centerer's
+/// @author Patryk Rozwadowski
 @mixin flex-centerer($direction: null) {
   display: flex;
   justify-content: center;
   align-items: center;
   @if ($direction) {
     flex-direction: column;
-  } @else {}
-}
-
-/// LINK STYLE GENERATOR
-// USAGE: @include link-style(yellow, $hover: blue) {};
-@mixin link-style {
-  a {
-    font-family: 'Roboto', sans-serif;
-    color: totoo-color('text-primary');
-
-    &:visited {
-      font-weight: bold;
-    }
+  } @else {
+    flex-direction: $direction;
   }
 }
 
-/// POSITION GENERATOR
+/// Custom position generator
+/// @group position's
 /// @param {String} $type - define position type
 /// @param {String} $top - direction
 /// @param {String} $right - direction
 /// @param {String} $bottom - direction
 /// @param {String} $left - direction
-// Usage: @include position(absolute, 10px, 0, 50px, 15px) {};
+/// @author Patryk Rozwadowski
+/// @example - Basic usage:
+/// .foo {
+///   @include position(absolute, 10px, 0, 50px, 15px);
+/// }
 @mixin position($type, $top: null, $right: null, $bottom: null, $left: null) {
   position: $type;
   top: $top;
@@ -58,13 +68,18 @@
   left: $left;
 }
 
-// @param {String} $width
-// @param {String} $height
+/// Quick and easy mixin for elements size manipulation
+/// For square just give $width value
+/// @group Elements props
+/// @param {String} $width
+/// @param {String} $height
+/// @author Patryk Rozwadowski
 @mixin size($width, $height: $width) {
   width: $width;
   height: $height;
 }
 
+/// @group Grid
 @mixin span($size, $columns: $grid-columns, $gap: $grid-gap) {
   width: $size / $columns * 100%;
   box-sizing: border-box;

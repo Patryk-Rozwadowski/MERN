@@ -4,6 +4,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `yarn sassdoc:save`
+
+Compile comments from sass folder into documentation.
+
+
 ### `yarn start`
 
 Runs the app in the development mode.<br />
