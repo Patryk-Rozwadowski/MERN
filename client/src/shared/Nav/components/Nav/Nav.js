@@ -1,14 +1,11 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 
 import Links from '../Links/Links';
-import Logo from "../../../Logo/Logo";
+import Logo from '../../../Logo/Logo';
 
-import {createMuiTheme, ThemeProvider} from '@material-ui/core/styles';
-import {fade} from "@material-ui/core/styles/colorManipulator";
+import {createMuiTheme} from '@material-ui/core/styles';
+import {fade} from '@material-ui/core/styles/colorManipulator';
 
 const muiTheme = createMuiTheme({
     palette: {
@@ -24,42 +21,35 @@ const muiTheme = createMuiTheme({
 
 const Nav = () => {
     return (
-        <ThemeProvider theme={muiTheme}>
-            <AppBar  color='secondary'>
-                <Toolbar color='secondary'>
-                    <Typography variant="h6">
+        <nav className='nav-transparent'>
+            <NavLink underline='none' to='/'>
+                <Links> <Logo/> </Links>
+            </NavLink>
 
-                        <NavLink underline='none' to='/'>
-                            <Links> <Logo/> </Links>
-                        </NavLink>
+            <NavLink to='/'>
+                <Links> Home </Links>
+            </NavLink>
 
-                        <NavLink underline='none' to='/'>
-                            <Links> Home </Links>
-                        </NavLink>
+            <NavLink to='/users'>
+                <Links> Users </Links>
+            </NavLink>
 
-                        <NavLink to='/users'>
-                            <Links> Users </Links>
-                        </NavLink>
+            <NavLink to='/images'>
+                <Links> Images </Links>
+            </NavLink>
 
-                        <NavLink to='/images'>
-                            <Links> Images </Links>
-                        </NavLink>
+            <NavLink to='/addimage'>
+                <Links> Add image </Links>
+            </NavLink>
 
-                        <NavLink to='/addimage'>
-                            <Links> Add image </Links>
-                        </NavLink>
+            <NavLink to='/signin'>
+                <Links>Login</Links>
+            </NavLink>
 
-                    </Typography>
-
-                    <NavLink to='/signin'>
-                        <Links>Login</Links>
-                    </NavLink>
-                    <NavLink to='/signup'>
-                        <Links>Register</Links>
-                    </NavLink>
-                </Toolbar>
-            </AppBar>
-        </ThemeProvider>
+            <NavLink to='/signup'>
+                <Links>Register</Links>
+            </NavLink>
+        </nav>
     );
 };
 

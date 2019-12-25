@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"yarn start:react\" \"yarn run start:server\" ",
-    "start:react": "cd client & yarn start",
-    "start:server": "cd server & nodemon server.js"
+    "start": "concurrently \"yarn run start:server\" \"yarn start:react\" ",
+    "start:server": "cd server & nodemon server.js",
+    "start:react": "cd client & yarn start"
   },
   "dependencies": {},
   "devDependencies": {

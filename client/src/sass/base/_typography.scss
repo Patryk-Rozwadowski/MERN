@@ -6,14 +6,15 @@
   }
 }
 
-a {
-
+a,
+link {
+  @include create-font('primary', 1em, $font-weight-text, 'primary')
 }
 
 p {
   font-family: 'Roboto', sans-serif;
   font-size: 1em;
-  color: totoo-colors('text-primary');
+  color: totoo-colors('primary');
 }
 
 .section {

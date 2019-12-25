@@ -89,19 +89,44 @@
 }
 
 /// For quick margin/padding
+/// @group elements props
+/// @param {String} $mg - Margin
+/// @param {String} $pd - Padding
 @mixin margin-padding($mg: null, $pd: null) {
   margin: $mg;
   padding: $pd;
 }
 
-/// CREATORS
-@mixin create-font($family: 'Overpass', $size: 1em, $weight: $font-weight-text) {
+/// Mixin for easy creating various fonts
+/// @group Fonts
+/// @param {String} $family Font-family
+/// @param {Number} $size Font-size
+/// @param {String} $weight font-weight
+/// @param {String} $color Color font
+/// @author Patryk Rozwadowski
+/// @example Basic usage:
+/// .foo {
+///   @include create-font('text-secondary', 2em, $font-weight-text, 'text-primary')
+/// }
+@mixin create-font($family: 'primary', $size: 1em, $weight: $font-weight-text, $color: 'text-primary') {
   font-family: $family;
   font-size: $size;
   font-weight: $weight;
-  color: totoo-color('text-primary');
+  color: totoo-color($color);
 }
 
+/// Mixin for fast and easy creating container
+/// @group container
+/// @param {String} $display - display
+/// @param {Number} $width - container width
+/// @param {Number} $height - container height
+/// @param {Boolean} $center - center elements in container
+/// @author Patryk Rozwadowski
+/// @example
+/// .foo {
+/// @include create-container('flex', $vw-100, $vh-100, true);
+/// };
+/// @todo add if statetment for width: 100% full and height
 @mixin create-container($display: 'block', $width: null, $height: $width, $center: false) {
   @include size($width, $height);
   @if ($display == 'flex' and $center) {
