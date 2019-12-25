@@ -48,9 +48,20 @@
   }
 }
 
+/// @todo doc
+@mixin flex-center-updown($direction: null) {
+  display: flex;
+  align-items: center;
+  @if ($direction) {
+    flex-direction: column;
+  } @else {
+    flex-direction: $direction;
+  }
+}
+
 /// Custom position generator
 /// @group position's
-/// @param {String} $type - define position type
+/// @param {String} $position - define position type
 /// @param {String} $top - direction
 /// @param {String} $right - direction
 /// @param {String} $bottom - direction
@@ -60,8 +71,8 @@
 /// .foo {
 ///   @include position(absolute, 10px, 0, 50px, 15px);
 /// }
-@mixin position($type, $top: null, $right: null, $bottom: null, $left: null) {
-  position: $type;
+@mixin position($position: 'block', $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
   top: $top;
   right: $right;
   bottom: $bottom;
@@ -109,7 +120,7 @@
 ///   @include create-font('text-secondary', 2em, $font-weight-text, 'text-primary')
 /// }
 @mixin create-font($family: 'primary', $size: 1em, $weight: $font-weight-text, $color: 'text-primary') {
-  font-family: $family;
+  font-family: font-pick($family);
   font-size: $size;
   font-weight: $weight;
   color: totoo-color($color);
@@ -121,16 +132,19 @@
 /// @param {Number} $width - container width
 /// @param {Number} $height - container height
 /// @param {Boolean} $center - center elements in container
+/// @param {String} $direction - flex-direction
 /// @author Patryk Rozwadowski
 /// @example
 /// .foo {
 /// @include create-container('flex', $vw-100, $vh-100, true);
 /// };
 /// @todo add if statetment for width: 100% full and height
-@mixin create-container($display: 'block', $width: null, $height: $width, $center: false) {
+@mixin create-container($display: 'block', $width: null, $height: $width, $center: false, $direction: null) {
   @include size($width, $height);
+  display: $display;
   @if ($display == 'flex' and $center) {
     @include flex-centerer;
-    display: $display;
+  } @else if ($display == 'flex' and $direction) {
+    flex-direction: $direction;
   }
 }

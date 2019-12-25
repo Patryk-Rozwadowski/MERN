@@ -1,5 +1,6 @@
 @for $i from 1 through 4 {
   h#{$i} {
+    @include margin-padding(5px, 5px);
     font-family: 'Overpass', sans-serif;
     font-size: ($i * $golden-ratio);
     color: totoo-colors('text-primary');
@@ -8,7 +9,7 @@
 
 a,
 link {
-  @include create-font('primary', 1em, $font-weight-text, 'primary')
+  @include create-font('primary', 1em, $font-weight-text, 'text-primary');
 }
 
 p {

@@ -21,7 +21,7 @@ const muiTheme = createMuiTheme({
 
 const Nav = () => {
     return (
-        <nav className='nav-transparent'>
+        <nav className='nav nav-transparent'>
             <NavLink underline='none' to='/'>
                 <Links> <Logo/> </Links>
             </NavLink>
