@@ -14,7 +14,7 @@
 }
 
 /// Helper mixin to center element horizontally
-/// @group centerer's
+/// @group Centerer's
 /// @author Patryk Rozwadowski
 @mixin margin-auto {
   display: block;
@@ -25,7 +25,7 @@
 /// Helper mixin to center container by
 /// position absolute. The parent should
 /// have position relative in this situation.
-/// @group centerer's
+/// @group Centerer's
 /// @author Patryk Rozwadowski
 @mixin abs-centerer {
   position: absolute;
@@ -35,7 +35,7 @@
 }
 
 /// Helper mixin to center elements by using flex
-/// @group centerer's
+/// @group Centerer's
 /// @author Patryk Rozwadowski
 @mixin flex-centerer($direction: null) {
   display: flex;
@@ -48,7 +48,8 @@
   }
 }
 
-/// @todo doc
+/// Uproght centerer
+/// @group Centerer's
 @mixin flex-center-updown($direction: null) {
   display: flex;
   align-items: center;
@@ -90,17 +91,26 @@
   height: $height;
 }
 
+/// Mixin for containers where we want to use it
+/// in "grid" way
 /// @group Grid
+/// @param {Number} $size - size calculated in %
+/// @param {Number} $columns - number of columns
+/// @param {Number} $gap - number in px for padding col gap
+/// @example
+/// .foo {
+///   @include span(8, 12, 5px);
+/// }
 @mixin span($size, $columns: $grid-columns, $gap: $grid-gap) {
   width: $size / $columns * 100%;
   box-sizing: border-box;
   display: block;
   float: left;
-  padding-right: $gap;
+  padding: 0 $gap;
 }
 
 /// For quick margin/padding
-/// @group elements props
+/// @group Elements props
 /// @param {String} $mg - Margin
 /// @param {String} $pd - Padding
 @mixin margin-padding($mg: null, $pd: null) {
@@ -127,7 +137,7 @@
 }
 
 /// Mixin for fast and easy creating container
-/// @group container
+/// @group Container
 /// @param {String} $display - display
 /// @param {Number} $width - container width
 /// @param {Number} $height - container height
