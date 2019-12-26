@@ -1,0 +1,31 @@
+.nav {
+  @include position($position: fixed, $top: 0, $left: 0);
+  @include create-container(flex, $vw-100, $nav-height, false, row);
+  z-index: z('menu');
+  @include flex-center-updown;
+
+  .link {
+    margin: 0 30px;
+
+    &:hover {
+      color: lighten(totoo-color('accent'), 20%);
+    }
+  }
+
+  &-transparent {
+    background-color: totoo-color('transparent');
+  }
+
+  &-black {
+    background-color: totoo-color('primary');
+  }
+
+  &__links {
+    @include span(11);
+  }
+
+  &__login {
+    @include span(1);
+  }
+
+}

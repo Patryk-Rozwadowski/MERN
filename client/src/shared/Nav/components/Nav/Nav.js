@@ -1,54 +1,40 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 
-import Links from '../Links/Links';
-import Logo from '../../../Logo/Logo';
-
-import {createMuiTheme} from '@material-ui/core/styles';
-import {fade} from '@material-ui/core/styles/colorManipulator';
-
-const muiTheme = createMuiTheme({
-    palette: {
-        primary: {
-            main: '#37474f',
-            transparent: fade('#37474f', 0.5)
-        },
-        secondary: {
-            main: fade('#313131', 0.1)
-        }
-    }
-});
-
-const Nav = () => {
+const Nav = props => {
     return (
-        <nav className='nav nav-transparent'>
-            <NavLink underline='none' to='/'>
-                <Links> <Logo/> </Links>
+        <nav className={`nav nav-${props.variant}`}>
+            <div className='nav__links'>
+                <NavLink cy='nav__logo' activeClassName={''} className='link' exact to='/'>
+                    ToToo
+                </NavLink>
+
+                <NavLink cy='nav__home' className='link' exact to='/'>
+                    Home
+                </NavLink>
+
+                <NavLink cy='nav__users' className='link' exact to='/users'>
+                    Users
+                </NavLink>
+
+                <NavLink cy='nav__images' className='link' exact to='/images'>
+                    Images
+                </NavLink>
+
+                <NavLink cy='nav__addimage' className='link' exact to='/addimage'>
+                    Add image
+                </NavLink>
+            </div>
+
+
+            <NavLink cy='nav__login' className='link' exact to='/signin'>
+                Login
             </NavLink>
 
-            <NavLink to='/'>
-                <Links> Home </Links>
+            <NavLink cy='nav__login' className='link' exact to='/signup'>
+                Register
             </NavLink>
 
-            <NavLink to='/users'>
-                <Links> Users </Links>
-            </NavLink>
-
-            <NavLink to='/images'>
-                <Links> Images </Links>
-            </NavLink>
-
-            <NavLink to='/addimage'>
-                <Links> Add image </Links>
-            </NavLink>
-
-            <NavLink to='/signin'>
-                <Links>Login</Links>
-            </NavLink>
-
-            <NavLink to='/signup'>
-                <Links>Register</Links>
-            </NavLink>
         </nav>
     );
 };

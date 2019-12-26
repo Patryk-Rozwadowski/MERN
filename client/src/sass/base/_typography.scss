@@ -7,9 +7,18 @@
   }
 }
 
+/// Class for active link
+.active {
+  color: totoo-color('accent');
+}
+
 a,
 link {
   @include create-font('primary', 1em, $font-weight-text, 'text-primary');
+
+  &:hover {
+    color: lighten(totoo-color('accent'), $color-interval);
+  }
 }
 
 p {
@@ -39,4 +48,8 @@ p {
     @include create-font('Overpass', 2.5em, $font-weight-subtitle)
   }
 
+}
+
+* {
+  transition: $transition-time ease;
 }

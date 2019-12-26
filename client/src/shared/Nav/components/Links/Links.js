@@ -3,7 +3,7 @@ import React from 'react';
 const Links = (props) => {
 	return (
 		<React.Fragment>
-			<a className='link'>
+			<a data-cy={props.cy} className='link'>
 				{props.children}
 			</a>
 		</React.Fragment>
