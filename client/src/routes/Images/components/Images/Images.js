@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
 
 import {fetchImagesRequest} from '../../../../redux/reducers/images.reducer';
 import SpinnerBuffer from '../../../../components/Spinner/SpinnerBuffer';
@@ -21,7 +21,7 @@ class Images extends React.Component {
         const {imagesData, isMounted, isLoaded} = this.props;
 
         return (
-            <div className='images__container'>
+            <div>
                 {
                     isMounted === true && isLoaded === true ?
                         <React.Fragment>
@@ -54,15 +54,14 @@ class Images extends React.Component {
                 }
 
             </div>
-        )
+        );
     }
 }
-
 
 const mapDispatchToProps = dispatch => {
     return {
         images: () => dispatch(fetchImagesRequest())
-    }
+    };
 };
 
 const mapStateToProps = state => {
@@ -70,7 +69,7 @@ const mapStateToProps = state => {
         imagesData: state.images.images,
         isMounted: state.images.mounted,
         isLoaded: state.images.loaded
-    }
+    };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Images);
