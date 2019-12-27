@@ -3,6 +3,7 @@
   @include create-container(flex, $vw-100, $nav-height, false, row);
   z-index: z('menu');
   @include flex-center-updown;
+  margin-bottom: $nav-height;
 
   .link {
     margin: 0 30px;

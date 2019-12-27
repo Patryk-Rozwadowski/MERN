@@ -5,7 +5,6 @@ import {connect} from 'react-redux';
 import {fetchImagesRequest} from '../../../../redux/reducers/images.reducer';
 import SpinnerBuffer from '../../../../components/Spinner/SpinnerBuffer';
 
-import './styles/Images.scss';
 import UserImage from '../UserImage/UserImage';
 
 class Images extends React.Component {
@@ -21,7 +20,7 @@ class Images extends React.Component {
         const {imagesData, isMounted, isLoaded} = this.props;
 
         return (
-            <div>
+            <section className='feed-container'>
                 {
                     isMounted === true && isLoaded === true ?
                         <React.Fragment>
@@ -53,7 +52,7 @@ class Images extends React.Component {
                         </div> : []
                 }
 
-            </div>
+            </section>
         );
     }
 }

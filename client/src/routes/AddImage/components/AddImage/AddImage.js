@@ -1,7 +1,7 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import './styles/AddImage.scss';
-import MButtons from '../../../../shared/Buttons/Buttons';
+import MButtons from '../../../../shared/components/Buttons/Buttons';
 
 // TODO make input more reusable
 class AddImage extends React.Component {

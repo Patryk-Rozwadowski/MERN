@@ -12,7 +12,7 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import {makeStyles} from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import Copyright from "../../../../shared/CopyRight/Copyright";
+import Copyright from '../../../../shared/components/CopyRight/Copyright';
 
 const useStyles = makeStyles(theme => ({
     paper: {

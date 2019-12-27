@@ -3,5 +3,14 @@
 }
 
 .row {
+  display: flex;
+  flex-direction: row;
+}
 
+.feed-container {
+  position: relative;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 50px;
+  margin-top: $nav-height + 50px;
 }

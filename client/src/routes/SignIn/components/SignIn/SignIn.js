@@ -13,7 +13,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
 import useStyles from './styles/SignIn-material.styles';
-import Copyright from '../../../../shared/CopyRight/Copyright';
+import Copyright from '../../../../shared/components/CopyRight/Copyright';
 
 const SignIn = () => {
     const classes = useStyles();

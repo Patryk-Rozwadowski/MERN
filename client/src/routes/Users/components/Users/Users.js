@@ -2,11 +2,12 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import UserItems from '../UserItems/UserItems';
-import {fetchUsersRequest} from "../../../../redux/reducers/users.reducer";
-import SpinnerBuffer from "../../../../components/Spinner/SpinnerBuffer";
+import {fetchUsersRequest} from '../../../../redux/reducers/users.reducer';
+import SpinnerBuffer from '../../../../components/Spinner/SpinnerBuffer';
 
 import './styles/Users.scss';
 
+// @todo messages
 class Users extends React.Component {
 
     componentDidMount() {
@@ -40,6 +41,14 @@ class Users extends React.Component {
                             <SpinnerBuffer variant='container'/>
                         </React.Fragment> : []
                 }
+
+                {
+                    usersData.length === 0 ?
+                        <React.Fragment>
+                            <p>Users not found!</p>
+                        </React.Fragment> : []
+                }
+
             </React.Fragment>
         )
     }

@@ -1,0 +1,38 @@
+.photo {
+
+  &__container {
+    @include span(3);
+    background-color: totoo-color('secondary');
+    border-radius: $border-radius;
+    margin: 50px;
+  }
+
+  &__author {
+    @include create-font($color: 'text-secondary', $size: 1em, $font-weight: $font-weight-text);
+  }
+
+  &__image {
+    width:100%;
+    height: 100%;
+  }
+
+  &__title {
+    @include create-font($font-family: 'primary', $color: 'text-secondary', $font-weight: $font-weight-text-fat);
+  }
+
+  &__description {
+    padding: 0 10px;
+  }
+
+  &__info {
+    @include create-container($display: flex, $height: 50px, $center: true);
+    border-top: 1px solid totoo-color('transparent');
+
+    &__element {
+      @include create-font('text-secondary', $color: 'transparent', $size: 0.75em);
+      padding: 0 10px;
+    }
+  }
+
+}
+

@@ -101,12 +101,11 @@
 /// .foo {
 ///   @include span(8, 12, 5px);
 /// }
-@mixin span($size, $columns: $grid-columns, $gap: $grid-gap) {
+@mixin span($size, $columns: $grid-columns) {
   width: $size / $columns * 100%;
   box-sizing: border-box;
   display: block;
   float: left;
-  padding: 0 $gap;
 }
 
 /// For quick margin/padding
@@ -129,11 +128,11 @@
 /// .foo {
 ///   @include create-font('text-secondary', 2em, $font-weight-text, 'text-primary')
 /// }
-@mixin create-font($family: 'primary', $size: 1em, $weight: $font-weight-text, $color: 'text-primary') {
-  font-family: font-pick($family);
-  font-size: $size;
-  font-weight: $weight;
+@mixin create-font($font-family: 'primary', $size: 1em, $font-weight: $font-weight-text, $color: 'text-primary') {
   color: totoo-color($color);
+  font-family: font-pick($font-family);
+  font-size: $size;
+  font-weight: $font-weight;
 }
 
 /// Mixin for fast and easy creating container
