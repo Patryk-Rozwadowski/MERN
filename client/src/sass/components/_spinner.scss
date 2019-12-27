@@ -1,0 +1,10 @@
+.spinner__container {
+  @include flex-centerer();
+  background-color: darken(totoo-color('transparent'), $color-interval);
+  z-index: z('modal');
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: $vw-100;
+  height: $vh-100;
+}

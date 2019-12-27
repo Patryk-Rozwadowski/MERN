@@ -47,9 +47,9 @@ class Images extends React.Component {
 
                 {
                     isMounted === false && isLoaded === false ?
-                        <div>
-                            <SpinnerBuffer variant='container'/>
-                        </div> : []
+                        <React.Fragment>
+                            <SpinnerBuffer/>
+                        </React.Fragment> : []
                 }
 
             </section>

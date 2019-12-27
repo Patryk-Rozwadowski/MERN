@@ -3,7 +3,7 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 
 import spinnerStyles from './styles/Spinner-material';
 
-const SpinnerBuffer = ({variant = 'container', ...props}) => {
+const SpinnerBuffer = () => {
 
     const classes = spinnerStyles();
 
@@ -37,29 +37,14 @@ const SpinnerBuffer = ({variant = 'container', ...props}) => {
         };
     }, []);
 
-    const spinner = () => {
-        switch (variant) {
-            case 'container':
-                return (
-                    <div className='spinner__container'>
-                        <div className={classes.root}>
-                            <LinearProgress variant="buffer" value={completed} valueBuffer={buffer}/>
-                            <LinearProgress variant="buffer" value={completed} valueBuffer={buffer} color="secondary"/>
-                        </div>
-                    </div>
-                );
-
-            default:
-                return (
-                    <div className={classes.root}>
-                        <LinearProgress variant="buffer" value={completed} valueBuffer={buffer}/>
-                        <LinearProgress variant="buffer" value={completed} valueBuffer={buffer} color="secondary"/>
-                    </div>
-                );
-        }
-    };
-
-    return <React.Fragment>{spinner()}</React.Fragment>;
+    return (
+        <div className='spinner__container'>
+            <div className={classes.root}>
+                <LinearProgress variant="buffer" value={completed} valueBuffer={buffer}/>
+                <LinearProgress variant="buffer" value={completed} valueBuffer={buffer} color="secondary"/>
+            </div>
+        </div>
+    );
 };
 
 export default SpinnerBuffer;
