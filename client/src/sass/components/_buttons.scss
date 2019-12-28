@@ -1,9 +1,6 @@
 .btn {
   @include size($width: 100px, $height: 30px);
-  font-family: 'Roboto', sans-serif;
-  font-weight: $font-weight-btn-register;
-  font-size: $font-size-btn;
-  background-color: totoo-color('secondary');
+  @include create-font($font-family: 'secondary', $font-size: 0.75em, $font-weight: $font-weight-text);
   border: 0;
   border-radius: $border-radius;
 
@@ -17,7 +14,16 @@
     color: lighten(totoo-color('text-secondary'), 60%);
   }
 
+  &__info {
+    background-color: totoo-color('info');
+  }
+
   &__register {
     @include size($width: 160px, $height: 60px);
+    font-size: $font-size-btn;
+    background-color: totoo-color('secondary');
+    border: 0;
+    border-radius: $border-radius;
+    font-weight: $font-weight-btn-register;
   }
 }

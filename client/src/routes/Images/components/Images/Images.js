@@ -20,7 +20,7 @@ class Images extends React.Component {
         const {imagesData, isMounted, isLoaded} = this.props;
 
         return (
-            <section className='feed-container'>
+            <section className='images__container'>
                 {
                     isMounted === true && isLoaded === true ?
                         <React.Fragment>

@@ -4,7 +4,7 @@ import './styles/UserImage.scss';
 
 const UserImage = props => {
     return (
-        <div style={props.pos} className='images__container'>
+        <div style={props.pos} className='images__image__container'>
             <h2 className='images__author'>{props.author ? props.author : 'unknown'}</h2>
             <img className='images__image' src={props.imageUrl} alt={props.title} />
             <h2 className='images__title'>{props.title ? props.title : 'unknown'}</h2>

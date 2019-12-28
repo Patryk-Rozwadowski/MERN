@@ -1,0 +1,44 @@
+.upload {
+
+  .section__title {
+    color: totoo-color('text-secondary');
+  }
+
+  .btn {
+    margin-top: 20px;
+  }
+
+  &__container {
+    @include full-screen;
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__upload {
+    @include span(6);
+    @include flex-centerer();
+    height: 50vh;
+    border: 1px solid #222;
+    border-radius: 10px;
+  }
+
+  &__form {
+    @include span(5);
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+  }
+
+  &__input {
+    @include span(5);
+  }
+}
+
+.form__text-area {
+  @include create-container($display: flex, $direction: column);
+}
+
+// TODO title section
+.title__section {
+  font-size: 3em;
+}

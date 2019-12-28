@@ -128,10 +128,10 @@
 /// .foo {
 ///   @include create-font('text-secondary', 2em, $font-weight-text, 'text-primary')
 /// }
-@mixin create-font($font-family: 'primary', $size: 1em, $font-weight: $font-weight-text, $color: 'text-primary') {
+@mixin create-font($font-family: 'primary', $font-size: 1em, $font-weight: $font-weight-text, $color: 'text-primary') {
   color: totoo-color($color);
   font-family: font-pick($font-family);
-  font-size: $size;
+  font-size: $font-size;
   font-weight: $font-weight;
 }
 
@@ -156,4 +156,12 @@
   } @else if ($display == 'flex' and $direction) {
     flex-direction: $direction;
   }
+}
+
+
+/// Mixin for full screen
+/// @author Patryk Rozwadowski
+@mixin full-screen {
+  width: $vw-100;
+  height: $vh-100;
 }
