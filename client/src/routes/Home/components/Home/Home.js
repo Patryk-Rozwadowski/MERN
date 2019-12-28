@@ -44,7 +44,7 @@ class Home extends React.Component {
                     <div className='f-center'>
                         <h2 className='homepage__title'>Share your photos</h2>
                         <h3 className='homepage__subtitle'> Ok, not yet, but i'm working on it! </h3>
-                        <button className='btn btn__register'>Register</button>
+                        <button className='btn btn-register'>Register</button>
                     </div>
                 </section>
             </React.Fragment>

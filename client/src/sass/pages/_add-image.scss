@@ -1,4 +1,5 @@
 .upload {
+  @include flex-centerer;
 
   .section__title {
     color: totoo-color('text-secondary');
@@ -9,21 +10,21 @@
   }
 
   &__container {
-    @include full-screen;
     display: flex;
     flex-direction: row;
+    height: $vh-100;
   }
 
   &__upload {
-    @include span(6);
-    @include flex-centerer();
-    height: 50vh;
-    border: 1px solid #222;
+    @include span(4);
+    @include flex-centerer;
+    border: 1px solid totoo-color('transparent');
     border-radius: 10px;
+    height: 500px;
   }
 
   &__form {
-    @include span(5);
+    @include span(4);
     display: flex;
     flex-direction: column;
     margin-left: 100px;
