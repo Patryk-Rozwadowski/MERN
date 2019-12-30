@@ -1,17 +1,15 @@
 import React from 'react';
 import {compose} from 'redux';
-import {NavLink, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
+import {NavLink, withRouter} from 'react-router-dom';
 
 import {fetchImagesRequest} from '../../../../redux/reducers/images.reducer';
-import SpinnerBuffer from '../../../../components/Spinner/SpinnerBuffer';
+import {getImages} from '../../../../redux/selectors/images.selectors';
+import SpinnerBuffer from '../../../../shared/components/Spinner/SpinnerBuffer';
 
-import UserImage from '../UserImage/UserImage';
+import UserImageCard from '../../../../shared/components/UserImage/UserImageCard';
 
-class Images extends React.Component {
-
-    // const userId = useParams().userId;
-    // const loadedImages = TEST_IMAGES.filter(image => image.creator === userId);
+class UserImagesList extends React.Component {
 
     componentDidMount() {
         this.props.images();
@@ -22,11 +20,12 @@ class Images extends React.Component {
 
         return (
             <section className='images__container'>
+
                 {
                     isMounted === true && isLoaded === true ?
                         <React.Fragment>
                             {
-                                imagesData.map(image => <UserImage
+                                imagesData.map(image => <UserImageCard
                                     key={image.id}
                                     author={image.author}
                                     id={image.id}
@@ -65,10 +64,7 @@ const mapStateToProps = (state, params) => {
         isLoaded: state.images.loaded
     };
 };
-
-const getImages = (state, params) => state.images.images.filter(img => img.creator === params.match.params.id);
-
 export default compose(
     withRouter(
-        connect(mapStateToProps, {images: fetchImagesRequest})(Images))
+        connect(mapStateToProps, {images: fetchImagesRequest})(UserImagesList))
 );

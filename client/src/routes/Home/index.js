@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Home from './components/Home/Home';
-import NavShared from '../../shared/Nav/index';
+import NavShared from '../../shared/modules/Nav/index';
 
 const HomeRoute = () => {
     return (

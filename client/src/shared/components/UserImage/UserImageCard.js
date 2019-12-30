@@ -2,7 +2,7 @@ import React from 'react';
 
 import './styles/UserImage.scss';
 
-const UserImage = props => {
+const UserImageCard = props => {
     return (
         <div className='images__image__container'>
             <h2 className='images__author'>{props.author ? props.author : 'unknown'}</h2>
@@ -19,4 +19,4 @@ const UserImage = props => {
 // @todo I decided to move description to modal for image
 // after clicking images element user can see description with other infos
 // <p className='images__description'>{props.description ? props.description : 'No description'}</p>
-export default UserImage;
+export default UserImageCard;

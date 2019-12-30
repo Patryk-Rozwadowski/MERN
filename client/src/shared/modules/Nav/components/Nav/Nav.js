@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 
-import Logo from '../../../components/Logo/Logo';
+import Logo from '../../../../components/Logo/Logo';
 
 const Nav = props => {
     return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import NavShared from '../../shared/Nav/index';
+import NavShared from '../../shared/modules/Nav/index';
 import Users from './components/Users/Users';
 
 const UsersRoute = () => {

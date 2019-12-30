@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import UserItems from '../UserItems/UserItems';
 import {fetchUsersRequest} from '../../../../redux/reducers/users.reducer';
-import SpinnerBuffer from '../../../../components/Spinner/SpinnerBuffer';
+import SpinnerBuffer from '../../../../shared/components/Spinner/SpinnerBuffer';
 
 import './styles/Users.scss';
 
