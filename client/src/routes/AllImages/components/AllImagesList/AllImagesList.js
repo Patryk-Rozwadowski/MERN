@@ -3,7 +3,7 @@ import {compose} from 'redux';
 import {connect} from 'react-redux';
 import {NavLink, withRouter} from 'react-router-dom';
 
-import {fetchImagesRequest} from '../../../../redux/reducers/images.reducer';
+import {fetchImagesRequest} from '../../../../redux/actions/images';
 import SpinnerBuffer from '../../../../shared/components/Spinner/SpinnerBuffer';
 
 import UserImageCard from '../../../../shared/components/UserImage/UserImageCard';
