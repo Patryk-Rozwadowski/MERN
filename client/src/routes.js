@@ -18,7 +18,7 @@ const Routes = () => {
                 <Route path='/signin' exact component={SignInRoute}/>
                 <Route path='/addimage' exact component={AddImageRoute}/>
                 <Route path='/images' exact component={ImagesRoute}/>
-                <Route path='/:id/images' exact component={HomeRoute}/>
+                <Route path='/:id/images' exact component={ImagesRoute}/>
             </Switch>
         </Router>
     )

@@ -50,22 +50,16 @@ class Users extends React.Component {
                 }
 
             </React.Fragment>
-        )
+        );
     }
 }
-
-const mapDispatchToProps = dispatch => {
-    return {
-        users: () => dispatch(fetchUsersRequest())
-    }
-};
 
 const mapStateToProps = state => {
     return {
         usersData: state.users.users,
         isMounted: state.users.mounted,
         isLoaded: state.users.loaded
-    }
+    };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Users);
+export default connect(mapStateToProps, {users: fetchUsersRequest})(Users);

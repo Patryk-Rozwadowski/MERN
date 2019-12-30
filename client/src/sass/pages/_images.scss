@@ -9,7 +9,8 @@
   }
 
   &__author {
-    @include create-font($color: 'text-secondary', $font-size: 1em, $font-weight: $font-weight-text);
+    @include create-font($color: 'text-secondary', $font-size: 1.4em, $font-weight: $font-weight-text);
+    padding: 20px;
   }
 
   &__image {

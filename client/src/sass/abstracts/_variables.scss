@@ -2,38 +2,37 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Overpass:200,400,900&display=swap');
 
-$grid-columns: 12;
-$grid-gap: 10px;
-
-$border-radius: 3px;
-
-$font-size-btn: 1.5em;
-
-$font-weight-title: 900;
-$font-weight-subtitle: 400;
+// =========================
+// FONT
+// =========================
+// @todo calc for size?
+$font-size-text: 1em;
 $font-weight-text: 400;
 $font-weight-text-fat: 600;
+
+$font-size-title: 2em;
+$font-size-title-big: 3em;
+$font-weight-title: 900;
+
+$font-size-subtitle: 1.5em;
+$font-size-subtitle-big: 2.5em;
+$font-weight-subtitle: 400;
+
+$font-size-btn: 1.5em;
 $font-weight-btn-register: 600;
 
 $font-size-link-nav: 1.2em;
 $font-weight-link-nav: 400;
 
-$nav-height: 50px;
-
 // =========================
-// UTILS
-// ========================
-$golden-ratio: 1.618;
-$color-interval: 20% !global;
-
-$vw-100: 100vw;
-$vh-100: 100vh;
-
-$transition-time: 350ms;
+// SIZES
+// =========================
+$nav-height: 50px;
 
 // =========================
 // COLORS
 // =========================
+$color-interval: 20% !global;
 $totoo-colors: (
         'primary': #000,
         'secondary': #fff,
@@ -77,4 +76,19 @@ $layers: (
         tooltip: 100,
         text: 1
 );
+
+// =========================
+// UTILS
+// ========================
+$border-radius: 3px;
+
+$grid-columns: 12;
+$grid-gap: 10px;
+
+$golden-ratio: 1.618;
+
+$vw-100: 100vw;
+$vh-100: 100vh;
+
+$transition-time: 350ms;
 

@@ -1,5 +1,6 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import {compose} from 'redux';
+import {NavLink, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 
 import {fetchImagesRequest} from '../../../../redux/reducers/images.reducer';
@@ -57,18 +58,17 @@ class Images extends React.Component {
     }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapStateToProps = (state, params) => {
     return {
-        images: () => dispatch(fetchImagesRequest())
-    };
-};
-
-const mapStateToProps = state => {
-    return {
-        imagesData: state.images.images,
+        imagesData: getImages(state, params),
         isMounted: state.images.mounted,
         isLoaded: state.images.loaded
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Images);
+const getImages = (state, params) => state.images.images.filter(img => img.creator === params.match.params.id);
+
+export default compose(
+    withRouter(
+        connect(mapStateToProps, {images: fetchImagesRequest})(Images))
+);

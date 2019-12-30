@@ -14,7 +14,11 @@
 
 a,
 link {
-  @include create-font('primary', 1em, $font-weight-text, 'text-primary');
+  @include create-font(
+          $font-family: 'primary',
+          $font-size: $font-size-text,
+          $font-weight: $font-weight-text,
+          $color: 'text-primary');
 
   &:hover {
     color: lighten(totoo-color('accent'), $color-interval);
@@ -22,30 +26,43 @@ link {
 }
 
 p {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1em;
-  color: totoo-colors('primary');
+  @include create-font(
+          $font-family: 'secondary',
+          $font-size: $font-size-text,
+          $color: 'primary');
 }
 
 .section {
 
   &__title {
-    @include create-font($font-family: 'Overpass', $font-size: 2em, $font-weight: $font-weight-title);
+    @include create-font(
+            $font-family: 'Overpass',
+            $font-size: 2em,
+            $font-weight: $font-weight-title);
   }
 
   &__subtitle {
-    @include create-font($font-family: 'Overpass', $font-size: 1.5em, $font-weight: $font-weight-subtitle);
+    @include create-font(
+            $font-family: 'Overpass',
+            $font-size: $font-size-subtitle,
+            $font-weight: $font-weight-subtitle);
   }
 
   &__text {
-    @include create-font($font-family: 'secondary', $font-size: 1.2em, $font-weight: $font-weight-text);
+    @include create-font(
+            $font-family: 'secondary',
+            $font-size: $font-size-text,
+            $font-weight: $font-weight-text);
   }
 }
 
 .homepage {
 
   &__title {
-    @include create-font('Overpass', 3em, $font-weight-title);
+    @include create-font(
+            $font-family: 'Overpass',
+            $font-size: $font-size-title-big,
+            $font-weight: $font-weight-title);
   }
 
   &__subtitle {
