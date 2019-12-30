@@ -1,4 +1,4 @@
-import {IMAGES_FETCHED} from '../constants';
+import {IMAGE_ADDED, IMAGES_FETCHED} from '../constants';
 
 const initialState = {
     mounted: false,
@@ -14,6 +14,12 @@ export function images(state = initialState, {type, payload}) {
                 images: payload,
                 mounted: true,
                 loaded: true
+            };
+
+        case IMAGE_ADDED:
+            return {
+                ...state,
+                images: [...state.images, payload]
             };
 
         default:

@@ -1,35 +1,63 @@
 import React from 'react';
-import TextField from '@material-ui/core/TextField';
+import uuid from 'uuid';
 import {connect} from 'react-redux';
+import {addImage} from '../../../../redux/actions/images.actions';
+
+import TextField from '@material-ui/core/TextField';
 
 class AddImage extends React.Component {
 
     constructor() {
         super();
         this.state = {
-            value: ''
-        }
+            id: uuid(),
+            name: 'Patryk',
+            title: '',
+            description: '',
+            location: ''
+        };
     }
 
     handleChange = e => {
-        this.setState({value: e.target.value});
-        console.log(this.state.value);
+        const value = e.target.value;
+        this.setState({
+            [e.target.name]: value
+        });
     };
 
-    handleSubmit = e => {
-        //this.props.submitNewImage;
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.submitNewImage(this.state);
     };
 
     render() {
         return (
             <section className='upload upload__container'>
-                    <form method='POST' action='/uploadphoto' encType='multipart/form-data' className='upload__form'>
-                        <h3 className='section__title'>Add photo</h3>
-                        <TextField onChange={this.handleChange} className='upload__input' label="Title"/>
-                        <TextField className='upload__input' label="Description"/>
-                        <TextField className='upload__input' label="Location"/>
-                        <button type='submit' className='btn btn-info' label='upload'>Upload</button>
-                    </form>
+                <form onSubmit={this.handleSubmit} encType='multipart/form-data' className='upload__form'>
+                    <h3 className='section__title'>Add photo</h3>
+                    <TextField
+                        name='title'
+                        value={this.state.title}
+                        onChange={this.handleChange}
+                        className='upload__input'
+                        label="Title"/>
+
+                    <TextField
+                        name='description'
+                        value={this.state.description}
+                        onChange={this.handleChange}
+                        className='upload__input'
+                        label="Description"/>
+
+                    <TextField
+                        name='location'
+                        value={this.state.location}
+                        onChange={this.handleChange}
+                        className='upload__input'
+                        label="Location"/>
+
+                    <button onClick={this.handleSubmit} className='btn btn-info' label='upload'>Upload</button>
+                </form>
                 <div className='upload__upload'>
                     <button className='btn btn-transparent'> Upload</button>
                 </div>
@@ -38,4 +66,5 @@ class AddImage extends React.Component {
     }
 }
 
-export default connect(null, null)(AddImage);
+// method='POST' action='/uploadphoto'
+export default connect(null, {submitNewImage: addImage})(AddImage);

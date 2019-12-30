@@ -3,7 +3,7 @@ import {compose} from 'redux';
 import {connect} from 'react-redux';
 import {NavLink, withRouter} from 'react-router-dom';
 
-import {fetchImagesRequest} from '../../../../redux/actions/images';
+import {fetchImagesRequest} from '../../../../redux/actions/images.actions';
 import {getImages} from '../../../../redux/selectors/images.selectors';
 import SpinnerBuffer from '../../../../shared/components/Spinner/SpinnerBuffer';
 
