@@ -29,3 +29,16 @@ export const fetchImagesRequest = () => {
             });
 
 };
+
+export const fetchUserImagesRequest = (id) => {
+    return (dispatch) =>
+        axios.get(`${API_URL}/${id}/images`)
+            .then(res => {
+                dispatch(requestImagesFetch());
+                dispatch(imagesFetched(res.data));
+            })
+            .catch(err => {
+                console.log(err.message);
+            });
+
+};

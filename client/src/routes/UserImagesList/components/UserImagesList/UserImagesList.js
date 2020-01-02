@@ -3,16 +3,15 @@ import {compose} from 'redux';
 import {connect} from 'react-redux';
 import {NavLink, withRouter} from 'react-router-dom';
 
-import {fetchImagesRequest} from '../../../../redux/actions/images.actions';
-import {getImages} from '../../../../redux/selectors/images.selectors';
-import SpinnerBuffer from '../../../../shared/components/Spinner/SpinnerBuffer';
+import {fetchUserImagesRequest} from '../../../../redux/actions/images.actions';
 
+import SpinnerBuffer from '../../../../shared/components/Spinner/SpinnerBuffer';
 import UserImageCard from '../../../../shared/components/UserImage/UserImageCard';
 
 class UserImagesList extends React.Component {
 
     componentDidMount() {
-        this.props.images();
+        this.props.images(this.props.match.params.id);
     }
 
     render() {
@@ -59,12 +58,12 @@ class UserImagesList extends React.Component {
 
 const mapStateToProps = (state, params) => {
     return {
-        imagesData: getImages(state, params),
+        imagesData: state.images.images,
         isMounted: state.images.mounted,
         isLoaded: state.images.loaded
     };
 };
 export default compose(
     withRouter(
-        connect(mapStateToProps, {images: fetchImagesRequest})(UserImagesList))
+        connect(mapStateToProps, {images: fetchUserImagesRequest})(UserImagesList))
 );
