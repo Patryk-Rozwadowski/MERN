@@ -33,38 +33,52 @@ class AddImage extends React.Component {
     render() {
         return (
             <section className='upload upload__container'>
-                <form onSubmit={this.handleSubmit} encType='multipart/form-data' className='upload__form'>
+                <form method='POST' onSubmit={this.handleSubmit} action='/uploadphoto' encType='multipart/form-data'
+                      className='upload__form'>
+
                     <h3 className='section__title'>Add photo</h3>
                     <TextField
                         name='title'
                         value={this.state.title}
                         onChange={this.handleChange}
                         className='upload__input'
-                        label="Title"/>
+                        label="Title"
+                        data-cy='upload__input-title'/>
 
                     <TextField
                         name='description'
                         value={this.state.description}
                         onChange={this.handleChange}
                         className='upload__input'
-                        label="Description"/>
+                        label="Description"
+                        data-cy='upload__input-description'/>
 
                     <TextField
                         name='location'
                         value={this.state.location}
                         onChange={this.handleChange}
                         className='upload__input'
-                        label="Location"/>
+                        label="Location"
+                        data-cy='upload__input-location'/>
 
-                    <button onClick={this.handleSubmit} className='btn btn-info' label='upload'>Upload</button>
+                    <button
+                        type='submit'
+                        className='btn btn-info'
+                        data-cy='upload__btn-upload'>Upload
+                    </button>
                 </form>
                 <div className='upload__upload'>
-                    <button className='btn btn-transparent'> Upload</button>
+                    <button
+                        method='POST'
+                        action='/addimage'
+                        type='submit'
+                        className='btn btn-transparent'
+                        data-cy='upload__btn-file'> Upload
+                    </button>
                 </div>
             </section>
         );
     }
 }
 
-// method='POST' action='/uploadphoto'
 export default connect(null, {submitNewImage: addImage})(AddImage);
