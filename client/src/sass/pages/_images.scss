@@ -38,7 +38,7 @@
     border-top: 1px solid totoo-color('transparent');
 
     &__element {
-      @include create-font('text-secondary', $color: 'transparent', $font-size: 0.75em);
+      @include create-font($font-family: 'primary', $color: 'transparent', $font-size: 0.75em);
       padding: 0 10px;
     }
   }

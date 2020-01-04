@@ -128,7 +128,7 @@
 /// .foo {
 ///   @include create-font('text-secondary', 2em, $font-weight-text, 'text-primary')
 /// }
-@mixin create-font($font-family: 'primary', $font-size: 1em, $font-weight: $font-weight-text, $color: 'text-primary') {
+@mixin create-font($color: 'primary', $font-family: 'primary', $font-size: 1em, $font-weight: $font-weight-text, $color: 'text-primary') {
   color: totoo-color($color);
   font-family: font-pick($font-family);
   font-size: $font-size;

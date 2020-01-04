@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './styles/UserImage.scss';
-
 const UserImageCard = props => {
     return (
         <div className='images__image__container'>

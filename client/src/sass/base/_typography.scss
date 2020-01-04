@@ -38,7 +38,8 @@ p {
     @include create-font(
             $font-family: 'Overpass',
             $font-size: 2em,
-            $font-weight: $font-weight-title);
+            $font-weight: $font-weight-title,
+            $color: 'text-primary');
   }
 
   &__subtitle {
@@ -62,11 +63,16 @@ p {
     @include create-font(
             $font-family: 'Overpass',
             $font-size: $font-size-title-big,
-            $font-weight: $font-weight-title);
+            $font-weight: $font-weight-title,
+            $color: 'text-primary');
   }
 
   &__subtitle {
-    @include create-font('Overpass', 2.5em, $font-weight-subtitle)
+    @include create-font(
+            $font-family: 'Overpass',
+            $font-size: 2.5em,
+            $font-weight: $font-weight-subtitle,
+            $color: 'text-primary')
   }
 
 }
