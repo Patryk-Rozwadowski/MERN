@@ -2,10 +2,10 @@
 
   &__container {
     position: relative;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     padding: 50px;
-    margin-top: $nav-height + 50px;
+    margin-top: $nav-height;
   }
 
   &__author {
@@ -18,7 +18,7 @@
     height: 100%;
 
     &__container {
-      @include span(3);
+      @include span(2);
       background-color: totoo-color('secondary');
       border-radius: $border-radius;
       margin: 50px;

@@ -104,8 +104,6 @@
 @mixin span($size, $columns: $grid-columns) {
   width: $size / $columns * 100%;
   box-sizing: border-box;
-  display: block;
-  float: left;
 }
 
 /// For quick margin/padding

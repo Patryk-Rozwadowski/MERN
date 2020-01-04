@@ -4,9 +4,13 @@
 /// @example
 /// Available colors:
 /// primary, secondary, text-primary, text-secondary, background, accent, warning, info, transparent
-@function totoo-color($key: 'primary' , $level: null) {
+@function totoo-color($key: 'primary' , $alpha: null) {
   @if map-has-key($totoo-colors, $key) {
-    @return map-get($totoo-colors, $key);
+    @if ($alpha) {
+      @return transparentize(map-get($totoo-colors, $key), $alpha);
+    } @else {
+      @return map-get($totoo-colors, $key);
+    }
   } @else {
     @warn 'Color #{$key} undefined';
     @return null;
