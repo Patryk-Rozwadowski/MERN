@@ -5,8 +5,6 @@ import UserItems from '../UserItems/UserItems';
 import {fetchUsersRequest} from '../../../../redux/reducers/users.reducer';
 import SpinnerBuffer from '../../../../shared/components/Spinner/SpinnerBuffer';
 
-import './styles/Users.scss';
-
 // @todo messages
 class Users extends React.Component {
 
@@ -18,10 +16,10 @@ class Users extends React.Component {
         const {usersData, isMounted, isLoaded} = this.props;
 
         return (
-            <React.Fragment>
+            <section className='users__container'>
                 {
                     isMounted === true && isLoaded === true ?
-                        <div className='users__container'>
+                        <div className='grid-3-row'>
                             {
                                 usersData.map(user => <UserItems
                                     key={user.id}
@@ -49,7 +47,7 @@ class Users extends React.Component {
                         </React.Fragment> : []
                 }
 
-            </React.Fragment>
+            </section>
         );
     }
 }

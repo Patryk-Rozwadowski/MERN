@@ -18,7 +18,7 @@ class UserImagesList extends React.Component {
         const {imagesData, isMounted, isLoaded} = this.props;
 
         return (
-            <section className='images__container'>
+            <section className='grid-3-row'>
 
                 {
                     isMounted === true && isLoaded === true ?

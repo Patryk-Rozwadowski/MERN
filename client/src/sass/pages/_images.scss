@@ -1,8 +1,11 @@
 .images {
 
   &__container {
+    display: grid;
     position: relative;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 55px;
     align-items: center;
     padding: 50px;
     margin-top: $nav-height;
@@ -18,10 +21,11 @@
     height: 100%;
 
     &__container {
-      @include span(2);
+      @include span(5);
+      justify-self: center;
       background-color: totoo-color('secondary');
       border-radius: $border-radius;
-      margin: 50px;
+
     }
   }
 
@@ -45,3 +49,9 @@
 
 }
 
+/// @todo seperate?
+@for $i from 2 through 999 {
+  .images__image__container:nth-child(#{$i}) {
+    margin-top: random(200) + px;
+  }
+}
