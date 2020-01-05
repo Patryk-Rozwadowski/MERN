@@ -6,7 +6,7 @@ const UserInfo = props => {
     return (
         <React.Fragment>
             <section className='user-info__container'>
-                <div className='user-info__cover-photo'>
+                <div style={{backgroundImage: `url(${props.profileBg})`}} className='user-info__cover-photo'>
                     <div className='gradient'>
                         <div className='user-info__top row'>
                             <Avatar alt='alt' avatarUrl={props.avatarUrl}/>

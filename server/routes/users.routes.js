@@ -10,19 +10,21 @@ const data = [
         profileBg: 'https://i.ytimg.com/vi/BfCwN4iy6T8/maxresdefault.jpg',
         description: 'Hello! I am new here',
         followers: 100,
-        following: 12
+        following: 12,
+        accountType: 'premium'
     },
 
     {
         id: 12,
         name: 'Peter',
+        userName: 'superPeter',
         places: ['Vietnam', 'USA'],
         avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
         description: 'Check out my profile!',
-        profileBg: 'https://i.ytimg.com/vi/BfCwN4iy6T8/maxresdefault.jpg',
-        description: 'Hello! I am new here',
+        profileBg: 'https://cdnp2.stackassets.com/d266074e6d32c9116aab88607fcbd97f939896fb/store/d22f1c81f037ce003d2ae2ac1264a21eb3667a66a4fabddd9d3509f19a47/sale_16031_primary_image_wide.jpg',
         followers: 1520,
-        following: 124
+        following: 124,
+        accountType: 'free'
     }
 ];
 
@@ -45,8 +47,7 @@ const data1 = [
         places: ['Vietnam', 'USA'],
         avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
         description: 'Check out my profile!',
-        profileBg: 'https://i.ytimg.com/vi/BfCwN4iy6T8/maxresdefault.jpg',
-        description: 'Hello! I am new here',
+        profileBg: 'https://www.tom-archer.com/wp-content/uploads/2018/06/milford-sound-night-fine-art-photography-new-zealand.jpg',
         followers: 1520,
         following: 124
     }

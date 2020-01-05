@@ -11,7 +11,7 @@ const userFetched = (user) => ({
     payload: user
 });
 
-export const fetchUserInfoRequest = (id = 21) => {
+export const fetchUserInfoRequest = (id) => {
     return dispatch => {
         axios.get(`${API_URL}/${id}/user`)
             .then((res) => {
