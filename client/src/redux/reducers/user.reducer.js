@@ -1,8 +1,9 @@
-import {USER_FETCHED} from '../constants';
+import {USER_FETCHED, USER_LOGGED} from '../constants';
 
 const initialState = {
     mounted: false,
     loaded: false,
+    logged: false,
     user: []
 };
 
@@ -16,6 +17,13 @@ const user = (state = initialState, {type, payload}) => {
                 loaded: true
             };
 
+        case USER_LOGGED:
+            return {
+                ...state,
+                logged: true,
+                mounted: true,
+                loaded: true
+            }
         default:
             return state;
     }

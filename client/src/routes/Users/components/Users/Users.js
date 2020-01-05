@@ -5,7 +5,7 @@ import UserItems from '../UserItems/UserItems';
 import {fetchUsersRequest} from '../../../../redux/actions/users.actions';
 import SpinnerBuffer from '../../../../shared/components/Spinner/SpinnerBuffer';
 
-// @todo messages
+// @todo error messages
 class Users extends React.Component {
 
     componentDidMount() {

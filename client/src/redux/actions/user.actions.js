@@ -23,3 +23,16 @@ export const fetchUserInfoRequest = (id) => {
             });
     };
 };
+
+export const loginUserRequest = () => {
+    return dispatch => {
+        axios.get(`${API_URL}/`)
+            .then((res) => {
+                dispatch(requestUserFetch(res.data[0].id));
+                dispatch(userFetched(res.data));
+            })
+            .catch(err => {
+                console.log(err.message);
+            });
+    }
+}
