@@ -1,17 +1,17 @@
-import {USERS_FETCHED} from '../constants';
+import {USER_FETCHED} from '../constants';
 
 const initialState = {
     mounted: false,
     loaded: false,
-    users: []
+    user: []
 };
 
-const users = (state = initialState, {type, payload}) => {
+const user = (state = initialState, {type, payload}) => {
     switch (type) {
-        case USERS_FETCHED:
+        case USER_FETCHED:
             return {
                 ...state,
-                users: payload,
+                user: payload,
                 mounted: true,
                 loaded: true
             };
@@ -21,4 +21,4 @@ const users = (state = initialState, {type, payload}) => {
     }
 };
 
-export default users;
+export default user;

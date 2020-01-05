@@ -6,7 +6,7 @@ const initialState = {
     images: []
 };
 
-export function images(state = initialState, {type, payload}) {
+const images = (state = initialState, {type, payload}) => {
     switch (type) {
         case IMAGES_FETCHED:
             return {
@@ -33,4 +33,6 @@ export function images(state = initialState, {type, payload}) {
         default:
             return state;
     }
-}
+};
+
+export default images;

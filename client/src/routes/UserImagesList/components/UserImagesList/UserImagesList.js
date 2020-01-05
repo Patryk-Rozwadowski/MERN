@@ -8,6 +8,7 @@ import {fetchUserImagesRequest} from '../../../../redux/actions/images.actions';
 import SpinnerBuffer from '../../../../shared/components/Spinner/SpinnerBuffer';
 import UserImageCard from '../../../../shared/components/UserImage/UserImageCard';
 
+// @todo seperate into smaller pieces
 class UserImagesList extends React.Component {
 
     componentDidMount() {
@@ -37,7 +38,7 @@ class UserImagesList extends React.Component {
                 }
 
                 {
-                    imagesData.length === 0 && isMounted === true ?
+                    imagesData.length === 0 && isMounted === true && isLoaded === true ?
                         <div>
                             <h2>Not found any images yet!</h2>
                             <NavLink to='/addimage'>Maybe add one?</NavLink>
@@ -56,7 +57,7 @@ class UserImagesList extends React.Component {
     }
 }
 
-const mapStateToProps = (state, params) => {
+const mapStateToProps = (state) => {
     return {
         imagesData: state.images.images,
         isMounted: state.images.mounted,

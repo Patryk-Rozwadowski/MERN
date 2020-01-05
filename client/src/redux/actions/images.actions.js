@@ -9,22 +9,22 @@ import {
     USER_IMAGES_FETCHED
 } from '../constants';
 
-export const imagesFetched = (images) => ({
+const requestImagesFetch = () => ({
+    type: REQUEST_FETCH_IMAGES
+});
+
+const imagesFetched = (images) => ({
     type: IMAGES_FETCHED,
     payload: images
 });
 
-export const requestImagesFetch = () => ({
-    type: REQUEST_FETCH_IMAGES
-});
-
-export const userImagesFetched = (images, id) => ({
+const userImagesFetched = (images, id) => ({
     type: USER_IMAGES_FETCHED,
     payload: images,
     id
 });
 
-export const requestFetchImagesUser = id => ({
+const requestFetchImagesUser = id => ({
     type: REQUEST_FETCH_IMAGES_USER,
     id
 });

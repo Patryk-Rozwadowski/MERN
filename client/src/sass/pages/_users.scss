@@ -1,10 +1,11 @@
 .users {
-  &__container {
 
+  &__container {
     padding: 50px;
 
     .grid-3-row {
       margin-top: $nav-height + 20px;
     }
   }
+
 }
