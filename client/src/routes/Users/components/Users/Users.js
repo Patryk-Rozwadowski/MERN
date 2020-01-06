@@ -2,12 +2,10 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import UserItems from '../UserItems/UserItems';
-import {fetchUsersRequest} from '../../../../redux/reducers/users.reducer';
+import {fetchUsersRequest} from '../../../../redux/actions/users.actions';
 import SpinnerBuffer from '../../../../shared/components/Spinner/SpinnerBuffer';
 
-import './styles/Users.scss';
-
-// @todo messages
+// @todo error messages
 class Users extends React.Component {
 
     componentDidMount() {
@@ -18,10 +16,10 @@ class Users extends React.Component {
         const {usersData, isMounted, isLoaded} = this.props;
 
         return (
-            <React.Fragment>
+            <section className='users__container'>
                 {
                     isMounted === true && isLoaded === true ?
-                        <div className='users__container'>
+                        <div className='grid-3-row'>
                             {
                                 usersData.map(user => <UserItems
                                     key={user.id}
@@ -43,13 +41,13 @@ class Users extends React.Component {
                 }
 
                 {
-                    usersData.length === 0 ?
+                    usersData.length === 0 && isMounted === true && isLoaded === true ?
                         <React.Fragment>
                             <p>Users not found!</p>
                         </React.Fragment> : []
                 }
 
-            </React.Fragment>
+            </section>
         );
     }
 }

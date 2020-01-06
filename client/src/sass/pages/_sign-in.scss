@@ -1,0 +1,46 @@
+.signin {
+
+  &__container {
+  }
+
+  &__forms {
+    @include abs-centerer;
+    @include flex-centerer('column');
+    @include size(500px);
+    padding: 10px;
+
+    .section__title {
+      color: totoo-color('text-secondary');
+    }
+  }
+}
+
+
+.avatar {
+  margin: 20px;
+  background-color: totoo-color('accent');
+}
+
+.form {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.root {
+  @include size($vw-100);
+  @include flex-centerer;
+}
+
+.mg {
+  margin-top: 50px;
+}
+
+.submit {
+  margin: 80px 0 20px;
+}

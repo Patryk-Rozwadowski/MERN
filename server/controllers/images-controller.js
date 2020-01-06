@@ -157,7 +157,7 @@ const data = [
         imageUrl: 'https://images.pexels.com/photos/3095521/pexels-photo-3095521.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
         location: {
             lat: 51.702372,
-            lng: 19.414996
+            lng: 19.4149
         },
         creator: '12'
     }

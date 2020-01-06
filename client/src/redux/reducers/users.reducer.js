@@ -1,16 +1,4 @@
-import {REQUEST_FETCH_USERS, USERS_FETCHED} from '../constants';
-
-import axios from 'axios';
-import API_URL from '../../config';
-
-const requestUsersFetch = () => ({
-    type: REQUEST_FETCH_USERS
-});
-
-export const usersFetched = (users) => ({
-    type: USERS_FETCHED,
-    payload: users
-});
+import {USERS_FETCHED} from '../constants';
 
 const initialState = {
     mounted: false,
@@ -18,7 +6,7 @@ const initialState = {
     users: []
 };
 
-export function users(state = initialState, {type, payload}) {
+const users = (state = initialState, {type, payload}) => {
     switch (type) {
         case USERS_FETCHED:
             return {
@@ -29,19 +17,8 @@ export function users(state = initialState, {type, payload}) {
             };
 
         default:
-            return state
+            return state;
     }
-}
-
-export const fetchUsersRequest = () => {
-    return (dispatch) =>
-        axios.get(`${API_URL}/users`)
-            .then(res => {
-                dispatch(requestUsersFetch());
-                dispatch(usersFetched(res.data))
-            })
-            .catch(err => {
-                console.log(err.message);
-            })
-
 };
+
+export default users;

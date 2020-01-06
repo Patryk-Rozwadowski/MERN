@@ -1,11 +1,14 @@
 .images {
 
   &__container {
+    display: grid;
     position: relative;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 55px;
     align-items: center;
     padding: 50px;
-    margin-top: $nav-height + 50px;
+    margin-top: $nav-height;
   }
 
   &__author {
@@ -18,10 +21,11 @@
     height: 100%;
 
     &__container {
-      @include span(3);
+      @include span(5);
+      justify-self: center;
       background-color: totoo-color('secondary');
       border-radius: $border-radius;
-      margin: 50px;
+
     }
   }
 
@@ -38,10 +42,16 @@
     border-top: 1px solid totoo-color('transparent');
 
     &__element {
-      @include create-font('text-secondary', $color: 'transparent', $font-size: 0.75em);
+      @include create-font($font-family: 'primary', $color: 'transparent', $font-size: 0.75em);
       padding: 0 10px;
     }
   }
 
 }
 
+/// @todo seperate?
+@for $i from 2 through 999 {
+  .images__image__container:nth-child(#{$i}) {
+    margin-top: random(200) + px;
+  }
+}

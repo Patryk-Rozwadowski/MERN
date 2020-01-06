@@ -56,6 +56,7 @@ class AllImagesList extends React.Component {
     }
 }
 
+
 const mapStateToProps = (state) => {
     return {
         imagesData: state.images.images,

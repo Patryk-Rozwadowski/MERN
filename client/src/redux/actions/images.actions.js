@@ -1,15 +1,32 @@
 import axios from 'axios';
 import API_URL from '../../config';
 
-import {IMAGE_ADDED, IMAGES_FETCHED, REQUEST_FETCH_IMAGES} from '../constants';
+import {
+    IMAGE_ADDED,
+    IMAGES_FETCHED,
+    REQUEST_FETCH_IMAGES,
+    REQUEST_FETCH_IMAGES_USER,
+    USER_IMAGES_FETCHED
+} from '../constants';
 
-export const imagesFetched = (images) => ({
+const requestImagesFetch = () => ({
+    type: REQUEST_FETCH_IMAGES
+});
+
+const imagesFetched = (images) => ({
     type: IMAGES_FETCHED,
     payload: images
 });
 
-export const requestImagesFetch = () => ({
-    type: REQUEST_FETCH_IMAGES
+const userImagesFetched = (images, id) => ({
+    type: USER_IMAGES_FETCHED,
+    payload: images,
+    id
+});
+
+const requestFetchImagesUser = id => ({
+    type: REQUEST_FETCH_IMAGES_USER,
+    id
 });
 
 export const addImage = image => ({
@@ -33,9 +50,9 @@ export const fetchImagesRequest = () => {
 export const fetchUserImagesRequest = (id) => {
     return (dispatch) =>
         axios.get(`${API_URL}/${id}/images`)
-            .then(res => {
-                dispatch(requestImagesFetch());
-                dispatch(imagesFetched(res.data));
+            .then((res) => {
+                dispatch(requestFetchImagesUser(res.data[0].creator));
+                dispatch(userImagesFetched(res.data));
             })
             .catch(err => {
                 console.log(err.message);

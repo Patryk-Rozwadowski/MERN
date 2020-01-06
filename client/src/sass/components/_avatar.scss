@@ -1,0 +1,13 @@
+.avatar {
+
+  &__container {
+    @include size(50px);
+    background-color: totoo-color('accent');
+    border-radius: 50%;
+  }
+
+  &__image {
+    @include size(inherit);
+    border-radius: 50%;
+  }
+}
