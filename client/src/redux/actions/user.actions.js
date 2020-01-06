@@ -35,4 +35,4 @@ export const loginUserRequest = () => {
                 console.log(err.message);
             });
     }
-}
+};

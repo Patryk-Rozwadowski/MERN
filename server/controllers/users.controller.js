@@ -20,10 +20,4 @@ allUsers = (req, res) => {
     res.json(data);
 };
 
-userProfile = (req, res) => {
-    const userId = req.params.uid;
-    const userProfile = data.filter(user => user.id === userId);
-    res.json(userProfile);
-};
-
 exports.allUsers = allUsers;

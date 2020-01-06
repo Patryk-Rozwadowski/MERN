@@ -13,7 +13,7 @@
 }
 
 a,
-link {
+.link {
   @include create-font(
           $font-family: 'primary',
           $font-size: $font-size-text,

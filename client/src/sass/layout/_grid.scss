@@ -6,3 +6,9 @@
   align-items: center;
   margin-top: $nav-height;
 }
+
+@for $i from 1 through $grid-columns {
+  .grid-#{$i} {
+    @include span($i);
+  }
+}

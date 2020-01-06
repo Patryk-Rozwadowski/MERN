@@ -1,8 +1,8 @@
 .nav {
   @include position($position: fixed, $top: 0, $left: 0);
   @include create-container(flex, $vw-100, $nav-height, false, row);
-  z-index: z('menu');
   @include flex-center-updown;
+  z-index: z('menu');
   margin-bottom: $nav-height;
 
   .link {
@@ -19,6 +19,7 @@
 
   &-black {
     background-color: totoo-color('primary');
+    box-shadow: 0 5px 0 0 totoo-color('accent');
   }
 
   &__links {

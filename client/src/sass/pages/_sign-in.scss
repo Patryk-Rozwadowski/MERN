@@ -1,16 +1,28 @@
 .signin {
 
-  &__container {
-  }
+  @include size($width: $vw-100, $height: $vh-100);
+  background-repeat: no-repeat;
+  background-size: cover;
 
   &__forms {
     @include abs-centerer;
     @include flex-centerer('column');
     @include size(500px);
-    padding: 10px;
+    padding: 50px;
+    background-color: totoo-color('background');
+    border-radius: $border-radius;
 
     .section__title {
       color: totoo-color('text-secondary');
+    }
+  }
+
+  .link {
+    color: totoo-color('text-secondary');
+    margin: 20px 0;
+
+    &:hover {
+      color: lighten(totoo-color('accent'), $color-interval);
     }
   }
 }
@@ -37,7 +49,7 @@
   @include flex-centerer;
 }
 
-.mg {
+.mg-top-50 {
   margin-top: 50px;
 }
 

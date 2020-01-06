@@ -23,7 +23,7 @@ const user = (state = initialState, {type, payload}) => {
                 logged: true,
                 mounted: true,
                 loaded: true
-            }
+            };
         default:
             return state;
     }

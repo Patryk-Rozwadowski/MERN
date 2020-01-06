@@ -2,6 +2,22 @@
   @include flex-centerer(true);
 }
 
+.text-align-c {
+  text-align: center;
+}
+
+.text-align-r {
+  text-align: right;
+}
+
+.text-align-l {
+  text-align: left;
+}
+
+.mg-20 {
+  margin: 20px;
+}
+
 .row {
   display: flex;
   flex-direction: row;
