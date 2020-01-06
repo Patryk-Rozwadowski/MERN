@@ -1,8 +1,8 @@
 .btn {
-  @include size($width: 100px, $height: 30px);
-  @include create-font($font-family: 'secondary', $font-size: 0.75em, $font-weight: $font-weight-text);
-  border: 0;
+  @include create-font($font-family: 'secondary', $font-size: 1em, $font-weight: $font-weight-text);
+  border: $border-radius;
   border-radius: $border-radius;
+  height: $button-height;
 
   &:hover {
     cursor: pointer;

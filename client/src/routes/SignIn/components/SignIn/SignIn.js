@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
+import Button from '../../../../shared/components/Button/Button';
 import Link from '../../../../shared/components/Link/Link';
 
 import Avatar from '../../../../shared/components/Avatar/Avatar';
@@ -41,15 +41,13 @@ const SignIn = () => {
 
                     <Button
                         type='submit'
-                        fullWidth
-                        variant='contained'
-                        color='primary'
-                        className='submit'
+                        variant='info'
+                        fullWidth={true}
                     >
                         Sign In
                     </Button>
-                    <Grid mt={2} container direction='row'>
-                        <Grid lg={6} justify align={'left'} item>
+                    <Grid container direction='row'>
+                        <Grid lg={6} align={'left'} item>
                             <Link to='/signup'>
                                 Forgot password?
                             </Link>
@@ -61,10 +59,10 @@ const SignIn = () => {
                             </Link>
                         </Grid>
                     </Grid>
-                    <Grid contaienr>
-                        <Grid align={'center'}>
-                            <Copyright/>
 
+                    <Grid justify={'center'} container>
+                        <Grid item>
+                            <Copyright/>
                         </Grid>
                     </Grid>
                 </form>
