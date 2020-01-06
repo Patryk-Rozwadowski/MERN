@@ -16,7 +16,6 @@
   }
 
   &__upload {
-    @include span(4);
     @include flex-centerer;
     border: 1px solid totoo-color('transparent');
     border-radius: 10px;
@@ -37,9 +36,4 @@
 
 .form__text-area {
   @include create-container($display: flex, $direction: column);
-}
-
-// TODO title section
-.title__section {
-  font-size: 3em;
 }

@@ -1,35 +1,35 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
 
 import Logo from '../../../../components/Logo/Logo';
+import NavLink from '../../../../components/NavLink/NavLink';
 
-const Nav = props => {
+const Nav = ({variant}) => {
     return (
-        <nav className={`nav nav-${props.variant}`}>
+        <nav className={`nav nav-${variant}`}>
             <div className='nav__links'>
-                <NavLink cy='nav__logo' activeClassName={''} className='link' exact to='/'>
+                <NavLink dataCy='logo' exact to='/'>
                     <Logo/>
                 </NavLink>
 
-                <NavLink cy='nav__home' className='link' exact to='/'>
+                <NavLink dataCy='home' exact to='/'>
                     Home
                 </NavLink>
 
-                <NavLink cy='nav__users' className='link' exact to='/users'>
+                <NavLink dataCy='users' exact to='/users'>
                     Users
                 </NavLink>
 
-                <NavLink cy='nav__images' className='link' exact to='/images'>
+                <NavLink dataCy='images' exact to='/images'>
                     Images
                 </NavLink>
 
-                <NavLink cy='nav__addimage' className='link' exact to='/addimage'>
+                <NavLink dataCy='addimage' exact to='/addimage'>
                     Add image
                 </NavLink>
             </div>
 
 
-            <NavLink cy='nav__login' className='link' exact to='/signin'>
+            <NavLink cy='login' exact to='/signin'>
                 Login
             </NavLink>
 
