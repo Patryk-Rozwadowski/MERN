@@ -11,6 +11,10 @@
   width: 100%;
 }
 
+.container {
+  @include size($width: $vw-100, $height: $vh-100);
+}
+
 .feed-container {
   margin-top: $nav-height + 50px;
 }
@@ -18,7 +22,7 @@
 .gradient {
   z-index: 2;
   background: linear-gradient(
-                  180deg,transparent 0,
+                  180deg, transparent 0,
                   totoo-color('primary', $alpha: 1) 0%,
                   totoo-color('primary', $alpha: 0.65) 30%,
                   totoo-color('primary', $alpha: 0.45) 60%,

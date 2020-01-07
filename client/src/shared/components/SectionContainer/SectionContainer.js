@@ -3,7 +3,7 @@ import Grid from '@material-ui/core/Grid';
 
 const SectionContainer = ({children}) => {
     return (
-            <Grid direction={'row'} justify='center' alignItems={'center'}>
+            <Grid className='container' container>
                 {children}
             </Grid>
     );

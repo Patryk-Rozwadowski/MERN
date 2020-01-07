@@ -37,7 +37,7 @@ class AddImage extends React.Component {
     render() {
         return (
 
-            <Grid alignItems={'center'} direction={'row'} lg={12} className={'upload__container'} container>
+            <Grid alignItems={'center'} direction={'row'} container>
                 <Grid lg={6} item>
 
                     <form method='POST' onSubmit={this.handleSubmit} action='/uploadphoto'
@@ -47,6 +47,7 @@ class AddImage extends React.Component {
                         <Heading type='h1'>Add photo</Heading>
                         <InputField
                             name='title'
+                            id='title'
                             value={this.state.title}
                             onChange={this.handleChange}
                             label='Title'
@@ -55,6 +56,7 @@ class AddImage extends React.Component {
 
                         <InputField
                             name='description'
+                            id='description'
                             value={this.state.description}
                             onChange={this.handleChange}
                             label='Description'
@@ -63,6 +65,7 @@ class AddImage extends React.Component {
 
                         <InputField
                             name='location'
+                            id='location'
                             value={this.state.location}
                             onChange={this.handleChange}
                             label='Location'
@@ -78,7 +81,7 @@ class AddImage extends React.Component {
                         </Button>
                     </form>
                 </Grid>
-                <Grid alignContent={'center'} lg={4} alignItems={'center'} item>
+                <Grid lg={4} item>
                     <div className='upload__upload'>
                         <Button
                             type='submit'
