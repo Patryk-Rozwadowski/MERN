@@ -24,6 +24,11 @@ const Button = ({children, type, variant, fullWidth, formmethod, dataCy, lg, sm,
     );
 };
 
+Button.defaultProps = {
+    fullWidth: false,
+    type: 'button'
+};
+
 Button.propTypes = {
     children: PropTypes.string.isRequired,
     variant: PropTypes.string.isRequired,

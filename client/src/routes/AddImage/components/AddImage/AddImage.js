@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import {addImage} from '../../../../redux/actions/images.actions';
 
 import Grid from '@material-ui/core/Grid';
+import Heading from '../../../../shared/components/Text/Heading';
 import Button from '../../../../shared/components/Button/Button';
 import InputField from '../../../../shared/components/InputField/InputField';
 
@@ -43,7 +44,7 @@ class AddImage extends React.Component {
                           encType='multipart/form-data'
                           className='upload__form'>
 
-                        <h3 className='section__title'>Add photo</h3>
+                        <Heading type='h1'>Add photo</Heading>
                         <InputField
                             name='title'
                             value={this.state.title}

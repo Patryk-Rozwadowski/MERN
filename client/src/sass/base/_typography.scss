@@ -37,9 +37,16 @@ p {
   &__title {
     @include create-font(
             $font-family: 'Overpass',
-            $font-size: 2em,
-            $font-weight: $font-weight-title,
-            $color: 'text-primary');
+            $font-size: 3em,
+            $font-weight: $font-weight-title);
+
+    &__title-black {
+      color: totoo-color('text-secondary');
+    }
+
+    &__title-white {
+      color: totoo-color('text-primary');
+    }
   }
 
   &__subtitle {
@@ -47,6 +54,14 @@ p {
             $font-family: 'Overpass',
             $font-size: $font-size-subtitle,
             $font-weight: $font-weight-subtitle);
+
+    &__title-black {
+      color: totoo-color('text-secondary');
+    }
+
+    &__title-white {
+      color: totoo-color('text-primary');
+    }
   }
 
   &__text {
@@ -54,6 +69,14 @@ p {
             $font-family: 'secondary',
             $font-size: $font-size-text,
             $font-weight: $font-weight-text);
+
+    &__title-black {
+      color: totoo-color('text-secondary');
+    }
+
+    &__title-white {
+      color: totoo-color('text-primary');
+    }
   }
 }
 
