@@ -6,8 +6,8 @@ import SectionContainer from '../../shared/components/SectionContainer/SectionCo
 const AddImageRoute = () => {
     return (
         <React.Fragment>
-            <SectionContainer>
                 <NavShared variant='black'/>
+            <SectionContainer>
                 <AddImage/>
             </SectionContainer>
         </React.Fragment>

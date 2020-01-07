@@ -3,17 +3,23 @@ import {PropTypes} from 'prop-types';
 
 import TextField from '@material-ui/core/TextField';
 
-const InputField = ({id, label, onChange, autoComplete, dataCy, ...otherProps}) => {
+const InputField = ({id, label, onChange, autoComplete, dataCy, width, height, lg, md, sm, ...otherProps}) => {
     return (
         <React.Fragment>
             <TextField
-                variant='outlined'
+                variant='standard'
                 margin='normal'
                 id={id}
                 label={label}
                 name={id}
                 onChange={onChange}
                 autoComplete={autoComplete}
+
+                className={`
+                    lg-${lg}
+                    md-${md}
+                    sm-${sm}`}
+
                 data-cy={`inputField-${dataCy}`}
                 {...otherProps}
             />
@@ -26,7 +32,10 @@ InputField.propTypes = {
     label: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
     dataCy: PropTypes.string.isRequired,
-    autoComplete: PropTypes.string
+    autoComplete: PropTypes.string,
+    lg: PropTypes.number,
+    md: PropTypes.number,
+    sm: PropTypes.number
 };
 
 export default InputField;

@@ -8,7 +8,19 @@
 }
 
 @for $i from 1 through $grid-columns {
-  .grid-#{$i} {
+  .lg-#{$i} {
+    @include span($i);
+  }
+}
+
+@for $i from 1 through $grid-columns {
+  .md#{$i} {
+    @include span($i);
+  }
+}
+
+@for $i from 1 through $grid-columns {
+  .sm#{$i} {
     @include span($i);
   }
 }

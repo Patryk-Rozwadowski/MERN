@@ -36,8 +36,8 @@ class AddImage extends React.Component {
     render() {
         return (
 
-            <Grid direction={'row'} container>
-                <Grid item lg={6} item>
+            <Grid alignItems={'center'} direction={'row'} lg={12} className={'upload__container'} container>
+                <Grid lg={6} item>
 
                     <form method='POST' onSubmit={this.handleSubmit} action='/uploadphoto'
                           encType='multipart/form-data'
@@ -48,32 +48,36 @@ class AddImage extends React.Component {
                             name='title'
                             value={this.state.title}
                             onChange={this.handleChange}
-                            label="Title"
+                            label='Title'
+                            lg={6}
                             dataCy='title'/>
 
                         <InputField
                             name='description'
                             value={this.state.description}
                             onChange={this.handleChange}
-                            label="Description"
+                            label='Description'
+                            lg={6}
                             dataCy='description'/>
 
                         <InputField
                             name='location'
                             value={this.state.location}
                             onChange={this.handleChange}
-                            label="Location"
+                            label='Location'
+                            lg={6}
                             dataCy='location'/>
 
                         <Button
                             type='submit'
                             variant={'info'}
-                            dataCy={'submit-upload-file'}>
+                            dataCy={'submit-upload-file'}
+                            lg={6}>
                             Upload
                         </Button>
                     </form>
                 </Grid>
-                <Grid alignContent={'center'} lg={6} item>
+                <Grid alignContent={'center'} lg={4} alignItems={'center'} item>
                     <div className='upload__upload'>
                         <Button
                             type='submit'

@@ -17,16 +17,15 @@
 
   &__upload {
     @include flex-centerer;
+
     border: 1px solid totoo-color('transparent');
     border-radius: 10px;
     height: 500px;
   }
 
   &__form {
-    @include span(4);
-    display: flex;
+    @include flex-centerer;
     flex-direction: column;
-    margin-left: 100px;
   }
 
   &__input {

@@ -1,7 +1,7 @@
 import React from 'react';
 import {PropTypes} from 'prop-types';
 
-const Button = ({children, type, variant, fullWidth, formmethod, dataCy,...otherProps}) => {
+const Button = ({children, type, variant, fullWidth, formmethod, dataCy, lg, sm, md, ...otherProps}) => {
     return (
         <React.Fragment>
             <button
@@ -11,6 +11,9 @@ const Button = ({children, type, variant, fullWidth, formmethod, dataCy,...other
                 className={`
                     btn
                     btn-${variant}
+                    lg-${lg}
+                    md-${md}
+                    sm-${sm}
                     ${fullWidth ? 'full-width' : []}
                 `}
                 {...otherProps}
@@ -27,7 +30,10 @@ Button.propTypes = {
     dataCy: PropTypes.string.isRequired,
     fullWidth: PropTypes.bool,
     type: PropTypes.string,
-    formmethod: PropTypes.string
+    formmethod: PropTypes.string,
+    lg: PropTypes.number,
+    md: PropTypes.number,
+    sm: PropTypes.number
 };
 
 export default Button;

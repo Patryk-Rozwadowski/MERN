@@ -50,7 +50,7 @@
 }
 
 /// @todo seperate?
-@for $i from 2 through 999 {
+@for $i from 2 through 50 {
   .images__image__container:nth-child(#{$i}) {
     margin-top: random(200) + px;
   }
