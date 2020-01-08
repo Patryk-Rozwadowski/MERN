@@ -26,7 +26,7 @@ const Button = ({children, type, variant, fullWidth, formmethod, dataCy, lg, sm,
 
 Button.defaultProps = {
     fullWidth: false,
-    type: 'button'
+    type: 'button',
 };
 
 Button.propTypes = {

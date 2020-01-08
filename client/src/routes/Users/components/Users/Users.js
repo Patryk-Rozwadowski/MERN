@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import UserItems from '../UserItems/UserItems';
+import UserCard from '../../../../shared/components/UserCard/UserCard';
 import {fetchUsersRequest} from '../../../../redux/actions/users.actions';
 import SpinnerBuffer from '../../../../shared/components/Spinner/SpinnerBuffer';
 
@@ -21,12 +21,13 @@ class Users extends React.Component {
                     isMounted === true && isLoaded === true ?
                         <div className='grid-3-row'>
                             {
-                                usersData.map(user => <UserItems
+                                usersData.map(user => <UserCard
                                     key={user.id}
                                     id={user.id}
                                     places={user.places}
                                     name={user.name}
                                     avatar={user.avatar}
+                                    profileBg={user.profileBg}
                                     description={user.description}
                                 />)
                             }

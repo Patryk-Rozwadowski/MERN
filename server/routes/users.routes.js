@@ -13,7 +13,7 @@ const data1 = [
         places: ['Poland', 'USA'],
         avatar: 'https://avatars3.githubusercontent.com/u/47067438?s=460&v=40',
         profileBg: 'https://i.ytimg.com/vi/BfCwN4iy6T8/maxresdefault.jpg',
-        description: 'Hello! I am new here',
+        description: 'Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie niezmienionym',
         followers: 100,
         following: 12
     },

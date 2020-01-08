@@ -129,7 +129,7 @@
 @mixin create-font($color: 'primary', $font-family: 'primary', $font-size: 1em, $font-weight: $font-weight-text, $color: 'text-primary') {
   display: inline-block;
   color: totoo-color($color);
-  font-family: font-pick($font-family);
+  font-family: font-pick($font-family), sans-serif;
   font-size: $font-size;
   font-weight: $font-weight;
 }

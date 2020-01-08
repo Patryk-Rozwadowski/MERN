@@ -1,13 +1,11 @@
 import React from 'react';
 
-const Avatar = props => {
+const Avatar = ({avatarUrl, alt}) => {
     return (
-        <React.Fragment>
-            <div className='avatar__container'>
-                <img className='avatar__image' src={props.avatarUrl} alt={props.alt}/>
-            </div>
-        </React.Fragment>
-    )
+        <div className='avatar__container'>
+            <img className='avatar__image' src={avatarUrl} alt={alt}/>
+        </div>
+    );
 };
 
 export default Avatar;

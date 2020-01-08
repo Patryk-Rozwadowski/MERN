@@ -12,7 +12,7 @@ const headers = {
 
 const Heading = ({type, variant, color, children, ...otherProps}) => {
     return React.createElement(
-        headers[type] || headers.h1,
+        headers[type],
         {
             className: `section__${variant}-${color}`,
             ...otherProps
@@ -22,16 +22,15 @@ const Heading = ({type, variant, color, children, ...otherProps}) => {
 };
 
 Heading.defaultProps = {
-    type: 'h1',
     variant: 'title',
     color: 'white'
 };
 
 Heading.propTypes = {
     type: PropTypes.string.isRequired,
-    variant: PropTypes.string.isRequired,
-    color: PropTypes.string.isRequired,
-    children: PropTypes.string.isRequired
+    children: PropTypes.string.isRequired,
+    variant: PropTypes.string,
+    color: PropTypes.string
 };
 
 export default Heading;
