@@ -13,12 +13,20 @@
     margin-left: 100px;
   }
 
+  .avatar {
+    &__image,
+    &__container {
+      @include size(70px);
+      background-color: unset;
+    }
+  }
+
   .section {
     &__title-white,
     &__text-white,
     &__subtitle-white {
       color: totoo-color('text-primary', 0.2);
-      margin: 15px 20px;
+      margin: 15px 35px;
     }
   }
 

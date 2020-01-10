@@ -24,12 +24,13 @@ class UserInfoList extends React.Component {
                                     key={user.id}
                                     nick={user.name}
                                     avatarUrl={user.avatar}
-                                    username={user.userName}
-                                    followers={user.followers}
-                                    following={user.following}
-                                    imagelen={user.places.length}
-                                    placeslen={user.places.length}
-                                    profileBg={user.profileBg}/>)
+                                    userName={user.userName}
+                                    followersNumber={user.followersNumber}
+                                    followingNumber={user.following}
+                                    imagesNumber={user.places.length}
+                                    placesNumber={user.places.length}
+                                    accountType={user.accountType}
+                                    profileBgPicture={user.profileBg}/>)
                             }
                         </React.Fragment> : []
                 }

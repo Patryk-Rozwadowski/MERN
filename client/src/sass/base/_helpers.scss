@@ -20,7 +20,6 @@
 }
 
 .gradient {
-  z-index: 2;
   background: linear-gradient(
                   180deg, transparent 0,
                   totoo-color('primary', $alpha: 1) 0%,
@@ -28,4 +27,5 @@
                   totoo-color('primary', $alpha: 0.45) 60%,
                   totoo-color('primary', $alpha: 0.4) 80%,
                   totoo-color('primary', $alpha: 0.25) 100%);
+  padding: 100px 100px 0;
 }
