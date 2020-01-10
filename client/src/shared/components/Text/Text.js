@@ -1,11 +1,11 @@
 import React from 'react';
 import {PropTypes} from 'prop-types';
 
-const Text = ({variant, color, children, textAlign}) => {
+const Text = ({variant, color, children,}) => {
     return (
-        <p className={
-            `section__${variant}-${color} 
-            ${textAlign ? `text-align-${textAlign}` : []} `}>
+        <p
+            className={
+            `section__${variant}-${color}`} >
             {children}
         </p>
     );
@@ -18,8 +18,8 @@ Text.defaultProps = {
 
 Text.propTypes = {
     variant: PropTypes.string.isRequired,
+    color: PropTypes.string.isRequired,
     children: PropTypes.string.isRequired,
-    textAlign: PropTypes.string
 };
 
 export default Text;

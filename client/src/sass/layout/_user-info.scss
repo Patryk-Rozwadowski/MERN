@@ -1,53 +1,25 @@
 .user-info {
+  margin-top: $nav-height;
+  height: 300px;
+  background-repeat: no-repeat;
 
   &__cover-photo {
-    width: 100%;
     padding-top: 130px;
     background-size: 100%;
     background-position: 10% 20%;
-    position: relative;
-  }
-
-  &__container {
-    margin-top: $nav-height;
-    height: 300px;
-    background-repeat: no-repeat;
-
-    .section {
-      &__title,
-      &__text,
-      &__subtitle {
-        @include flex-centerer;
-        color: totoo-color('text-primary');
-      }
-
-      &__text {
-        color: totoo-color('text-primary', 0.2);
-        margin: 0 20px 50px;
-        height: 20px;
-      }
-    }
-
-    .avatar__container {
-      @include size(100px);
-    }
   }
 
   &__top {
     margin-left: 100px;
   }
 
-  &__bottom__account {
-    @include span(6);
-    margin: -10px 190px;
-  }
-
-  &__bottom__places {
-    display: flex;
-    justify-content: end;
-    @include span(3);
-    text-align: right;
-    margin: -10px 0;
+  .section {
+    &__title-white,
+    &__text-white,
+    &__subtitle-white {
+      color: totoo-color('text-primary', 0.2);
+      margin: 15px 20px;
+    }
   }
 
 }

@@ -1,36 +1,37 @@
 import React from 'react';
 
+import Grid from '@material-ui/core/Grid';
 import Avatar from '../../components/Avatar/Avatar';
+import Text from '../../components/Text/Text';
 
-const UserInfo = props => {
-    return (
-        <React.Fragment>
-            <section className='user-info__container'>
-                <div style={{backgroundImage: `url(${props.profileBg})`}} className='user-info__cover-photo'>
-                    <div className='gradient'>
-                        <div className='user-info__top row'>
-                            <Avatar alt='alt' avatarUrl={props.avatarUrl}/>
-                            <h2 className='section__title'>{props.nick}</h2>
-                        </div>
+const UserInfo = props =>
+    <section className='user-info'>
+        <div style={{backgroundImage: `url(${props.profileBg})`}} className='user-info__cover-photo'>
+            <div className='gradient'>
+                <Grid direction='column' container>
+                    <Grid lg={4} item>
+                        <Avatar alt='alt' avatarUrl={props.avatarUrl}/>
+                        <Text variant='subtitle' color={'white'}>{props.nick}</Text>
+                    </Grid>
+                </Grid>
 
-                        <div className='row'>
-                            <div className='user-info__bottom__account row'>
-                                <p className='section__text user-info__account-type'>{props.accountype}</p>
-                                <p className='section__text'>{props.username}</p>
-                                <p className='section__text'>{props.followers} Followers</p>
-                                <p className='section__text'>{props.following} Following</p>
-                            </div>
+                <Grid container>
+                    <Grid lg={10} item>
+                        <Text variant='text' color='white'>{props.accountype}</Text>
+                        <Text variant='text' color='white'>{props.username}</Text>
+                        <Text variant='text' color='white'>{props.followers} Followers</Text>
+                        <Text variant='text' color='white'>{props.following} Following</Text>
+                    </Grid>
 
-                            <div className='user-info__bottom__places row'>
-                                <p className='section__text'>{props.imageslen} Images</p>
-                                <p className='section__text'>{props.placeslen} Places</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </React.Fragment>
-    )
-};
+                    <Grid lg={2} item>
+                        <Text variant='text' color='white'>{props.imageslen} Images</Text>
+                        <Text variant='text' color='white'>{props.placeslen} Places</Text>
+                    </Grid>
+                </Grid>
+            </div>
+        </div>
+    </section>;
+
+
 
 export default UserInfo;

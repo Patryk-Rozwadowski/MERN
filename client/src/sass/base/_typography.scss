@@ -45,6 +45,22 @@ p {
 
 .section {
 
+  &__text-black {
+    @include create-font(
+            $font-family: Overpass,
+            $font-size: 1em,
+            $font-weight: $font-weight-text,
+            $color: 'text-secondary');
+  }
+
+  &__text-white {
+    @include create-font(
+            $font-family: 'Overpass',
+            $font-size: 1em,
+            $font-weight: $font-weight-text,
+            $color: 'text-primary');
+  }
+
   &__title-black {
     @include create-font(
             $font-family: Overpass,
