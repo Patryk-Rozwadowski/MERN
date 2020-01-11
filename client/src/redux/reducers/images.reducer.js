@@ -1,4 +1,4 @@
-import {IMAGE_ADDED, IMAGES_FETCHED, USER_IMAGES_FETCHED} from '../constants';
+import {IMAGE_ADDED, IMAGES_FETCHED, USER_IMAGES_FETCHED} from '../constants/images.constants';
 
 const initialState = {
     mounted: false,

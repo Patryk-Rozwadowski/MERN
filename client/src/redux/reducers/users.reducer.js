@@ -1,14 +1,14 @@
-import {USERS_FETCHED} from '../constants';
+import {USERS_FETCHED_OK} from '../constants/users.constants';
 
 const initialState = {
-    mounted: false,
-    loaded: false,
+    isComponentRendered: false,
+    isDataFetched: false,
     users: []
 };
 
 const users = (state = initialState, {type, payload}) => {
     switch (type) {
-        case USERS_FETCHED:
+        case USERS_FETCHED_OK:
             return {
                 ...state,
                 users: payload,

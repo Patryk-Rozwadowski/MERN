@@ -37,19 +37,19 @@ const UserCard = ({id, avatar, name, profileBg, description}) => {
                 <Grid direction={'row'} justify={'center'} alignItems={'center'} container>
                     <Grid lg={4} className='text-align-c' item>
                         <Link to={`/${id}/images`}>
-                            <Text dataCy={'user-images'}> Images </Text>
+                            <Text dataCy={'userReducer-images'}> Images </Text>
                         </Link>
                     </Grid>
 
                     <Grid lg={4} className='text-align-c' item>
                         <Link to={`/${id}/places`}>
-                            <Text dataCy={'user-places'}> Places </Text>
+                            <Text dataCy={'userReducer-places'}> Places </Text>
                         </Link>
                     </Grid>
 
                     <Grid lg={4} className='text-align-c' item>
                         <Link to={`/${id}/profile`}>
-                            <Text dataCy={'user-profile'}> Profile </Text>
+                            <Text dataCy={'userReducer-profile'}> Profile </Text>
                         </Link>
                     </Grid>
 

@@ -1,5 +1,6 @@
 import React from 'react';
-
+// Its just temporary solution
+// Will be changed
 import image1 from '../../../../assets/randomImg/photo1.jpg';
 import image2 from '../../../../assets/randomImg/photo2.jpg';
 import image3 from '../../../../assets/randomImg/photo3.jpg';

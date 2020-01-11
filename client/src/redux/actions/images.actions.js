@@ -4,14 +4,9 @@ import API_URL from '../../config';
 import {
     IMAGE_ADDED,
     IMAGES_FETCHED,
-    REQUEST_FETCH_IMAGES,
     REQUEST_FETCH_IMAGES_USER,
     USER_IMAGES_FETCHED
-} from '../constants';
-
-const requestImagesFetch = () => ({
-    type: REQUEST_FETCH_IMAGES
-});
+} from '../constants/images.constants';
 
 const imagesFetched = (images) => ({
     type: IMAGES_FETCHED,
@@ -38,7 +33,6 @@ export const fetchImagesRequest = () => {
     return (dispatch) =>
         axios.get(`${API_URL}/images`)
             .then(res => {
-                dispatch(requestImagesFetch());
                 dispatch(imagesFetched(res.data));
             })
             .catch(err => {

@@ -1,11 +1,11 @@
 import React from 'react';
 import {PropTypes} from 'prop-types';
 
-const Text = ({variant, color, children,}) => {
+const Text = ({variant, color, children}) => {
     return (
         <p
             className={
-            `section__${variant}-${color}`} >
+                `section__${variant}-${color}`}>
             {children}
         </p>
     );
@@ -18,8 +18,7 @@ Text.defaultProps = {
 
 Text.propTypes = {
     variant: PropTypes.string.isRequired,
-    color: PropTypes.string.isRequired,
-    children: PropTypes.string.isRequired,
+    color: PropTypes.string.isRequired
 };
 
 export default Text;

@@ -1,26 +1,18 @@
-import {USER_FETCHED, USER_LOGGED} from '../constants';
+import {USER_FETCHED_OK} from '../constants/user.constants';
 
 const initialState = {
-    mounted: false,
-    loaded: false,
+    isComponentRendered: false,
+    isDataFetched: false,
     logged: false,
     user: []
 };
 
-const user = (state = initialState, {type, payload}) => {
+const userReducer = (state = initialState, {type, payload}) => {
     switch (type) {
-        case USER_FETCHED:
+        case USER_FETCHED_OK:
             return {
                 ...state,
                 user: payload,
-                mounted: true,
-                loaded: true
-            };
-
-        case USER_LOGGED:
-            return {
-                ...state,
-                logged: true,
                 mounted: true,
                 loaded: true
             };
@@ -29,4 +21,4 @@ const user = (state = initialState, {type, payload}) => {
     }
 };
 
-export default user;
+export default userReducer;

@@ -3,7 +3,7 @@
   width: 400px;
   height: 100%;
   border-radius: 15px;
-  background-color: #fff;
+  background-color: totoo-color('secondary');
   box-shadow: 10px 10px 5px -1px totoo-color('transparent');
 
   &__background {
@@ -24,6 +24,7 @@
 
   .avatar__container {
     @include size(200px);
+    @include flex-centerer;
     position: absolute;
     top: 50px;
     border: 6px solid totoo-color('secondary');

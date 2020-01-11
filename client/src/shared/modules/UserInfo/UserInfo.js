@@ -21,25 +21,26 @@ const UserInfo = props => {
             <div style={{backgroundImage: `url(${profileBgPicture})`}} className='user-info__cover-photo'>
                 <div className='gradient'>
 
-                    <Grid direction='row' container>
-                        <Grid container>
-                            <Avatar alt='alt' avatarUrl={avatarUrl}/>
-                            <Text variant='subtitle' color='white'>{nick}</Text>
-                        </Grid>
-                    </Grid>
-
                     <Grid container>
-                        <Grid lg={10} item>
-                            <Text variant='text' color='white'>{accountType}</Text>
-                            <Text variant='text' color='white'>{userName}</Text>
-                            <Text variant='text' color='white'>{followersNumber} Followers</Text>
-                            <Text variant='text' color='white'>{followingNumber} Following</Text>
+                        <Avatar alt='alt' avatarUrl={avatarUrl}/>
+
+                        <Grid lg={11} item>
+                            <Text variant='subtitle' color='white'>{nick}</Text>
+                            <Grid container>
+                                <Grid lg={9} item>
+                                    <Text variant='text' color='white'>{accountType}</Text>
+                                    <Text variant='text' color='white'>{userName}</Text>
+                                    <Text variant='text' color='white'>{followersNumber} Followers</Text>
+                                    <Text variant='text' color='white'>{followingNumber} Following</Text>
+                                </Grid>
+
+                                <Grid lg={3} item>
+                                    <Text variant='text' color='white'>{imagesNumber} Images</Text>
+                                    <Text variant='text' color='white'>{placesNumber} Places</Text>
+                                </Grid>
+                            </Grid>
                         </Grid>
 
-                        <Grid lg={2} item>
-                            <Text variant='text' color='white'>{imagesNumber} Images</Text>
-                            <Text variant='text' color='white'>{placesNumber} Places</Text>
-                        </Grid>
                     </Grid>
 
                 </div>

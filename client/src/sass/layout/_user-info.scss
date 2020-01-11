@@ -14,19 +14,22 @@
   }
 
   .avatar {
-    &__image,
     &__container {
-      @include size(70px);
+      @include size(100px);
       background-color: unset;
+      padding-bottom: 20px;
     }
   }
 
   .section {
     &__title-white,
-    &__text-white,
-    &__subtitle-white {
+    &__text-white {
       color: totoo-color('text-primary', 0.2);
-      margin: 15px 35px;
+      margin: 0 30px 15px;
+    }
+
+    &__subtitle-white {
+      margin: 25px 0 10px 30px;
     }
   }
 
