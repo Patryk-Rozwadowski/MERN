@@ -7,7 +7,7 @@ import {fetchUserInfoRequest} from '../../../../redux/actions/user.actions';
 import {fetchUserImagesRequest} from '../../../../redux/actions/images.actions';
 import UserInfo from '../../../../components/UserInfo/UserInfo';
 
-import {checkIsLoadedIsFetched} from '../../../../utils/checkIsLoadedIsFetched';
+import {checkIsLoadedIsFetched} from '../../../../utils/checkIfReadyToMount';
 
 // @todo error handling
 const UserInfoList = ({userInformations, match, fetchUserImages, fetchuserProfileInformations}) => {
