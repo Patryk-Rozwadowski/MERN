@@ -11,46 +11,61 @@ import image7 from '../../../../assets/randomImg/photo7.jpg';
 import image8 from '../../../../assets/randomImg/photo8.jpg';
 
 class Home extends React.Component {
-
-    constructor() {
-        super();
-        this.state = {
-            backgroundImage: `url(${image1})`,
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            className: 'fadeout',
-        }
-    }
-
-    componentDidMount = () => {
-        this.interval = setInterval(() => this.setState({
-            backgroundImage: `url(${this.randomPic()})`
-        }), 6000);
+  constructor() {
+    super();
+    this.state = {
+      backgroundImage: `url(${image1})`,
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      className: 'fadeout'
     };
+  }
 
-    componentWillUnmount() {
-        clearInterval(this.interval);
-    }
+  componentDidMount = () => {
+    this.interval = setInterval(
+      () =>
+        this.setState({
+          backgroundImage: `url(${this.randomPic()})`
+        }),
+      6000
+    );
+  };
 
-    // TODO replace request to unsplash with pictures from mongoDB
-    randomPic = () => {
-        const arr = [image1, image2, image3, image4, image5, image6, image7, image8];
-        return arr[Math.floor(arr.length * Math.random())]
-    };
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
 
-    render() {
-        return (
-            <React.Fragment>
-                <section style={this.state} className='home'>
-                    <div className='f-center'>
-                        <h2 className='homepage__title'>Share your photos</h2>
-                        <h3 className='homepage__subtitle'> Ok, not yet, but i'm working on it! </h3>
-                        <button className='btn btn-register'>Register</button>
-                    </div>
-                </section>
-            </React.Fragment>
-        )
-    }
+  // TODO replace request to unsplash with pictures from mongoDB
+  randomPic = () => {
+    const arr = [
+      image1,
+      image2,
+      image3,
+      image4,
+      image5,
+      image6,
+      image7,
+      image8
+    ];
+    return arr[Math.floor(arr.length * Math.random())];
+  };
+
+  render() {
+    return (
+      <React.Fragment>
+        <section style={this.state} className='home'>
+          <div className='f-center'>
+            <h2 className='homepage__title'>Share your photos</h2>
+            <h3 className='homepage__subtitle'>
+              {' '}
+              Ok, not yet, but i'm working on it!{' '}
+            </h3>
+            <button className='btn btn-register'>Register</button>
+          </div>
+        </section>
+      </React.Fragment>
+    );
+  }
 }
 
 export default Home;

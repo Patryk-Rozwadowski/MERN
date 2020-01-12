@@ -1,24 +1,18 @@
 import React from 'react';
-import {PropTypes} from 'prop-types';
+import { PropTypes } from 'prop-types';
 
-const Text = ({variant, color, children}) => {
-    return (
-        <p
-            className={
-                `section__${variant}-${color}`}>
-            {children}
-        </p>
-    );
+const Text = ({ variant, color, children }) => {
+  return <p className={`section__${variant}-${color}`}>{children}</p>;
 };
 
 Text.defaultProps = {
-    variant: 'text',
-    color: 'black'
+  variant: 'text',
+  color: 'black'
 };
 
 Text.propTypes = {
-    variant: PropTypes.string.isRequired,
-    color: PropTypes.string.isRequired
+  variant: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired
 };
 
 export default Text;

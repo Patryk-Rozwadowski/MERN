@@ -1,14 +1,25 @@
 import React from 'react';
-import {PropTypes} from 'prop-types';
+import { PropTypes } from 'prop-types';
 
-const Button = ({children, type, variant, fullWidth, formmethod, dataCy, lg, sm, md, ...otherProps}) => {
-    return (
-        <React.Fragment>
-            <button
-                type={type}
-                formMethod={formmethod}
-                data-cy={`button-${dataCy}`}
-                className={`
+const Button = ({
+  children,
+  type,
+  variant,
+  fullWidth,
+  formmethod,
+  dataCy,
+  lg,
+  sm,
+  md,
+  ...otherProps
+}) => {
+  return (
+    <React.Fragment>
+      <button
+        type={type}
+        formMethod={formmethod}
+        data-cy={`button-${dataCy}`}
+        className={`
                     btn
                     btn-${variant}
                     lg-${lg}
@@ -16,29 +27,29 @@ const Button = ({children, type, variant, fullWidth, formmethod, dataCy, lg, sm,
                     sm-${sm}
                     ${fullWidth ? 'full-width' : []}
                 `}
-                {...otherProps}
-            >
-                {children}
-            </button>
-        </React.Fragment>
-    );
+        {...otherProps}
+      >
+        {children}
+      </button>
+    </React.Fragment>
+  );
 };
 
 Button.defaultProps = {
-    fullWidth: false,
-    type: 'button',
+  fullWidth: false,
+  type: 'button'
 };
 
 Button.propTypes = {
-    children: PropTypes.string.isRequired,
-    variant: PropTypes.string.isRequired,
-    dataCy: PropTypes.string.isRequired,
-    fullWidth: PropTypes.bool,
-    type: PropTypes.string,
-    formmethod: PropTypes.string,
-    lg: PropTypes.number,
-    md: PropTypes.number,
-    sm: PropTypes.number
+  children: PropTypes.string.isRequired,
+  variant: PropTypes.string.isRequired,
+  dataCy: PropTypes.string.isRequired,
+  fullWidth: PropTypes.bool,
+  type: PropTypes.string,
+  formmethod: PropTypes.string,
+  lg: PropTypes.number,
+  md: PropTypes.number,
+  sm: PropTypes.number
 };
 
 export default Button;
