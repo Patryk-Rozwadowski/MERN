@@ -1,13 +1,13 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
-import HomeRoute from './routes/Home/index';
-import SignUpRoute from './routes/SignUp/index';
-import UsersRoute from './routes/Users/index';
-import UserImagesListRoute from './routes/UserImagesList/index';
-import AddImageRoute from './routes/AddImage/index';
-import SignInRoute from './routes/SignIn/index';
-import AllImagesRoute from './routes/AllImages';
+import HomeRoute from './pages/Home/index';
+import SignUpRoute from './pages/SignUp/index';
+import UsersRoute from './pages/Users/index';
+import UserImagesListRoute from './pages/UserImagesList/index';
+import AddImageRoute from './pages/AddImage/index';
+import SignInRoute from './pages/SignIn/index';
+import AllImagesRoute from './pages/AllImages';
 
 const Routes = () => {
     return (
