@@ -4,31 +4,33 @@ import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 
 import {fetchUserInfoRequest} from '../../../../redux/actions/user.actions';
+import {fetchUserImagesRequest} from '../../../../redux/actions/images.actions';
 import UserInfo from '../../../../shared/modules/UserInfo/UserInfo';
 
-import {componentIsLoadedAndFetched} from '../../../../utils/componentIsLoadedAndFetched';
+import {checkIsLoadedIsFetched} from '../../../../utils/checkIsLoadedIsFetched';
 
 // @todo error handling
-const UserInfoList = ({userProfileInformations, match, fetchuserProfileInformations}) => {
+const UserInfoList = ({userInformations, match, fetchUserImages, fetchuserProfileInformations}) => {
 
     useEffect(() => {
         const userId = match.params.id;
         fetchuserProfileInformations(userId);
+        fetchUserImages(userId);
     }, [fetchuserProfileInformations, match]);
 
     return (
         <React.Fragment>
             {
-                componentIsLoadedAndFetched &&
+                checkIsLoadedIsFetched &&
                 <React.Fragment>
                     {
-                        userProfileInformations.map(user => <UserInfo
+                        userInformations.map(user => <UserInfo
                             key={user.id}
                             nick={user.name}
                             avatarUrl={user.avatar}
                             userName={user.userName}
                             followersNumber={user.followersNumber}
-                            followingNumber={user.following}
+                            followingNumber={user.followingNumber}
                             imagesNumber={user.places.length}
                             placesNumber={user.places.length}
                             accountType={user.accountType}
@@ -41,16 +43,21 @@ const UserInfoList = ({userProfileInformations, match, fetchuserProfileInformati
     );
 };
 
-const mapStateToProps = state => {
-    const {user, loaded, mounted} = state.userReducer;
+const mapStateToProps = ({userReducer}) => {
+    const {userInformations, isComponentMounted, isDataFetched} = userReducer;
     return {
-        userProfileInformations: user,
-        isMounted: mounted,
-        isLoaded: loaded
+        userInformations,
+        isComponentMounted,
+        isDataFetched
     };
 };
 
+const mapDispatchToProps = dispatch => ({
+    fetchuserProfileInformations: id => dispatch(fetchUserInfoRequest(id)),
+    fetchUserImages: id => dispatch(fetchUserImagesRequest(id))
+});
+
 export default compose(
     withRouter(
-        connect(mapStateToProps, {fetchuserProfileInformations: fetchUserInfoRequest})(UserInfoList))
+        connect(mapStateToProps, mapDispatchToProps)(UserInfoList))
 );

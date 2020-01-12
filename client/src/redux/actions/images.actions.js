@@ -1,27 +1,16 @@
 import axios from 'axios';
 import API_URL from '../../config';
 
-import {
-    IMAGE_ADDED,
-    IMAGES_FETCHED,
-    REQUEST_FETCH_IMAGES_USER,
-    USER_IMAGES_FETCHED
-} from '../constants/images.constants';
+import {IMAGE_ADDED, IMAGES_FETCHED_OK, USER_IMAGES_FETCHED_OK} from '../constants/images.constants';
 
-const imagesFetched = (images) => ({
-    type: IMAGES_FETCHED,
+const allUsersImagesFetchedOk = (images) => ({
+    type: IMAGES_FETCHED_OK,
     payload: images
 });
 
-const userImagesFetched = (images, id) => ({
-    type: USER_IMAGES_FETCHED,
-    payload: images,
-    id
-});
-
-const requestFetchImagesUser = id => ({
-    type: REQUEST_FETCH_IMAGES_USER,
-    id
+const userImagesFetchedOk = (images) => ({
+    type: USER_IMAGES_FETCHED_OK,
+    payload: images
 });
 
 export const addImage = image => ({
@@ -29,27 +18,18 @@ export const addImage = image => ({
     payload: image
 });
 
-export const fetchImagesRequest = () => {
+export const fetchAllUsersImages = () => {
     return (dispatch) =>
         axios.get(`${API_URL}/images`)
             .then(res => {
-                dispatch(imagesFetched(res.data));
-            })
-            .catch(err => {
-                console.log(err.message);
+                dispatch(allUsersImagesFetchedOk(res.data));
             });
-
 };
 
 export const fetchUserImagesRequest = (id) => {
     return (dispatch) =>
         axios.get(`${API_URL}/${id}/images`)
             .then((res) => {
-                dispatch(requestFetchImagesUser(res.data[0].creator));
-                dispatch(userImagesFetched(res.data));
-            })
-            .catch(err => {
-                console.log(err.message);
+                dispatch(userImagesFetchedOk(res.data));
             });
-
 };

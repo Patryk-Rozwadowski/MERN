@@ -1,19 +1,19 @@
 import {USERS_FETCHED_OK} from '../constants/users.constants';
 
 const initialState = {
-    isComponentRendered: false,
+    isComponentMounted: false,
     isDataFetched: false,
-    users: []
+    allUsersArray: []
 };
 
-const users = (state = initialState, {type, payload}) => {
+const usersReducer = (state = initialState, {type, payload}) => {
     switch (type) {
         case USERS_FETCHED_OK:
             return {
                 ...state,
-                users: payload,
-                mounted: true,
-                loaded: true
+                allUsersArray: payload,
+                isComponentMounted: true,
+                isDataFetched: true
             };
 
         default:
@@ -21,4 +21,4 @@ const users = (state = initialState, {type, payload}) => {
     }
 };
 
-export default users;
+export default usersReducer;

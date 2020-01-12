@@ -1,33 +1,36 @@
-import {IMAGE_ADDED, IMAGES_FETCHED, USER_IMAGES_FETCHED} from '../constants/images.constants';
+import {IMAGE_ADDED, IMAGES_FETCHED_OK, USER_IMAGES_FETCHED_OK} from '../constants/images.constants';
 
+// @todo logged
 const initialState = {
-    mounted: false,
-    loaded: false,
-    images: []
+    isComponentMounted: false,
+    isDataFetched: false,
+    logged: false,
+    imagesListAllUsers: [],
+    imagesUser: []
 };
 
-const images = (state = initialState, {type, payload}) => {
+const imagesReducer = (state = initialState, {type, payload}) => {
     switch (type) {
-        case IMAGES_FETCHED:
+        case IMAGES_FETCHED_OK:
             return {
                 ...state,
-                images: payload,
-                mounted: true,
-                loaded: true
+                imagesListAllUsers: payload,
+                isComponentMounted: true,
+                isDataFetched: true
             };
 
-        case USER_IMAGES_FETCHED:
+        case USER_IMAGES_FETCHED_OK:
             return {
                 ...state,
-                images: payload,
-                mounted: true,
-                loaded: true
+                imagesUser: payload,
+                isComponentMounted: true,
+                isDataFetched: true
             };
 
         case IMAGE_ADDED:
             return {
                 ...state,
-                images: [...state.images, payload]
+                imagesUser: [...state.imagesUser, payload]
             };
 
         default:
@@ -35,4 +38,4 @@ const images = (state = initialState, {type, payload}) => {
     }
 };
 
-export default images;
+export default imagesReducer;

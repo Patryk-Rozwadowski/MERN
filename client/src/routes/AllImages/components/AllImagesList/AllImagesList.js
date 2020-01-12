@@ -3,7 +3,7 @@ import {compose} from 'redux';
 import {connect} from 'react-redux';
 import {NavLink, withRouter} from 'react-router-dom';
 
-import {fetchImagesRequest} from '../../../../redux/actions/images.actions';
+import {fetchAllUsersImages} from '../../../../redux/actions/images.actions';
 import SpinnerBuffer from '../../../../shared/components/Spinner/SpinnerBuffer';
 
 import UserImageCard from '../../../../shared/components/UserImage/UserImageCard';
@@ -56,15 +56,20 @@ class AllImagesList extends React.Component {
     }
 }
 
-
-const mapStateToProps = (state) => {
+const mapStateToProps = ({imagesReducer}) => {
+    const {imagesListAllUsers, isComponentMounted, isDataFetched} = imagesReducer;
     return {
-        imagesData: state.images.images,
-        isMounted: state.images.mounted,
-        isLoaded: state.images.loaded
+        imagesData: imagesListAllUsers,
+        isMounted: isComponentMounted,
+        isLoaded: isDataFetched
     };
 };
+
+const mapDispatchToProps = dispatch => ({
+    images: () => dispatch(fetchAllUsersImages())
+});
+
 export default compose(
     withRouter(
-        connect(mapStateToProps, {images: fetchImagesRequest})(AllImagesList))
+        connect(mapStateToProps, mapDispatchToProps)(AllImagesList))
 );

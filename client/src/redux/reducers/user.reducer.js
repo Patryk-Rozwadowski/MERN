@@ -1,10 +1,10 @@
 import {USER_FETCHED_OK} from '../constants/user.constants';
 
 const initialState = {
-    isComponentRendered: false,
+    isComponentMounted: false,
     isDataFetched: false,
     logged: false,
-    user: []
+    userInformations: []
 };
 
 const userReducer = (state = initialState, {type, payload}) => {
@@ -12,9 +12,9 @@ const userReducer = (state = initialState, {type, payload}) => {
         case USER_FETCHED_OK:
             return {
                 ...state,
-                user: payload,
-                mounted: true,
-                loaded: true
+                userInformations: payload,
+                isComponentMounted: true,
+                isDataFetched: true
             };
         default:
             return state;

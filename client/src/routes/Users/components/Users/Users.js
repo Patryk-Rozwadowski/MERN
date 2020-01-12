@@ -53,12 +53,18 @@ class Users extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = ({usersReducer}) => {
+    const {allUsersArray, isComponentMounted, isDataFetched} = usersReducer;
     return {
-        usersData: state.users.users,
-        isMounted: state.users.mounted,
-        isLoaded: state.users.loaded
+        usersData: allUsersArray,
+        isMounted: isComponentMounted,
+        isLoaded: isDataFetched
     };
 };
 
-export default connect(mapStateToProps, {users: fetchUsersRequest})(Users);
+const mapDispatchToProps = dispatch => ({
+    users: id => dispatch(fetchUsersRequest(id))
+});
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Users);

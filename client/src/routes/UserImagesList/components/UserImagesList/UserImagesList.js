@@ -8,11 +8,10 @@ import {fetchUserImagesRequest} from '../../../../redux/actions/images.actions';
 import SpinnerBuffer from '../../../../shared/components/Spinner/SpinnerBuffer';
 import UserImageCard from '../../../../shared/components/UserImage/UserImageCard';
 
-// @todo seperate into smaller pieces
 class UserImagesList extends React.Component {
 
     componentDidMount() {
-        this.props.images(this.props.match.params.id);
+        this.props.fetchUserImages(this.props.match.params.id);
     }
 
     render() {
@@ -57,14 +56,20 @@ class UserImagesList extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({imagesReducer}) => {
+    const {imagesUser, isComponentMounted, isDataFetched} = imagesReducer;
     return {
-        imagesData: state.images.images,
-        isMounted: state.images.mounted,
-        isLoaded: state.images.loaded
+        imagesData: imagesUser,
+        isMounted: isComponentMounted,
+        isLoaded: isDataFetched
     };
 };
+
+const mapDispatchToProps = dispatch => ({
+    fetchUserImages: id => dispatch(fetchUserImagesRequest(id))
+});
+
 export default compose(
     withRouter(
-        connect(mapStateToProps, {images: fetchUserImagesRequest})(UserImagesList))
+        connect(mapStateToProps, mapDispatchToProps)(UserImagesList))
 );
