@@ -1,0 +1,1 @@
+export const checkIsLoadedIsFetched = (isComponentRendered, isDataFetched) => !!(isComponentRendered && isDataFetched);
