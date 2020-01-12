@@ -22,17 +22,17 @@ const Nav = ({variant}) =>
                 Images
             </NavLink>
 
-            <NavLink dataCy='add-image' exact to='/addimage'>
+            <NavLink dataCy='add-image' exact to='/add-image'>
                 Add image
             </NavLink>
         </div>
 
 
-        <NavLink cy='login' exact to='/signin'>
+        <NavLink cy='login' exact to='/sign-in'>
             Login
         </NavLink>
 
-        <NavLink cy='nav__login' className='link' exact to='/signup'>
+        <NavLink cy='nav__login' className='link' exact to='/sign-up'>
             Register
         </NavLink>
 

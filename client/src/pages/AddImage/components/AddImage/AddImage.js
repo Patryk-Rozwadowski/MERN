@@ -44,7 +44,7 @@ class AddImage extends React.Component {
                           encType='multipart/form-data'
                           className='upload__form'>
 
-                        <Heading type='h1'>Add image</Heading>
+                        <Heading color='black' type='h1'>Add image</Heading>
                         <InputField
                             name='title'
                             id='title'

@@ -6,12 +6,12 @@ import SectionContainer from '../../components/SectionContainer/SectionContainer
 const AddImageRoute = () => {
     return (
         <React.Fragment>
-                <NavShared variant='black'/>
+            <NavShared variant='black'/>
             <SectionContainer>
                 <AddImage/>
             </SectionContainer>
         </React.Fragment>
-    )
+    );
 };
 
 export default AddImageRoute;
