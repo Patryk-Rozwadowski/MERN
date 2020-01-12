@@ -5,13 +5,13 @@ import NavShared from '../../components/Nav/index';
 import UserInfoList from './components/UserInfoList/UserInfoList';
 
 const UserImagesListRoute = () => {
-    return (
-        <React.Fragment>
-            <NavShared variant='black'/>
-            <UserInfoList/>
-            <UserImagesList/>
-        </React.Fragment>
-    );
+  return (
+    <React.Fragment>
+      <NavShared variant='black' />
+      <UserInfoList />
+      <UserImagesList />
+    </React.Fragment>
+  );
 };
 
 export default UserImagesListRoute;

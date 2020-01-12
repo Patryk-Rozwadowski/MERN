@@ -1,25 +1,33 @@
-import React, {useEffect} from 'react';
-import {compose} from 'redux';
-import {connect} from 'react-redux';
-import {NavLink, withRouter} from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import { NavLink, withRouter } from 'react-router-dom';
 
-import {fetchAllUsersImages} from '../../../../redux/actions/images.actions';
+import { fetchAllUsersImages } from '../../../../redux/actions/images.actions';
 import SpinnerBuffer from '../../../../components/Spinner/SpinnerBuffer';
 
 import UserImageCard from '../../../../components/UserImage/UserImageCard';
 
-import {checkIfEmptyIsMounted, checkIsLoadedIsFetched} from '../../../../utils/checkIfReadyToMount';
+import {
+  checkIfEmptyIsMounted,
+  checkIsLoadedIsFetched
+} from '../../../../utils/checkIfReadyToMount';
 
-const AllImagesList = ({ images, imagesData, isMounted, isLoaded }) => {
+const AllImagesList = ({
+  fetchingAllUsersImages,
+  imagesListAllUsers,
+  isComponentMounted,
+  isDataFetched
+}) => {
   useEffect(() => {
-    images();
-  }, [images]);
+    fetchingAllUsersImages();
+  }, [fetchingAllUsersImages]);
 
   return (
-    <section className="images__container">
-      {checkIsLoadedIsFetched ? (
+    <section className='images__container'>
+      {checkIsLoadedIsFetched(isComponentMounted, isDataFetched) ? (
         <React.Fragment>
-          {imagesData.map(image => (
+          {imagesListAllUsers.map(image => (
             <UserImageCard
               key={image.id}
               author={image.author}
@@ -35,10 +43,10 @@ const AllImagesList = ({ images, imagesData, isMounted, isLoaded }) => {
         <SpinnerBuffer />
       )}
 
-      {checkIfEmptyIsMounted && (
+      {checkIfEmptyIsMounted(imagesListAllUsers, isComponentMounted) && (
         <React.Fragment>
           <h2>Not found any images yet!</h2>
-          <NavLink to="/addimage">Maybe add one?</NavLink>
+          <NavLink to='/addimage'>Maybe add one?</NavLink>
         </React.Fragment>
       )}
     </section>
@@ -52,14 +60,14 @@ const mapStateToProps = ({ imagesReducer }) => {
     isDataFetched
   } = imagesReducer;
   return {
-    imagesData: imagesListAllUsers,
-    isMounted: isComponentMounted,
-    isLoaded: isDataFetched
+    imagesListAllUsers,
+    isComponentMounted,
+    isDataFetched
   };
 };
 
 const mapDispatchToProps = dispatch => ({
-  images: () => dispatch(fetchAllUsersImages())
+  fetchingAllUsersImages: () => dispatch(fetchAllUsersImages())
 });
 
 export default compose(

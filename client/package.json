@@ -41,5 +41,9 @@
   "devDependencies": {
     "cypress": "^3.8.0",
     "prettier": "^1.19.1"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "jsxSingleQuote": true
   }
 }
