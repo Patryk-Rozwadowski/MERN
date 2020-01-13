@@ -11,12 +11,16 @@ import {
   checkIsLoadedIsFetched
 } from '../../../../utils/checkIfReadyToMount';
 
-const UserImagesList = props => {
-  const { imagesUser, isComponentMounted, isDataFetched } = props;
-
+const UserImagesList = ({
+  imagesUser,
+  fetchUserImages,
+  isComponentMounted,
+  isDataFetched,
+  match
+}) => {
   useEffect(() => {
-    const userId = props.match.params.id;
-    props.fetchUserImages(userId);
+    const userId = match.params.id;
+    fetchUserImages(userId);
   }, []);
 
   return (
@@ -42,7 +46,7 @@ const UserImagesList = props => {
       {checkIsLoadedIsFetched(imagesUser, isComponentMounted) && (
         <div>
           <h2>Not found any images yet!</h2>
-          <NavLink to='/addimage'>Maybe add one?</NavLink>
+          <NavLink to='/add-image'>Maybe add one?</NavLink>
         </div>
       )}
     </section>
