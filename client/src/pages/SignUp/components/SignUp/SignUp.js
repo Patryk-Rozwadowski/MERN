@@ -1,13 +1,13 @@
 import React from 'react';
 
 import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Copyright from '../../../../components/CopyRight/Copyright';
 
+import Button from '../../../../components/Button/Button';
 const useStyles = makeStyles(theme => ({
   paper: {
     marginTop: theme.spacing(8),
@@ -89,13 +89,7 @@ const SignUp = () => {
               />
             </Grid>
           </Grid>
-          <Button
-            type='submit'
-            fullWidth
-            variant='contained'
-            color='primary'
-            className={classes.submit}
-          >
+          <Button dataCy='sign-up' type='submit' variant='info' fullWidth={true}>
             Sign Up
           </Button>
           <Grid container justify='flex-end'>

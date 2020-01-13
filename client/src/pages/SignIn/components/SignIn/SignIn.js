@@ -41,7 +41,7 @@ const SignIn = () => {
             autoComplete='current-password'
           />
 
-          <Button type='submit' variant='info' fullWidth={true}>
+          <Button dataCy='sign-in' type='submit' variant='info' fullWidth={true}>
             Sign In
           </Button>
           <Grid container direction='row'>
