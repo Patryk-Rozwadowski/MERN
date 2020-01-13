@@ -14,7 +14,7 @@ const NavLink = ({
         to={to}
         activeClassName={''}
         className='link'
-        cy-data={`nav-link-${dataCy}`}
+        data-cy={`nav-link-${dataCy}`}
         exact={exact}
         {...otherProps}
       >

@@ -4,7 +4,7 @@ import Logo from '../../../Logo/Logo';
 import NavLink from '../../../NavLink/NavLink';
 // @todo fix reusable
 const Nav = ({ variant }) => (
-  <nav className={`nav nav-${variant}`}>
+  <nav data-cy='nav' className={`nav nav-${variant}`}>
     <div className='nav__links'>
       <NavLink dataCy='logo' exact to='/'>
         <Logo />
@@ -27,11 +27,11 @@ const Nav = ({ variant }) => (
       </NavLink>
     </div>
 
-    <NavLink cy='login' exact to='/sign-in'>
+    <NavLink dataCy='login' exact to='/sign-in'>
       Login
     </NavLink>
 
-    <NavLink cy='nav__login' className='link' exact to='/sign-up'>
+    <NavLink dataCy='register' className='link' exact to='/sign-up'>
       Register
     </NavLink>
   </nav>
