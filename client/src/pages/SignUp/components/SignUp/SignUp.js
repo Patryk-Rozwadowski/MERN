@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -27,7 +28,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function SignUp() {
+const SignUp = () => {
   const classes = useStyles();
 
   return (
@@ -109,4 +110,6 @@ export default function SignUp() {
       </div>
     </section>
   );
-}
+};
+
+export default SignUp;

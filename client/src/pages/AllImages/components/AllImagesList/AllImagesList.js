@@ -46,7 +46,7 @@ const AllImagesList = ({
       {checkIfEmptyIsMounted(imagesListAllUsers, isComponentMounted) && (
         <React.Fragment>
           <h2>Not found any images yet!</h2>
-          <NavLink to='/addimage'>Maybe add one?</NavLink>
+          <NavLink to='/add-image'>Maybe add one?</NavLink>
         </React.Fragment>
       )}
     </section>
