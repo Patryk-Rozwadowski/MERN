@@ -10,7 +10,7 @@ import Heading from '../Heading/Heading';
 
 const UserCard = ({ id, avatar, name, profileBg, description }) => {
   return (
-    <div className='userCard'>
+    <div data-cy={`user-card-${id}`} className='userCard'>
       <div
         style={{ backgroundImage: `url(${profileBg})` }}
         className='userCard__background'
@@ -42,20 +42,20 @@ const UserCard = ({ id, avatar, name, profileBg, description }) => {
           container
         >
           <Grid lg={4} className='text-align-c' item>
-            <Link to={`/${id}/images`}>
-              <Text dataCy={'userReducer-images'}> Images </Text>
+            <Link data-cy={`user-images-${id}`} to={`/${id}/images`}>
+              <Text> Images </Text>
             </Link>
           </Grid>
 
           <Grid lg={4} className='text-align-c' item>
-            <Link to={`/${id}/places`}>
-              <Text dataCy={'userReducer-places'}> Places </Text>
+            <Link data-cy={`user-places-${id}`} to={`/${id}/places`}>
+              <Text> Places </Text>
             </Link>
           </Grid>
 
           <Grid lg={4} className='text-align-c' item>
-            <Link to={`/${id}/profile`}>
-              <Text dataCy={'userReducer-profile'}> Profile </Text>
+            <Link data-cy={`user-profile-${id}`} to={`/${id}/profile`}>
+              <Text> Profile </Text>
             </Link>
           </Grid>
         </Grid>

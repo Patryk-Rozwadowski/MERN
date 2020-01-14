@@ -15,7 +15,7 @@ class Users extends React.Component {
     const { usersData, isMounted, isLoaded } = this.props;
 
     return (
-      <section className='users__container'>
+      <section data-cy='users-list-container' className='users__container'>
         {isMounted === true && isLoaded === true ? (
           <div className='grid-3-row'>
             {usersData.map(user => (
