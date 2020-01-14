@@ -4,15 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "install": "concurrently \"yarn install:client\" \"yarn install:server\" " ,
+    "install": "concurrently \"yarn install:client\" \"yarn install:server\" ",
     "install:client": "cd client & yarn install",
     "install:server": "cd server & yarn install",
     "start": "concurrently \"yarn run start:server\" \"yarn start:react\" ",
     "start:server": "cd server & node server.js",
     "start:react": "cd client & yarn start"
   },
-  "dependencies": {},
+  "dependencies": {
+    "mongodb": "^3.4.1"
+  },
   "devDependencies": {
     "concurrently": "^5.0.2"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "jsxSingleQuote": true
   }
 }
