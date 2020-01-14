@@ -26,5 +26,4 @@
 
 Cypress.Commands.add('setUp', target => {
     cy.server();
-    cy.viewport('macbook-15')
 });

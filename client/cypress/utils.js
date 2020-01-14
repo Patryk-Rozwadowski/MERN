@@ -4,4 +4,4 @@ export const getElementAndType = el => {
   };
 };
 
-export const getElement = el => cy.get(`[data-cy="${el}"`);
+export const getElement = el => cy.get(`[data-cy="${el}"]`);

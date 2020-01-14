@@ -19,38 +19,39 @@ const UserInfo = props => {
   return (
     <section className='user-info'>
       <div
+        data-cy='profile-background'
         style={{ backgroundImage: `url(${profileBgPicture})` }}
         className='user-info__cover-photo'
       >
-        <div className='gradient'>
+        <div data-cy='user-profile-gradient' className='gradient'>
           <Grid container>
-            <Avatar alt='alt' avatarUrl={avatarUrl} />
+            <Avatar alt={`${nick}'s avatar`} avatarUrl={avatarUrl} />
 
             <Grid lg={11} item>
-              <Text variant='subtitle' color='white'>
+              <Text data-cy='nick' variant='subtitle' color='white'>
                 {nick}
               </Text>
               <Grid container>
                 <Grid lg={9} item>
-                  <Text variant='text' color='white'>
+                  <Text data-cy='account-type' variant='text' color='white'>
                     {accountType}
                   </Text>
-                  <Text variant='text' color='white'>
+                  <Text data-cy='user-name' variant='text' color='white'>
                     {userName}
                   </Text>
-                  <Text variant='text' color='white'>
+                  <Text data-cy='followers-number' variant='text' color='white'>
                     {followersNumber} Followers
                   </Text>
-                  <Text variant='text' color='white'>
+                  <Text data-cy='following-number' variant='text' color='white'>
                     {followingNumber} Following
                   </Text>
                 </Grid>
 
                 <Grid lg={3} item>
-                  <Text variant='text' color='white'>
+                  <Text data-cy='images-number' variant='text' color='white'>
                     {imagesNumber} Images
                   </Text>
-                  <Text variant='text' color='white'>
+                  <Text data-cy='places-number' variant='text' color='white'>
                     {placesNumber} Places
                   </Text>
                 </Grid>

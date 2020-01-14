@@ -24,7 +24,7 @@ const UserImagesList = ({
   }, []);
 
   return (
-    <section className='grid-3-row'>
+    <section data-cy='user-images-list' className='grid-3-row'>
       {checkIfEmptyIsMounted(isComponentMounted, isDataFetched) ? (
         <React.Fragment>
           {imagesUser.map(image => (
@@ -43,8 +43,8 @@ const UserImagesList = ({
         <SpinnerBuffer />
       )}
 
-      {checkIsLoadedIsFetched(imagesUser, isComponentMounted) && (
-        <div>
+      {checkIfEmptyIsMounted(imagesUser, isComponentMounted) && (
+        <div data-cy='warrning-images-not-found'>
           <h2>Not found any images yet!</h2>
           <NavLink to='/add-image'>Maybe add one?</NavLink>
         </div>
