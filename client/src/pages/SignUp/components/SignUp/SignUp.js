@@ -89,7 +89,12 @@ const SignUp = () => {
               />
             </Grid>
           </Grid>
-          <Button dataCy='sign-up' type='submit' variant='info' fullWidth={true}>
+          <Button
+            dataCy='sign-up'
+            type='submit'
+            variant='info'
+            fullWidth={true}
+          >
             Sign Up
           </Button>
           <Grid container justify='flex-end'>

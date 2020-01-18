@@ -1,7 +1,7 @@
 describe('Nav', () => {
   beforeEach(() => {
     cy.setUp();
-    cy.visit('/')
+    cy.visit('/');
   });
 
   it('should be visible', () => {
