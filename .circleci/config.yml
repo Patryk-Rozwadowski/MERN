@@ -10,7 +10,6 @@ workflows:
           requires:
             - react/install
   build:
-    working_directory: ~/client
     jobs:
       - cypress/run:
           yarn: true
