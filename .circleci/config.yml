@@ -1,10 +1,9 @@
 version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
+workflows:
   build:
     jobs:
       - cypress/run:
           yarn: true
-          start: yarn test
-          no-workspace: true
           working_directory: client
