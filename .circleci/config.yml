@@ -4,6 +4,11 @@ orbs:
 workflows:
   build:
     jobs:
+      - run server:
+          yarn: true
+          start: yarn start
+          working_directory: client
+          
       - cypress/run:
           yarn: true
           working_directory: client
