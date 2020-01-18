@@ -7,4 +7,4 @@ workflows:
       - cypress/run:
           yarn: true
           start: yarn start
-          working_directory: cluent
+          working_directory: client
