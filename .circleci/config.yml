@@ -2,12 +2,12 @@ version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
 workflows:
+  build:
     jobs:
-      - run server:
-          yarn: true
-          start: yarn start
-          working_directory: client
-
       - cypress/run:
-          yarn: true
+          record: true
+          parallel: true
+          parallelism: 4
+          group: 'all tests'
+          start: 'npm start'
           working_directory: client
