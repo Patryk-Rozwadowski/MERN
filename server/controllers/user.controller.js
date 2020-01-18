@@ -27,7 +27,6 @@ const getUserProfile = async (req, res, next) => {
 };
 
 const createNewUser = async (req, res, next) => {
-    debugger;
     const data = new Users({
         id: uuidv4(),
         name: req.body.name,
