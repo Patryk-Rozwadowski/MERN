@@ -3,7 +3,7 @@ import { getElement } from '../../utils';
 describe('users page', () => {
   beforeEach(() => {
     cy.setUp();
-    cy.route('/api/users', 'fixture:users.fixture').as('users');
+    cy.route('/api/users', 'fixture:users/users.fixture').as('users');
     cy.visit('/users');
     cy.wait(['@users']);
   });

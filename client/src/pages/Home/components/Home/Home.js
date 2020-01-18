@@ -52,18 +52,17 @@ class Home extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
-        <section style={this.state} className='home'>
-          <div className='f-center'>
-            <h2 className='homepage__title'>Share your photos</h2>
-            <h3 className='homepage__subtitle'>
-              {' '}
-              Ok, not yet, but i'm working on it!{' '}
-            </h3>
-            <button className='btn btn-register'>Register</button>
-          </div>
-        </section>
-      </React.Fragment>
+      <section data-cy='home' style={this.state} className='home'>
+        <div className='f-center'>
+          <h2 className='homepage__title'>Share your photos</h2>
+          <h3 className='homepage__subtitle'>
+            Ok, not yet, but i'm working on it!
+          </h3>
+          <button data-cy='register-btn' className='btn btn-register'>
+            Register
+          </button>
+        </div>
+      </section>
     );
   }
 }

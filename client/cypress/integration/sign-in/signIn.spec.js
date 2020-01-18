@@ -1,15 +1,14 @@
-import { getElementAndType } from '../../utils';
+import { getElement, getElementAndType } from '../../utils';
 
 describe('sign in', () => {
   beforeEach(() => {
-    cy.setUp('/sign-up');
+    cy.setUp();
+    cy.visit('/sign-in');
   });
 
   it('should be possible to log in', () => {
-    getElementAndType('#firstName')('Patryk');
-    getElementAndType('#lastName')('Paprykowski');
     getElementAndType('#email')('papryka@papryk.com');
     getElementAndType('#password')('qwerty123');
-    cy.get('[data-cy=button-sign-up]').click();
+    getElement('button-sign-in').click();
   });
 });
