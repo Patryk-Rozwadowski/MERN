@@ -1,10 +1,10 @@
 version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
+workflows:
   build:
     jobs:
       - cypress/run:
           yarn: true
-          no-workspace: true
-          start: npm start
-          working_directory: client
+          start: yarn start
+          working_directory: cluent
