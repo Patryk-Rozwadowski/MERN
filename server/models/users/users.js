@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const DataSchema = new Schema(
@@ -9,12 +9,13 @@ const DataSchema = new Schema(
         avatar: {type: String, required: true},
         profileBg: {type: String, required: true},
         description: {type: String, required: true},
+        places: {type: Array, required: true},
+        imagesNumber: {type: Array, required: true},
         followersNumber: {type: Number, required: true},
         followingNumber: {type: Number, required: true},
         accountType: {type: String, required: true}
     },
-    { timestamps: true }
+    {timestamps: true}
 );
 
-
-module.exports = mongoose.model("Users", DataSchema);
+module.exports = mongoose.model('Users', DataSchema);
