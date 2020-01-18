@@ -10,7 +10,8 @@
     "start": "concurrently \"yarn run start:server\" \"yarn start:react\" ",
     "start:server": "cd server & node server.js",
     "start:react": "cd client & yarn start",
-    "test:cypress": "cd client & cypress run"
+    "test": "concurrently \"yarn start:react\" \"yarn test:cypress \" ",
+    "test:cypress": "cd client & yarn cypress run"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
