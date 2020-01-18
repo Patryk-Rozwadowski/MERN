@@ -1,20 +1,22 @@
+import { getElement } from '../../utils';
+
 describe('Nav', () => {
   beforeEach(() => {
     cy.setUp();
-    cy.visit('/')
+    cy.visit('/');
   });
 
   it('should be visible', () => {
-    cy.get('[data-cy="nav"]').should('be.visible');
+    getElement('nav').should('be.visible');
   });
 
   it('should be visible and transparent', () => {
-    cy.get('[data-cy="nav"]').should('have.class', 'nav-transparent');
+    getElement('nav').should('have.class', 'nav-transparent');
   });
 
   it('should be visible and black', () => {
     cy.visit('/users');
-    cy.get('[data-cy="nav"]').should('have.class', 'nav-black');
+    getElement('nav').should('have.class', 'nav-black');
   });
 
   it('should links works', () => {
@@ -28,6 +30,10 @@ describe('Nav', () => {
   });
 
   context('logo and home working as intended', () => {
+    beforeEach(() => {
+      cy.visit('/');
+    });
+
     it('logo working', () => {
       cy.visit('/users');
       cy.get('[data-cy="nav-link-logo"]').click();

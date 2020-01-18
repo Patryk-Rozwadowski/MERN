@@ -9,3 +9,6 @@ workflows:
           yarn: true
           start: yarn start
           working_directory: client
+          post-steps:
+            - store_artifacts:
+                path: cypress-artifacts
