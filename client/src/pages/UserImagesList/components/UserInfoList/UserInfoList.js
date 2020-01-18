@@ -22,7 +22,7 @@ const UserInfoList = ({
     const userId = match.params.id;
     fetchuserProfileInformations(userId);
     fetchUserImages(userId);
-  }, [fetchuserProfileInformations, match]);
+  }, [fetchuserProfileInformations, match, fetchUserImages]);
 
   return (
     <React.Fragment>

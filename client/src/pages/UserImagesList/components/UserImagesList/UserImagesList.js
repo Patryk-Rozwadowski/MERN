@@ -21,11 +21,11 @@ const UserImagesList = ({
   useEffect(() => {
     const userId = match.params.id;
     fetchUserImages(userId);
-  }, []);
+  }, [fetchUserImages, match.params.id]);
 
   return (
     <section data-cy='user-images-list' className='grid-3-row'>
-      {checkIfEmptyIsMounted(isComponentMounted, isDataFetched) ? (
+      {checkIsLoadedIsFetched(isComponentMounted, isDataFetched) ? (
         <React.Fragment>
           {imagesUser.map(image => (
             <UserImageCard
