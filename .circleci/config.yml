@@ -5,4 +5,4 @@ workflows:
   build:
     jobs:
       - cypress/run:
-          executor: cypress/base-10.15.3
+          executor: ./client/cypress/base-10.15.3
