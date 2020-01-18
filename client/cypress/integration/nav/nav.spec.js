@@ -29,18 +29,12 @@ describe('Nav', () => {
     cy.get('[data-cy="nav-link-register"]').click();
   });
 
-  context('logo and home working as intended', () => {
-    beforeEach(() => {
-      cy.visit('/');
-    });
-
-    it('logo working', () => {
-      cy.visit('/users');
-      cy.get('[data-cy="nav-link-logo"]').click();
-    });
-    it('Home working', () => {
-      cy.visit('/users');
-      cy.get('[data-cy="nav-link-home"]').click();
-    });
+  it('logo working', () => {
+    cy.visit('/users');
+    cy.get('[data-cy="nav-link-logo"]').click();
+  });
+  it('Home working', () => {
+    cy.visit('/users');
+    cy.get('[data-cy="nav-link-home"]').click();
   });
 });
