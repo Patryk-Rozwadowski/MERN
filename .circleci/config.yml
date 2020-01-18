@@ -1,25 +1,17 @@
-version: 2
-jobs:
+version: 2.1
+orbs:
+  cypress: cypress-io/cypress@1
+  react: thefrontside/react@0.1.0
+workflows:
+  push:
+    jobs:
+      - react/install
+      - react/test:
+          requires:
+            - react/install
   build:
-    docker:
-      - image: cypress/base:8
-        environment:
-          ## this enables colors in the output
-          TERM: xterm
     working_directory: ~/client
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
-            - v1-deps-{{ .Branch }}
-            - v1-deps
-      - run:
-          name: Install Dependencies
-          command: yarn install --frozen-lockfile
-      - save_cache:
-          key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
-
+    jobs:
       - cypress/run:
           yarn: true
           start: yarn start
