@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "install": "concurrently \"yarn install:client\" \"yarn install:server\" ",
+    "install:all": "concurrently \"yarn install:client\" \"yarn install:server\" ",
     "install:client": "cd client & yarn install",
     "install:server": "cd server & yarn install",
     "start": "concurrently \"yarn run start:server\" \"yarn start:react\" ",

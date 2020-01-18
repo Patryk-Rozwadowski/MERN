@@ -13,6 +13,6 @@ workflows:
     jobs:
       - cypress/run:
           yarn: true
-          start: yarn run start:react
+          start: yarn start:react
           wait-on: 'http://localhost:3000'
           no-workspace: true
