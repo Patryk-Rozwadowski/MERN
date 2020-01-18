@@ -6,8 +6,5 @@ orbs:
       - cypress/run:
           yarn: true
           no-workspace: true
-          working_directory: client
           start: npm start
-          wait-on: 'http://localhost:3000'
-          post-steps:
-            - run: npm start
+          working_directory: client
