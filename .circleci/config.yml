@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
-workflows:
+jobs:
   build:
     working_directory: client
     parallelism: 4
