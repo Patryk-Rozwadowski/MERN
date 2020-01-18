@@ -16,9 +16,7 @@ jobs:
           paths:
             - ~/.npm
             - ~/.cache
-      - run:
-          name: Running E2E tests with multiple cypress
-          command: npm run cypress run
+      - run: $(npm bin)/cypress run --record --key <record_key>
       - store_test_results:
           path: cypress-results
       - store_artifacts:
