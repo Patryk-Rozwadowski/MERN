@@ -10,7 +10,7 @@ jobs:
     parallelism: 4
     steps:
       - checkout
-      - run: npm ci
+      - run: npm install
       - save_cache:
           key: v2-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
