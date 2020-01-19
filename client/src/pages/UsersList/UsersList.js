@@ -9,7 +9,7 @@ import {
   checkIsLoadedIsFetched,
   checkIfEmptyIsMounted
 } from '../../utils/checkIfReadyToMount';
-import NavShared from '../../components/Nav';
+import NavShared from '../../components/Nav/Nav';
 
 const UsersList = ({
   allUsersArray,

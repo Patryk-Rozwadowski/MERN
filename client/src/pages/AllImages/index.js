@@ -1,6 +1,6 @@
 import React from 'react';
 
-import NavShared from '../../components/Nav/index';
+import NavShared from '../../components/Nav/Nav';
 import AllImagesList from './components/AllImagesList/AllImagesList';
 
 const AllImagesRoute = () => {

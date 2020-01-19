@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Logo from '../../../Logo/Logo';
-import NavLink from '../../../NavLink/NavLink';
-// @todo fix reusable
-const Nav = ({ variant }) => (
+import Logo from '../Logo/Logo';
+import NavLink from '../NavLink/NavLink';
+
+const NavShared = ({ variant = '' }) => (
   <nav data-cy='nav' className={`nav nav-${variant}`}>
     <div className='nav__links'>
       <NavLink dataCy='logo' exact to='/'>
@@ -37,4 +37,4 @@ const Nav = ({ variant }) => (
   </nav>
 );
 
-export default Nav;
+export default NavShared;
