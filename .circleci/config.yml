@@ -9,6 +9,4 @@ workflows:
           start: yarn start
           working_directory: client
           record: true
-          parallel: true
-          parallelism: 4
           wait-on: 'http://localhost:3000'
