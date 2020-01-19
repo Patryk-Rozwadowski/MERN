@@ -4,5 +4,6 @@
   "requestTimeout": 6000,
   "viewportWidth": 1900,
   "viewportHeight": 900,
-  "projectId": "72mbm5"
+  "projectId": "72mbm5",
+  "ignoreTestFiles": "*.utils.js"
 }

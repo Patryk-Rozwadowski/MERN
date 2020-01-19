@@ -22,7 +22,7 @@ describe('Nav', () => {
   });
 
   it('nav links should works', () => {
-    getElement('nav-link-users').click();
+    getElement('nav-link-users-lists').click();
     getElement('nav-link-images').click();
     getElement('nav-link-add-image').click();
 
