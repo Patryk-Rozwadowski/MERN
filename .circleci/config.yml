@@ -9,3 +9,4 @@ workflows:
           start: yarn start
           working_directory: client
           record: true
+          wait-on: 'http://localhost:3000'
