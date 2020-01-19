@@ -4,6 +4,8 @@ describe('home page', () => {
   beforeEach(() => {
     cy.setUp();
     cy.visit('/');
+
+    cy.route('/api/users', 'route:users/users.fixture');
   });
 
   it('home page should be visible', () => {

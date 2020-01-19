@@ -5,8 +5,15 @@ describe('user page', () => {
     beforeEach(() => {
       cy.setUp();
       cy.visit('/21/images');
-      cy.route('/api/21/user', 'fixture:user/user.fixture');
-      cy.route('/api/21/images', 'fixture:user/user-images.fixture');
+
+      cy.route('/api/21/user', 'fixture:user/user.fixture').as('userInfo');
+
+      cy.route('/api/21/images', 'fixture:user/user-images.fixture').as(
+        'userImages'
+      );
+
+      cy.wait('@userInfo');
+      cy.wait('@userImages');
     });
 
     context('Images found', () => {
