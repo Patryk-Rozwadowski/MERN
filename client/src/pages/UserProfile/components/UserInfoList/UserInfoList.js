@@ -9,7 +9,6 @@ import UserInfo from '../../../../components/UserInfo/UserInfo';
 
 import { checkIsLoadedIsFetched } from '../../../../utils/checkIfReadyToMount';
 
-// @todo error handling and spinner
 const UserInfoList = ({
   userInformations,
   match,

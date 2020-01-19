@@ -42,13 +42,13 @@ const UserCard = ({ id, avatar, name, profileBg, description }) => {
           container
         >
           <Grid lg={4} className='text-align-c' item>
-            <Link data-cy={`user-images-${id}`} to={`/${id}/images`}>
+            <Link data-cy={`user-images-${id}`} to={`/${id}/profile/images`}>
               <Text> Images </Text>
             </Link>
           </Grid>
 
           <Grid lg={4} className='text-align-c' item>
-            <Link data-cy={`user-places-${id}`} to={`/${id}/places`}>
+            <Link data-cy={`user-places-${id}`} to={`/${id}/profile/places`}>
               <Text> Places </Text>
             </Link>
           </Grid>

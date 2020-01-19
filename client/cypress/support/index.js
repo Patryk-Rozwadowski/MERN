@@ -1,5 +1,5 @@
 // ***********************************************************
-// This example support/index.js is processed and
+// This example support/UserProfile.js is processed and
 // isDataFetched automatically before your test files.
 //
 // This is a great place to put global configuration and

@@ -19,12 +19,12 @@ describe('users list page', () => {
 
   it('profile links for user images works', () => {
     getElement('user-images-21').click();
-    cy.url().should('include', '/21/images');
+    cy.url().should('include', '/21/profile/images');
   });
 
   it('profile links for user places works', () => {
     getElement('user-places-21').click();
-    cy.url().should('include', '/21/places');
+    cy.url().should('include', '/21/profile/places');
   });
 
   it('profile links for user profile works', () => {

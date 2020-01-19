@@ -6,7 +6,7 @@ describe('user page', () => {
     cy.setUp();
 
     userRoutes();
-    cy.visit('/21/images');
+    cy.visit('/21/profile/images');
     cy.wait(['@userInfo']);
     cy.wait(['@userImages']);
   });
@@ -20,7 +20,7 @@ describe('user page', () => {
 
   context('Images not found', () => {
     beforeEach(() => {
-      cy.visit('/21/images');
+      cy.visit('/21/profile/images');
       cy.route('/api/21/images', []);
     });
     it('warrning Images not found be visible', () => {

@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import HomeRoute from './pages/Home/index';
 import SignUpRoute from './pages/SignUp/index';
 import UsersList from './pages/UsersList/UsersList';
-import UserImagesListRoute from './pages/UserImagesList/index';
+import UserProfile from './pages/UserProfile/UserProfile';
 import AddImageRoute from './pages/AddImage/index';
 import SignInRoute from './pages/SignIn/index';
 import AllImagesRoute from './pages/AllImages';
@@ -19,7 +19,7 @@ const Routes = () => {
         <Route path='/sign-in' exact component={SignInRoute} />
         <Route path='/add-image' exact component={AddImageRoute} />
         <Route path='/images' exact component={AllImagesRoute} />
-        <Route path='/:id/images' exact component={UserImagesListRoute} />
+        <Route path='/:id/profile/images' exact component={UserProfile} />
       </Switch>
     </Router>
   );
