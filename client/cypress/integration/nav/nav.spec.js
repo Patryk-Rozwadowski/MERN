@@ -3,7 +3,8 @@ import { getElement } from '../../utils';
 describe('Nav', () => {
   beforeEach(() => {
     cy.setUp();
-    cy.route('/api/users', 'fixture:users/users.fixture').as('users');
+    cy.route('/api/users', []);
+    cy.route('/api/images', []);
     cy.visit('/');
   });
 
@@ -17,7 +18,6 @@ describe('Nav', () => {
 
   it('should be visible and black', () => {
     cy.visit('/users');
-    cy.wait(['@users']);
     getElement('nav').should('have.class', 'nav-black');
   });
 
@@ -33,12 +33,10 @@ describe('Nav', () => {
 
   it('logo working', () => {
     cy.visit('/users');
-    cy.wait(['@users']);
     cy.get('[data-cy="nav-link-logo"]').click();
   });
   it('Home working', () => {
     cy.visit('/users');
-    cy.wait(['@users']);
     cy.get('[data-cy="nav-link-home"]').click();
   });
 });
