@@ -5,10 +5,9 @@ workflows:
   build:
     jobs:
       - cypress/run:
-          store_artifacts: true
           yarn: true
           start: yarn start
           working_directory: client
-          post-steps:
-            - store_artifacts:
-                path: cypress-artifacts
+          record: true
+          wait-on: 'http://localhost:3000'
+
