@@ -27,7 +27,7 @@ const getUserProfile = async (req, res, next) => {
 };
 
 const createNewUser = async (req, res, next) => {
-  const data = new Users({
+  const newUser = new Users({
     id: uuidv4(),
     name: req.body.name,
     userName: req.body.userName,
@@ -43,7 +43,7 @@ const createNewUser = async (req, res, next) => {
     accountType: 'free'
   });
 
-  const result = await data.save();
+  const result = await newUser.save();
   res.json(result);
 };
 

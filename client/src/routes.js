@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import HomeRoute from './pages/Home/index';
 import SignUpRoute from './pages/SignUp/index';
-import UsersList from './pages/Users/Users';
+import UsersList from './pages/UsersList/UsersList';
 import UserImagesListRoute from './pages/UserImagesList/index';
 import AddImageRoute from './pages/AddImage/index';
 import SignInRoute from './pages/SignIn/index';
