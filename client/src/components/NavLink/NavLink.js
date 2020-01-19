@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink as NavLinkRouter } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
 
 const NavLink = ({
   children,
@@ -22,6 +23,11 @@ const NavLink = ({
       </NavLinkRouter>
     </React.Fragment>
   );
+};
+
+NavLink.propTypes = {
+  children: PropTypes.string.isRequired,
+  dataCy: PropTypes.string.isRequired
 };
 
 export default NavLink;

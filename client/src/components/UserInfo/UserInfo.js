@@ -4,18 +4,17 @@ import Grid from '@material-ui/core/Grid';
 import Avatar from '../Avatar/Avatar';
 import Text from '../Text/Text';
 
-const UserInfo = props => {
-  const {
-    profileBgPicture,
-    avatarUrl,
-    nick,
-    accountType,
-    userName,
-    followersNumber,
-    followingNumber,
-    imagesNumber,
-    placesNumber
-  } = props;
+const UserInfo = ({
+  profileBgPicture,
+  avatarUrl,
+  nick,
+  accountType,
+  userName,
+  followersNumber,
+  followingNumber,
+  imagesNumber,
+  placesNumber
+}) => {
   return (
     <section className='user-info'>
       <div
