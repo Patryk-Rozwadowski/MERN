@@ -5,7 +5,6 @@ describe('Nav', () => {
     cy.setUp();
     cy.route('/api/users', 'fixture:users/users.fixture').as('users');
     cy.visit('/');
-    cy.wait(['@users']);
   });
 
   it('should be visible', () => {
@@ -18,6 +17,7 @@ describe('Nav', () => {
 
   it('should be visible and black', () => {
     cy.visit('/users');
+    cy.wait(['@users']);
     getElement('nav').should('have.class', 'nav-black');
   });
 
@@ -33,10 +33,12 @@ describe('Nav', () => {
 
   it('logo working', () => {
     cy.visit('/users');
+    cy.wait(['@users']);
     cy.get('[data-cy="nav-link-logo"]').click();
   });
   it('Home working', () => {
     cy.visit('/users');
+    cy.wait(['@users']);
     cy.get('[data-cy="nav-link-home"]').click();
   });
 });
