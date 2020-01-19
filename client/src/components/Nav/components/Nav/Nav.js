@@ -14,7 +14,7 @@ const Nav = ({ variant }) => (
         Home
       </NavLink>
 
-      <NavLink dataCy='users' exact to='/users'>
+      <NavLink dataCy='users-lists' exact to='/users-list'>
         Users
       </NavLink>
 

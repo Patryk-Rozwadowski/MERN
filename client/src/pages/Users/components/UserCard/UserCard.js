@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 
 import Grid from '@material-ui/core/Grid';
-import Text from '../Text/Text';
+import Text from '../../../../components/Text/Text';
 
-import Avatar from '../Avatar/Avatar';
-import Heading from '../Heading/Heading';
+import Avatar from '../../../../components/Avatar/Avatar';
+import Heading from '../../../../components/Heading/Heading';
 
 const UserCard = ({ id, avatar, name, profileBg, description }) => {
   return (

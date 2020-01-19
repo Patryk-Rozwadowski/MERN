@@ -41,16 +41,17 @@ const SignIn = () => {
             autoComplete='current-password'
           />
 
-          <Button dataCy='sign-in' type='submit' variant='info' fullWidth={true}>
+          <Button
+            dataCy='sign-in'
+            type='submit'
+            variant='info'
+            fullWidth={true}
+          >
             Sign In
           </Button>
           <Grid container direction='row'>
-            <Grid lg={6} align={'left'} item>
-              <Link to='/signup'>Forgot password?</Link>
-            </Grid>
-
-            <Grid lg={6} align={'right'} item>
-              <Link to='/signup'>Dont have an account? Sign Up</Link>
+            <Grid lg={12} align={'right'} item>
+              <Link to='/sign-up'>Dont have an account? Sign Up</Link>
             </Grid>
           </Grid>
 

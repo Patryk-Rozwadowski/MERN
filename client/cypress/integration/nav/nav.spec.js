@@ -17,7 +17,7 @@ describe('Nav', () => {
   });
 
   it('should be visible and black', () => {
-    cy.visit('/users');
+    cy.visit('/users-list');
     getElement('nav').should('have.class', 'nav-black');
   });
 
@@ -35,11 +35,11 @@ describe('Nav', () => {
   });
 
   it('logo working', () => {
-    cy.visit('/users');
+    cy.visit('/users-list');
     getElement('nav-link-logo').click();
   });
   it('Home working', () => {
-    cy.visit('/users');
+    cy.visit('/users-list');
     getElement('nav-link-home').click();
   });
 });

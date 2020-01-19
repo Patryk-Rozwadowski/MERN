@@ -1,10 +1,10 @@
 import { getElement } from '../../utils';
 
-describe('users page', () => {
+describe('users list page', () => {
   beforeEach(() => {
     cy.setUp();
     cy.route('/api/users', 'fixture:users/users.fixture').as('users');
-    cy.visit('/users');
+    cy.visit('/users-list');
     cy.wait(['@users']);
   });
 
