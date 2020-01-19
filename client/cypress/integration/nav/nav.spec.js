@@ -1,10 +1,10 @@
 import { getElement } from '../../utils';
+import { navRoutes } from './nav.utils';
 
 describe('Nav', () => {
   beforeEach(() => {
     cy.setUp();
-    cy.route('/api/users', []);
-    cy.route('/api/images', []);
+    navRoutes();
     cy.visit('/');
   });
 
@@ -21,22 +21,25 @@ describe('Nav', () => {
     getElement('nav').should('have.class', 'nav-black');
   });
 
-  it('should links works', () => {
-    cy.get('[data-cy="nav-link-users"]').click();
-    cy.get('[data-cy="nav-link-images"]').click();
-    cy.get('[data-cy="nav-link-add-image"]').click();
+  it('nav links should works', () => {
+    getElement('nav-link-users').click();
+    getElement('nav-link-images').click();
+    getElement('nav-link-add-image').click();
 
-    cy.get('[data-cy="nav-link-login"]').click();
+    getElement('nav-link-login').click();
     cy.visit('/');
-    cy.get('[data-cy="nav-link-register"]').click();
+
+    getElement('nav-link-register')
+      .should('be.visible')
+      .click();
   });
 
   it('logo working', () => {
     cy.visit('/users');
-    cy.get('[data-cy="nav-link-logo"]').click();
+    getElement('nav-link-logo').click();
   });
   it('Home working', () => {
     cy.visit('/users');
-    cy.get('[data-cy="nav-link-home"]').click();
+    getElement('nav-link-home').click();
   });
 });
