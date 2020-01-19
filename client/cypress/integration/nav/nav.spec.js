@@ -3,7 +3,9 @@ import { getElement } from '../../utils';
 describe('Nav', () => {
   beforeEach(() => {
     cy.setUp();
+    cy.route('/api/users', 'fixture:users/users.fixture').as('users');
     cy.visit('/');
+    cy.wait(['@users']);
   });
 
   it('should be visible', () => {
