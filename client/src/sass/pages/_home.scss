@@ -1,5 +1,7 @@
 .home {
   @include create-container('flex', $vw-100, $vh-100, true);
+  background: url('../../assets/photo4.jpg') no-repeat fixed center;
+  background-size: cover;
 
   &__title-wrapper {
     @include flex-centerer;

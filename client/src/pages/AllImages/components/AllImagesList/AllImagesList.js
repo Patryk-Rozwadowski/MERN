@@ -7,7 +7,9 @@ import { fetchAllUsersImages } from '../../../../redux/actions/images.actions';
 import SpinnerBuffer from '../../../../components/Spinner/SpinnerBuffer';
 
 import UserImageCard from '../../../../components/UserImage/UserImageCard';
-
+import Heading from '../../../../components/Heading/Heading';
+import Text from '../../../../components/Text/Text';
+import NotFoundData from '../../../../components/NotFoundData/NotFoundData';
 import {
   checkIfEmptyIsMounted,
   checkIsLoadedIsFetched
@@ -24,9 +26,9 @@ const AllImagesList = ({
   }, [fetchingAllUsersImages]);
 
   return (
-    <section className='images__container'>
+    <React.Fragment>
       {checkIsLoadedIsFetched(isComponentMounted, isDataFetched) ? (
-        <React.Fragment>
+        <section className='images__container'>
           {imagesListAllUsers.map(image => (
             <UserImageCard
               key={image.id}
@@ -38,18 +40,15 @@ const AllImagesList = ({
               description={image.description}
             />
           ))}
-        </React.Fragment>
+        </section>
       ) : (
         <SpinnerBuffer />
       )}
 
       {checkIfEmptyIsMounted(imagesListAllUsers, isComponentMounted) && (
-        <div data-cy='no-images-found-user'>
-          <h2>Not found any images yet!</h2>
-          <NavLink to='/add-image'>Maybe add one?</NavLink>
-        </div>
+        <NotFoundData text='No images found!' link='Maybe add one?' />
       )}
-    </section>
+    </React.Fragment>
   );
 };
 

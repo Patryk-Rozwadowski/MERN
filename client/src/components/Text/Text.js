@@ -11,7 +11,7 @@ Text.defaultProps = {
 };
 
 Text.propTypes = {
-  variant: PropTypes.string.isRequired,
+  variant: PropTypes.string,
   color: PropTypes.string.isRequired
 };
 

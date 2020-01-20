@@ -1,0 +1,4 @@
+.modal-container {
+  @include abs-centerer;
+  @include size($width: $vw-100, $height: $vh-100);
+}
