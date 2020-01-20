@@ -13,7 +13,7 @@ const NavLink = ({
     <React.Fragment>
       <NavLinkRouter
         to={to}
-        activeClassName={''}
+        activeClassName=''
         className='link'
         data-cy={`nav-link-${dataCy}`}
         exact={exact}

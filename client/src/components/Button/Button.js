@@ -14,7 +14,6 @@ const Button = ({
   ...otherProps
 }) => {
   return (
-    <React.Fragment>
       <button
         type={type}
         formMethod={formmethod}
@@ -31,7 +30,6 @@ const Button = ({
       >
         {children}
       </button>
-    </React.Fragment>
   );
 };
 

@@ -28,7 +28,7 @@
 
   &-register {
     @include size($width: 160px, $height: 60px);
-    @include create-font($font-family: 'text-secondary', $color: 'primary', $font-size: 1.5em, $font-weight: $font-weight-btn-register);
+    @include create-font($font-family: 'text-secondary', $color: 'secondary', $font-size: 1.5em, $font-weight: $font-weight-btn-register);
     background-color: totoo-color('secondary');
     border: 0;
     border-radius: $border-radius;

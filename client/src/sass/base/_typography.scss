@@ -34,6 +34,10 @@ a,
   &:hover {
     color: lighten(totoo-color('accent'), $color-interval);
   }
+
+  &-black {
+    color: totoo-color('primary');
+  }
 }
 
 p {
