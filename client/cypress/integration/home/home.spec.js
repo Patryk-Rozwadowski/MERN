@@ -19,6 +19,6 @@ describe('home page', () => {
   });
 
   it('register button should be visible', () => {
-    getElement('register-btn').should('be.visible');
+    getElement('button-register').should('be.visible');
   });
 });
