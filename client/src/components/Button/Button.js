@@ -14,11 +14,11 @@ const Button = ({
   ...otherProps
 }) => {
   return (
-      <button
-        type={type}
-        formMethod={formmethod}
-        data-cy={`button-${dataCy}`}
-        className={`
+    <button
+      type={type}
+      formMethod={formmethod}
+      data-cy={`button-${dataCy}`}
+      className={`
                     btn
                     btn-${variant}
                     lg-${lg}
@@ -26,10 +26,10 @@ const Button = ({
                     sm-${sm}
                     ${fullWidth ? 'full-width' : []}
                 `}
-        {...otherProps}
-      >
-        {children}
-      </button>
+      {...otherProps}
+    >
+      {children}
+    </button>
   );
 };
 

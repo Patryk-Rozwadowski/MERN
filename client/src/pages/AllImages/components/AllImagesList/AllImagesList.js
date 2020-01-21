@@ -1,14 +1,12 @@
 import React, { useEffect } from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import { NavLink, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 import { fetchAllUsersImages } from '../../../../redux/actions/images.actions';
 import SpinnerBuffer from '../../../../components/Spinner/SpinnerBuffer';
 
 import UserImageCard from '../../../../components/UserImage/UserImageCard';
-import Heading from '../../../../components/Heading/Heading';
-import Text from '../../../../components/Text/Text';
 import NotFoundData from '../../../../components/NotFoundData/NotFoundData';
 import {
   checkIfEmptyIsMounted,

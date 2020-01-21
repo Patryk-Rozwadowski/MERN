@@ -1,49 +1,27 @@
 import React from 'react';
 
-import Avatar from '@material-ui/core/Avatar';
-import TextField from '@material-ui/core/TextField';
-import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
-import Copyright from '../../../../components/CopyRight/Copyright';
 
-import Button from '../../../../components/Button/Button';
-const useStyles = makeStyles(theme => ({
-  paper: {
-    marginTop: theme.spacing(8),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center'
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main
-  },
-  form: {
-    width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(3)
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2)
-  }
-}));
+import Copyright from '../../components/CopyRight/Copyright';
+import Button from '../../components/Button/Button';
+import Link from '../../components/Link/Link';
+import Avatar from '../../components/Avatar/Avatar';
+import InputField from '../../components/InputField/InputField';
 
-const SignUp = () => {
-  const classes = useStyles();
-
+const SignUp = React.memo(props => {
   return (
     <section
       style={{ backgroundImage: `url(https://source.unsplash.com/random)` }}
-      className='signin__container'
+      className='sign-forms'
     >
-      <div className='signin__forms'>
+      <div className='sign-forms__forms'>
         <Avatar />
 
         <h1 className='section__title'>Sign up</h1>
-        <form className={classes.form} noValidate>
+        <form noValidate>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
-              <TextField
+              <InputField
                 autoComplete='fname'
                 name='firstName'
                 variant='outlined'
@@ -54,8 +32,9 @@ const SignUp = () => {
                 autoFocus
               />
             </Grid>
+
             <Grid item xs={12} sm={6}>
-              <TextField
+              <InputField
                 variant='outlined'
                 required
                 fullWidth
@@ -65,8 +44,9 @@ const SignUp = () => {
                 autoComplete='lname'
               />
             </Grid>
+
             <Grid item xs={12}>
-              <TextField
+              <InputField
                 variant='outlined'
                 required
                 fullWidth
@@ -76,8 +56,9 @@ const SignUp = () => {
                 autoComplete='email'
               />
             </Grid>
+
             <Grid item xs={12}>
-              <TextField
+              <InputField
                 variant='outlined'
                 required
                 fullWidth
@@ -89,6 +70,7 @@ const SignUp = () => {
               />
             </Grid>
           </Grid>
+
           <Button
             dataCy='sign-up'
             type='submit'
@@ -97,18 +79,24 @@ const SignUp = () => {
           >
             Sign Up
           </Button>
-          <Grid container justify='flex-end'>
-            <Grid item>
-              <Link data-cy='link-to-signin' href='/sign-in' variant='body2'>
+
+          <Grid container direction='row'>
+            <Grid lg={12} align={'right'} item>
+              <Link dataC='link-to-signin' to='/sign-in'>
                 Already have an account? Sign in
               </Link>
             </Grid>
           </Grid>
-          <Copyright />
         </form>
+
+        <Grid justify={'center'} container>
+          <Grid item>
+            <Copyright />
+          </Grid>
+        </Grid>
       </div>
     </section>
   );
-};
+});
 
 export default SignUp;

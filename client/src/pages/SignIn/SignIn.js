@@ -1,20 +1,20 @@
 import React from 'react';
 
 import Grid from '@material-ui/core/Grid';
-import Button from '../../../../components/Button/Button';
-import Link from '../../../../components/Link/Link';
 
-import Avatar from '../../../../components/Avatar/Avatar';
-import Copyright from '../../../../components/CopyRight/Copyright';
-import InputField from '../../../../components/InputField/InputField';
+import Button from '../../components/Button/Button';
+import Link from '../../components/Link/Link';
+import Avatar from '../../components/Avatar/Avatar';
+import Copyright from '../../components/CopyRight/Copyright';
+import InputField from '../../components/InputField/InputField';
 
-const SignIn = () => {
+const SignIn = React.memo(props => {
   return (
     <section
       style={{ backgroundImage: `url(https://source.unsplash.com/random)` }}
-      className='signin'
+      className='sign-forms'
     >
-      <div className='signin__forms'>
+      <div className='sign-forms__forms'>
         <Avatar />
         <h1 className='section__title'>Sign in</h1>
         <form noValidate>
@@ -51,7 +51,9 @@ const SignIn = () => {
           </Button>
           <Grid container direction='row'>
             <Grid lg={12} align={'right'} item>
-              <Link to='/sign-up'>Dont have an account? Sign Up</Link>
+              <Link dataCy='sign-up' to='/sign-up'>
+                Dont have an account? Sign Up
+              </Link>
             </Grid>
           </Grid>
 
@@ -64,6 +66,6 @@ const SignIn = () => {
       </div>
     </section>
   );
-};
+});
 
 export default SignIn;

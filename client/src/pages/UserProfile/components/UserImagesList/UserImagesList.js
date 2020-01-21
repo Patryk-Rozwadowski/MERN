@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import { NavLink, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 import { fetchUserImagesRequest } from '../../../../redux/actions/images.actions';
 import SpinnerBuffer from '../../../../components/Spinner/SpinnerBuffer';
@@ -10,6 +10,7 @@ import {
   checkIfEmptyIsMounted,
   checkIsLoadedIsFetched
 } from '../../../../utils/checkIfReadyToMount';
+import NotFoundData from '../../../../components/NotFoundData/NotFoundData';
 
 const UserImagesList = ({
   imagesUser,
@@ -44,10 +45,7 @@ const UserImagesList = ({
       )}
 
       {checkIfEmptyIsMounted(imagesUser, isComponentMounted) && (
-        <div data-cy='warrning-images-not-found'>
-          <h2>Not found any images yet!</h2>
-          <NavLink to='/add-image'>Maybe add one?</NavLink>
-        </div>
+        <NotFoundData text='Not found any images' />
       )}
     </section>
   );
