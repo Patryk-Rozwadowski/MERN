@@ -14,7 +14,7 @@ describe('signUp / register', () => {
   });
 
   it('in case if user has account, go to sing in page', () => {
-    getElement('link-to-signin').click();
+    getElement('link-link-to-signin').click();
     cy.url().should('include', '/sign-in');
   });
 });

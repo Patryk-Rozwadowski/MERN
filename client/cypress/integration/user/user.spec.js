@@ -24,7 +24,7 @@ describe('user page', () => {
       cy.route('/api/21/images', []);
     });
     it('warrning Images not found be visible', () => {
-      getElement('warrning-images-not-found').should('be.visible');
+      cy.contains('Not found any images').should('be.visible');
     });
   });
 });

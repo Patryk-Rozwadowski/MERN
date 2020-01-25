@@ -82,7 +82,7 @@ const SignUp = React.memo(props => {
 
           <Grid container direction='row'>
             <Grid lg={12} align={'right'} item>
-              <Link dataC='link-to-signin' to='/sign-in'>
+              <Link dataCy='link-to-signin' to='/sign-in'>
                 Already have an account? Sign in
               </Link>
             </Grid>
