@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "install:all": "concurrently \"yarn install:client\" \"yarn install:server\" ",
-    "install:client": "cd client & yarn install",
-    "install:server": "cd server & yarn install",
+    "install:all": "concurrently \"npm run install:client\" \"npm run install:server\" ",
+    "install:client": "cd client & npm install",
+    "install:server": "cd server & npm install",
     "start": "concurrently \"yarn run start:server\" \"yarn start:react\" ",
     "start:server": "cd server & node server.js",
     "start:react": "cd client & yarn start",

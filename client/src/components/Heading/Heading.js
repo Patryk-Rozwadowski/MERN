@@ -1,5 +1,5 @@
 import React from 'react';
-import { PropTypes } from 'prop-types';
+import {PropTypes} from 'prop-types';
 
 const headers = {
   h1: 'h1',
@@ -10,8 +10,8 @@ const headers = {
   h6: 'h6'
 };
 
-const Heading = ({ type, variant, color, children, ...otherProps }) => {
-  return React.createElement(
+const Heading = ({ type, variant, color, children, ...otherProps }) =>
+  React.createElement(
     headers[type],
     {
       className: `section__${variant}-${color}`,
@@ -19,7 +19,6 @@ const Heading = ({ type, variant, color, children, ...otherProps }) => {
     },
     children
   );
-};
 
 Heading.defaultProps = {
   variant: 'title',
