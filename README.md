@@ -1,4 +1,5 @@
 # Work in progress [![CircleCI](https://circleci.com/gh/Patryk-Rozwadowski/MERN.svg?style=svg)](https://circleci.com/gh/Patryk-Rozwadowski/MERN)
+# Currently refactoring old code/react components for more modern approach.
 #### The main goal of this project is to learn how to create full stack applications with
 - React - for client side 
 - Node/express - for communication between client side and MongoDB by api
