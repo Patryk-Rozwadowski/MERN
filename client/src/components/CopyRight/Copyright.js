@@ -10,7 +10,6 @@ const Copyright = () => (
       Patryk Rozwadowski
     </Link>{' '}
     {new Date().getFullYear()}
-    {'.'}
   </Typography>
 );
 export default Copyright;

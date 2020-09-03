@@ -1,14 +1,11 @@
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import React, {useEffect} from 'react';
+import {connect} from 'react-redux';
 
 import UserCard from './components/UserCard/UserCard';
-import { fetchUsersRequest } from '../../redux/actions/users.actions';
+import {fetchUsersRequest} from '../../redux/actions/users.actions';
 import SpinnerBuffer from '../../components/Spinner/SpinnerBuffer';
 
-import {
-  checkIsLoadedIsFetched,
-  checkIfEmptyIsMounted
-} from '../../utils/checkIfReadyToMount';
+import {checkIfEmptyIsMounted, checkIsLoadedIsFetched} from '../../utils/checkIfReadyToMount';
 import NavShared from '../../components/Nav/Nav';
 
 const UsersList = ({
@@ -22,7 +19,7 @@ const UsersList = ({
   }, [fetchingAllUsersList]);
 
   return (
-    <React.Fragment>
+    <>
       <NavShared variant='black' />
       <section data-cy='users-list-container' className='users__container'>
         {checkIsLoadedIsFetched(isComponentMounted, isDataFetched) ? (
@@ -47,7 +44,7 @@ const UsersList = ({
           <p>Users not found!</p>
         )}
       </section>
-    </React.Fragment>
+    </>
   );
 };
 
