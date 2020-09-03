@@ -3,15 +3,12 @@ import AddImage from './components/AddImage/AddImage';
 import NavShared from '../../components/Nav/Nav';
 import SectionContainer from '../../components/SectionContainer/SectionContainer';
 
-const AddImageRoute = () => {
-  return (
-    <React.Fragment>
+const AddImageRoute = () =>
+    <>
       <NavShared variant='black' />
       <SectionContainer>
         <AddImage />
       </SectionContainer>
-    </React.Fragment>
-  );
-};
+    </>
 
 export default AddImageRoute;
