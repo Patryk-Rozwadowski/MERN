@@ -1,15 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
+const app = express();
 
+const connectDB = require('./dbconfig/dbconfig');
 const imagesRoutes = require('./routes/images.routes');
 const usersRoutes = require('./routes/users.routes');
 const userRoute = require('./routes/user.routes');
-const cors = require('cors');
-const app = express();
 const port = 8000;
 
-app.use(express.static(__dirname + '/public'));
+connectDB();
 
+app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
