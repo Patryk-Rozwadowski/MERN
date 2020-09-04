@@ -19,7 +19,7 @@ const UploadImageForm = () => {
 
     const handleChange = e => {
         const value = e.target.value;
-        uploadNewImage({
+        uploadNewImage({...newImage,
             [e.target.name]: value
         });
     };
@@ -53,9 +53,9 @@ const UploadImageForm = () => {
             id: 'input-location',
             value: newImage.location,
             onchange: handleChange,
-            label: 'description',
+            label: 'Location',
             lg: 6,
-            dataCy: 'description'
+            dataCy: 'location'
         }
     }
 

@@ -1,17 +1,14 @@
-import React, { useEffect } from 'react';
-import { compose } from 'redux';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import React, {useEffect} from 'react';
+import {compose} from 'redux';
+import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom';
 
-import { fetchAllUsersImages } from '../../../../redux/actions/images.actions';
+import {fetchAllUsersImages} from '../../../../redux/actions/images.actions';
 import SpinnerBuffer from '../../../../components/Spinner/SpinnerBuffer';
 
 import UserImageCard from '../../../../components/UserImage/UserImageCard';
 import NotFoundData from '../../../../components/NotFoundData/NotFoundData';
-import {
-  checkIfEmptyIsMounted,
-  checkIsLoadedIsFetched
-} from '../../../../utils/checkIfReadyToMount';
+import {checkIfEmptyIsMounted, checkIsLoadedIsFetched} from '../../../../utils/checkIfReadyToMount';
 
 const AllImagesList = ({
   fetchingAllUsersImages,
@@ -24,7 +21,7 @@ const AllImagesList = ({
   }, [fetchingAllUsersImages]);
 
   return (
-    <React.Fragment>
+    <>
       {checkIsLoadedIsFetched(isComponentMounted, isDataFetched) ? (
         <section className='images__container'>
           {imagesListAllUsers.map(image => (
@@ -46,7 +43,7 @@ const AllImagesList = ({
       {checkIfEmptyIsMounted(imagesListAllUsers, isComponentMounted) && (
         <NotFoundData text='No images found!' link='Maybe add one?' />
       )}
-    </React.Fragment>
+    </>
   );
 };
 
