@@ -1,5 +1,6 @@
 import React from 'react';
+import LogoImg from './white_logo_transparent_background.png';
 
-const Logo = () => <h2 className='app-logo'>ToToo</h2>;
+const Logo = () => <img className='app-logo' src={LogoImg} alt='Logo' />
 
 export default Logo;

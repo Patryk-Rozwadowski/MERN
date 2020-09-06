@@ -22,18 +22,21 @@ const NavShared = ({ variant = '' }) => (
         Images
       </NavLink>
 
+
       <NavLink dataCy='add-image' exact to='/add-image'>
         Add image
       </NavLink>
     </div>
 
-    <NavLink dataCy='login' exact to='/sign-in'>
-      Login
-    </NavLink>
+      <div className='nav__login-panel'>
+          <NavLink dataCy='login' exact to='/sign-in'>
+              Login
+          </NavLink>
 
-    <NavLink dataCy='register' className='link' exact to='/sign-up'>
-      Register
-    </NavLink>
+          <NavLink dataCy='register' className='link' exact to='/sign-up'>
+              Register
+          </NavLink>
+      </div>
   </nav>
 );
 
