@@ -4,7 +4,7 @@ const imagesControllers = require('../controllers/images-controller');
 
 /*
     @route      GET api/:id/images
-    @desc       returning array of all user's images with specific id
+    @desc       returning array of all User's images with specific id
 */
 router.get('/', imagesControllers.userImages);
 
