@@ -3,9 +3,9 @@ const router = express.Router();
 const imagesControllers = require('../controllers/images-controller');
 
 /*
-    @route      GET api/images
-    @desc       returning array of all users images
+    @route      GET api/:id/images
+    @desc       returning array of all user's images with specific id
 */
-router.get('/', imagesControllers.allImages);
+router.get('/', imagesControllers.userImages);
 
 module.exports = router;

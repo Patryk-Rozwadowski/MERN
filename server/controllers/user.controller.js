@@ -1,9 +1,13 @@
+
 const uuidv4 = require('uuid/v4');
 const Users = require('../models/users/users');
 
 const getUserProfile = async (req, res, next) => {
+
   const userId = await req.params.uid;
+
   const userProfile = await Users.find({ id: userId });
+  console.log(userProfile)
   res.json(userProfile);
 };
 

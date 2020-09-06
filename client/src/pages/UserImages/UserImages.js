@@ -4,7 +4,7 @@ import UserImagesList from './components/UserImagesList/UserImagesList';
 import NavShared from '../../components/Nav/Nav';
 import UserInfoList from './components/UserInfoList/UserInfoList';
 
-const UserImagesListRoute = () => (
+const UserImages = () => (
   <React.Fragment>
     <NavShared variant='black' />
     <UserInfoList />
@@ -12,4 +12,4 @@ const UserImagesListRoute = () => (
   </React.Fragment>
 );
 
-export default UserImagesListRoute;
+export default UserImages;

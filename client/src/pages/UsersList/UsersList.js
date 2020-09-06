@@ -58,7 +58,7 @@ const mapStateToProps = ({ usersReducer }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchingAllUsersList: id => dispatch(fetchUsersRequest(id))
+  fetchingAllUsersList: () => dispatch(fetchUsersRequest())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UsersList);

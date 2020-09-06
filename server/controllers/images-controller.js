@@ -1,6 +1,6 @@
 const data = [
     {
-        id: Math.random(),
+        id: 1,
         name: 'Some cool name',
         author: 'Patryk',
         title: 'My first Image',
@@ -14,7 +14,7 @@ const data = [
     },
 
     {
-        id: Math.random(),
+        id: 2,
         name: 'Some cool name',
         author: 'Peter',
         title: 'Some cool image',
@@ -27,7 +27,7 @@ const data = [
         creator: '12'
     },
     {
-        id: Math.random(),
+        id: 1,
         name: 'Some cool name',
         author: 'Patryk',
         title: 'My first Image',
@@ -41,7 +41,7 @@ const data = [
     },
 
     {
-        id: Math.random(),
+        id: 2,
         name: 'Some cool name',
         author: 'Peter',
         title: 'Some cool image',
@@ -54,7 +54,7 @@ const data = [
         creator: '12'
     },
     {
-        id: Math.random(),
+        id: 1,
         name: 'Some cool name',
         author: 'Patryk',
         title: 'My first Image',
@@ -68,7 +68,7 @@ const data = [
     },
 
     {
-        id: Math.random(),
+        id: 2,
         name: 'Some cool name',
         author: 'Peter',
         title: 'Some cool image',
@@ -81,7 +81,7 @@ const data = [
         creator: '12'
     },
     {
-        id: Math.random(),
+        id: 1,
         name: 'Some cool name',
         author: 'Patryk',
         title: 'My first Image',
@@ -95,7 +95,7 @@ const data = [
     },
 
     {
-        id: Math.random(),
+        id: 2,
         name: 'Some cool name',
         author: 'Peter',
         title: 'Some cool image',
@@ -108,7 +108,7 @@ const data = [
         creator: '12'
     },
     {
-        id: Math.random(),
+        id: 1,
         name: 'Some cool name',
         author: 'Patryk',
         title: 'My first Image',
@@ -122,7 +122,7 @@ const data = [
     },
 
     {
-        id: Math.random(),
+        id: 2,
         name: 'Some cool name',
         author: 'Peter',
         title: 'Some cool image',
@@ -135,7 +135,7 @@ const data = [
         creator: '12'
     },
     {
-        id: Math.random(),
+        id: 1,
         name: 'Some cool name',
         author: 'Patryk',
         title: 'My first Image',
@@ -149,7 +149,7 @@ const data = [
     },
 
     {
-        id: Math.random(),
+        id: 2,
         name: 'Some cool name',
         author: 'Peter',
         title: 'Some cool image',

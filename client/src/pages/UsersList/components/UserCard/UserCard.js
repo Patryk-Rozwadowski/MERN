@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { PropTypes } from 'prop-types';
+import {Link} from 'react-router-dom';
+import {PropTypes} from 'prop-types';
 
 import Grid from '@material-ui/core/Grid';
 import Text from '../../../../components/Text/Text';
@@ -42,13 +42,13 @@ const UserCard = ({ id, avatar, name, profileBg, description }) => {
           container
         >
           <Grid lg={4} className='text-align-c' item>
-            <Link data-cy={`user-images-${id}`} to={`/${id}/profile/images`}>
+            <Link data-cy={`user-images-${id}`} to={`/${id}/images`}>
               <Text> Images </Text>
             </Link>
           </Grid>
 
           <Grid lg={4} className='text-align-c' item>
-            <Link data-cy={`user-places-${id}`} to={`/${id}/profile/places`}>
+            <Link data-cy={`user-places-${id}`} to={`/${id}/places`}>
               <Text> Places </Text>
             </Link>
           </Grid>

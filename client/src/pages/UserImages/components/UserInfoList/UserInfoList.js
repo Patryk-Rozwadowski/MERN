@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
-import { compose } from 'redux';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import React, {useEffect} from 'react';
+import {compose} from 'redux';
+import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom';
 
-import { fetchUserInfoRequest } from '../../../../redux/actions/user.actions';
-import { fetchUserImagesRequest } from '../../../../redux/actions/images.actions';
+import {fetchUserInfoRequest} from '../../../../redux/actions/user.actions';
+import {fetchUserImagesRequest} from '../../../../redux/actions/images.actions';
 import UserInfo from '../../../../components/UserInfo/UserInfo';
 
-import { checkIsLoadedIsFetched } from '../../../../utils/checkIfReadyToMount';
+import {checkIsLoadedIsFetched} from '../../../../utils/checkIfReadyToMount';
 
 const UserInfoList = ({
   userInformations,
@@ -27,20 +27,19 @@ const UserInfoList = ({
     <React.Fragment>
       {checkIsLoadedIsFetched(isDataFetched, isComponentMounted) && (
         <React.Fragment>
-          {userInformations.map(user => (
-            <UserInfo
-              key={user.id}
-              nick={user.name}
-              avatarUrl={user.avatar}
-              userName={user.userName}
-              followersNumber={user.followersNumber}
-              followingNumber={user.followingNumber}
-              imagesNumber={user.places.length}
-              placesNumber={user.places.length}
-              accountType={user.accountType}
-              profileBgPicture={user.profileBg}
+          {userInformations ? userInformations.map(user => <UserInfo
+                key={user.id}
+                nick={user.name}
+                avatarUrl={user.avatar}
+                userName={user.userName}
+                followersNumber={user.followersNumber}
+                followingNumber={user.followingNumber}
+                imagesNumber={user.places.length}
+                placesNumber={user.places.length}
+                accountType={user.accountType}
+                profileBgPicture={user.profileBg}
             />
-          ))}
+          ) : <h1>nope</h1>}
         </React.Fragment>
       )}
     </React.Fragment>
