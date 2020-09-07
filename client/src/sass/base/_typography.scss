@@ -67,7 +67,7 @@ p {
 
   &__title-black {
     @include create-font(
-            $font-family: Overpass,
+            $font-family: 'Overpass',
             $font-size: 3em,
             $font-weight: $font-weight-title,
             $color: 'text-secondary');
@@ -103,7 +103,7 @@ p {
 
   &__title {
     @include create-font(
-            $font-family: Overpass,
+            $font-family: 'Overpass',
             $font-size: $font-size-title-big,
             $font-weight: $font-weight-title,
             $color: 'text-primary');

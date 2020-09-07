@@ -1,57 +1,62 @@
 .images {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 55px;
+  align-items: center;
+  padding: 50px;
+  margin-top: $nav-height;
+}
 
-  &__container {
-    display: grid;
-    position: relative;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 55px;
-    align-items: center;
-    padding: 50px;
-    margin-top: $nav-height;
+.image-card {
+  position: relative;
+  background-size: cover;
+
+  &__feed {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,0.6) 0%, rgba(255,255,255,0.1) 100%);
   }
 
-  &__author {
-    @include create-font($color: 'text-secondary', $font-size: 1.4em, $font-weight: $font-weight-text);
-    padding: 20px;
+  &:hover &__feed {
+    width: 100%;
   }
 
   &__image {
-    width: 100%;
-    height: 100%;
+    position: relative;
+    background-size: contain;
+    background-repeat: no-repeat;
 
-    &__container {
-      @include span(5);
-      justify-self: center;
-      background-color: totoo-color('secondary');
-      border-radius: $border-radius;
+  }
 
-    }
+  &__author {
+    @include create-font(
+      $color: 'text-primary',
+      $font-size: 1.1em,
+      $font-weight: $font-weight-text
+    );
+    margin: 0 0 0 10px;
   }
 
   &__title {
-    @include create-font($font-family: 'primary', $color: 'text-secondary', $font-weight: $font-weight-text-fat);
+    @include create-font(
+      $font-family: 'primary',
+      $color: 'text-primary',
+      $font-weight: $font-weight-text-fat
+    );
+
+    margin-left: 10px;
   }
-
-  &__description {
-    padding: 0 10px;
-  }
-
-  &__info {
-    @include create-container($display: flex, $height: 50px, $center: true);
-    border-top: 1px solid totoo-color('transparent');
-
-    &__element {
-      @include create-font($font-family: 'primary', $color: 'transparent', $font-size: 0.75em);
-      padding: 0 10px;
-    }
-  }
-
 }
 
 /// @todo seperate?
 @for $i from 2 through 50 {
-  .images__image__container:nth-child(#{$i}) {
+  .image-card:nth-child(#{$i}) {
     margin-top: random(200) + px;
   }
 }

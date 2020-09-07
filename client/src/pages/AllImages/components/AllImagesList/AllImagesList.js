@@ -23,7 +23,7 @@ const AllImagesList = ({
   return (
     <>
       {checkIsLoadedIsFetched(isComponentMounted, isDataFetched) ? (
-        <section className='images__container'>
+        <section className='images'>
           {imagesListAllUsers.map(image => (
             <UserImageCard
               key={image.id}
