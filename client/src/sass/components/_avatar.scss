@@ -9,6 +9,7 @@
   &__image {
     @include size(inherit);
     border-radius: 50%;
+    object-fit: cover;
   }
 
 }
