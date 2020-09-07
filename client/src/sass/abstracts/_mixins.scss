@@ -72,7 +72,13 @@
 /// .foo {
 ///   @include position(absolute, 10px, 0, 50px, 15px);
 /// }
-@mixin position($position: 'block', $top: null, $right: null, $bottom: null, $left: null) {
+@mixin position(
+  $position: 'block',
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
   position: $position;
   top: $top;
   right: $right;
@@ -126,7 +132,13 @@
 /// .foo {
 ///   @include create-font('text-secondary', 2em, $font-weight-text, 'text-primary')
 /// }
-@mixin create-font($color: 'primary', $font-family: 'primary', $font-size: 1em, $font-weight: $font-weight-text, $color: 'text-primary') {
+@mixin create-font(
+  $color: 'primary',
+  $font-family: 'primary',
+  $font-size: 1em,
+  $font-weight: $font-weight-text,
+  $color: 'text-primary'
+) {
   display: inline-block;
   color: totoo-color($color);
   font-family: font-pick($font-family), sans-serif;
@@ -147,7 +159,13 @@
 /// @include create-container('flex', $vw-100, $vh-100, true);
 /// };
 /// @todo add if statetment for width: 100% full and height
-@mixin create-container($display: 'block', $width: null, $height: $width, $center: false, $direction: null) {
+@mixin create-container(
+  $display: 'block',
+  $width: null,
+  $height: $width,
+  $center: false,
+  $direction: null
+) {
   @include size($width, $height);
   display: $display;
   @if ($display == 'flex' and $center) {
@@ -156,7 +174,6 @@
     flex-direction: $direction;
   }
 }
-
 
 /// Mixin for full screen
 /// @author Patryk Rozwadowski
