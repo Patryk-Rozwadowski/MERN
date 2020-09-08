@@ -17,43 +17,44 @@ const UserImageCard = ({ imageUrl, author, title }) => {
       }}
     >
       <div className='image-card__feed'>
-        <Grid direction={'row'} container>
-          <div className='image-card__image-info'>
-            <h2 className='image-card__title'>{title ? title : 'unknown'}</h2>
-          </div>
-
-          <Grid container direction='row'>
+        <Grid direction='row' container>
+          <Grid container m={3} alignItems='center' direction='row'>
             <Grid xs={8} item>
-              <h2 className='image-card__author'>
-                by {author ? author : 'unknown'}
-              </h2>
+              <Grid container direction='column'>
+                <div className='image-card__image-info'>
+                  <h2 className='image-card__title'>
+                    {title ? title : 'unknown'}
+                  </h2>
+                </div>
+                <h2 className='image-card__author'>
+                  by {author ? author : 'unknown'}
+                </h2>
+              </Grid>
             </Grid>
 
             <Grid xs={4} item>
-              <div className='image-card__icons'>
-                <Grid container direction={'row'}>
-                  <Grid xs={6} item>
-                    <Grid container alignContent='center' justify='center'>
-                      <img
-                        className='image-card__icon'
-                        src={starSVG}
-                        alt='star icon'
-                      />
-                      <p className='image-card__icon-text'>24</p>
-                    </Grid>
-                  </Grid>
-                  <Grid xs={6} item>
-                    <Grid container alignContent='center' justify='center'>
-                      <img
-                        className='image-card__icon'
-                        src={commentSVG}
-                        alt='star icon'
-                      />
-                      <p className='image-card__icon-text'>2</p>
-                    </Grid>
+              <Grid container direction='row'>
+                <Grid xs={6} item>
+                  <Grid container alignContent='center' justify='center'>
+                    <img
+                      className='image-card__icon'
+                      src={starSVG}
+                      alt='star icon'
+                    />
+                    <p className='image-card__icon-stats'>24</p>
                   </Grid>
                 </Grid>
-              </div>
+                <Grid xs={6} item>
+                  <Grid container alignContent='center' justify='center'>
+                    <img
+                      className='image-card__icon'
+                      src={commentSVG}
+                      alt='comment icon'
+                    />
+                    <p className='image-card__icon-stats'>2</p>
+                  </Grid>
+                </Grid>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
