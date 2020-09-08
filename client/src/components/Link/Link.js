@@ -1,7 +1,7 @@
 import React from 'react';
-import { PropTypes } from 'prop-types';
+import {PropTypes} from 'prop-types';
 
-import { Link as LinkRouter } from 'react-router-dom';
+import {Link as LinkRouter} from 'react-router-dom';
 
 const Link = ({ children, color, to, dataCy }) => (
   <LinkRouter
@@ -17,7 +17,7 @@ Link.propTypes = {
   children: PropTypes.string.isRequired,
   to: PropTypes.string.isRequired,
   dataCy: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired
+  color: PropTypes.string
 };
 
 export default Link;

@@ -3,7 +3,7 @@
   border: $border-radius;
   border-radius: $border-radius;
   height: $button-height;
-  margin: 20px;
+  margin-top: 20px;
 
   &:hover {
     cursor: pointer;
@@ -22,7 +22,7 @@
 
   &-transparent {
     background-color: totoo-color('transparent');
-    border: 1px solid totoo-colors('transparent');
+    border: 1px solid totoo-color('transparent');
     color: totoo-color('text-primary');
   }
 
