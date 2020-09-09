@@ -1,7 +1,10 @@
-
 const { validationResult } = require('express-validator');
+
 const gravatar = require('gravatar');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+
+require('dotenv').config();
 
 const User = require('../models/User/User');
 
@@ -13,18 +16,19 @@ const getUserProfile = async (req, res, next) => {
 
 const createNewUser = async (req, res, next) => {
   const errors = validationResult(req);
-  if(!errors.isEmpty()) {
-    return res.status(400).json({errors : errors.array()})
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
   }
   console.log(req.body);
 
   const { name, email, password } = req.body;
 
   try {
-    let user = await User.findOne({email});
-    if(user) {
-      res.status(400).json({errors: [{msg: 'User already exists.'}]});
-      return;
+    let user = await User.findOne({ email });
+    if (user) {
+      return res
+        .status(400)
+        .json({ errors: [{ msg: 'User already exists.' }] });
     }
 
     const avatar = gravatar.url(email, {
@@ -37,18 +41,26 @@ const createNewUser = async (req, res, next) => {
       name,
       password,
       avatar,
-      email,
+      email
     });
 
     const salt = await bcrypt.genSalt(10);
 
     user.password = await bcrypt.hash(password, salt);
 
-    await user.save()
-    res.send(`User ${name} registered.`)
+    await user.save();
+    const payload = {
+      user: {
+        id: user.id
+      }
+    };
 
-  } catch(err) {
-    console.error((err));
+    jwt.sign(payload, process.env.jwtSecret, {expiresIn: 360000}, (err, token) => {
+      if(err) throw err;
+      res.json({token});
+    });
+  } catch (err) {
+    console.error(err);
     res.status(500).send('Server error.');
   }
 };
