@@ -8,7 +8,7 @@ const Copyright = () => (
     {'Copyright © '}
     <Link color='inherit' href='https://github.com/Patryk-Rozwadowski'>
       Patryk Rozwadowski
-    </Link>{' '}
+    </Link>
     {new Date().getFullYear()}
   </Typography>
 );
