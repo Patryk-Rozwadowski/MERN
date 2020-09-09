@@ -1,5 +1,8 @@
 
-const uuidv4 = require('uuid/v4');
+const { validationResult } = require('express-validator');
+const gravatar = require('gravatar');
+const bcrypt = require('bcrypt');
+
 const User = require('../models/User/User');
 
 const getUserProfile = async (req, res, next) => {
@@ -9,17 +12,45 @@ const getUserProfile = async (req, res, next) => {
 };
 
 const createNewUser = async (req, res, next) => {
-  const newUser = new User({
-    id: uuidv4(),
-    name: req.body.name,
-    userName: req.body.userName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    password: req.body.password,
-  });
+  const errors = validationResult(req);
+  if(!errors.isEmpty()) {
+    return res.status(400).json({errors : errors.array()})
+  }
+  console.log(req.body);
 
-  const result = await newUser.save();
-  res.json(result);
+  const { name, email, password } = req.body;
+
+  try {
+    let user = await User.findOne({email});
+    if(user) {
+      res.status(400).json({errors: [{msg: 'User already exists.'}]});
+      return;
+    }
+
+    const avatar = gravatar.url(email, {
+      s: '200',
+      r: 'pg',
+      d: 'mm'
+    });
+
+    user = new User({
+      name,
+      password,
+      avatar,
+      email,
+    });
+
+    const salt = await bcrypt.genSalt(10);
+
+    user.password = await bcrypt.hash(password, salt);
+
+    await user.save()
+    res.send(`User ${name} registered.`)
+
+  } catch(err) {
+    console.error((err));
+    res.status(500).send('Server error.');
+  }
 };
 
 exports.getUserProfile = getUserProfile;

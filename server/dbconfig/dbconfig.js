@@ -10,9 +10,12 @@ const apiProjectName = process.env.API_PROJECT_NAME;
 
 const url = `mongodb+srv://${apiUser}:${apiPass}@${apiProjectName}-3yhfa.mongodb.net/users?retryWrites=true&w=majority`;
 const connectDB = async () => {
-  console.log(url);
   mongoose
-    .connect(url, { userNewUrlParser: true })
+    .connect(url, {
+      useNewUrlParser: true,
+      useCreateIndex: true,
+      useUnifiedTopology: true
+    })
     .then(() => {
       console.log('Connected to database');
     })

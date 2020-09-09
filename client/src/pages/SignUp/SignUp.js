@@ -12,7 +12,6 @@ const SignUp = () => (
   >
     <div className='sign-forms__forms'>
       <Avatar />
-
       <h3 className='section__title'>Sign up</h3>
       <SignUpForms />
       <LinkToSignIn />
