@@ -1,64 +1,20 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import {PropTypes} from 'prop-types';
+import UserCardAvatar from './Components/Avatar/Avatar';
+import AvatarBackground from '../AvatarBackground/AvatarBackground';
+import UserCardDescription from '../UserCardDescription/UserCardDescription';
+import UserCardLinks from '../UserCardLinks/UserCardLinks';
 
-import Grid from '@material-ui/core/Grid';
-import Text from '../../../../components/Text/Text';
+const UserCard = ({ id, avatar, name, profileBg, description }) => (
+  <div data-cy={`user-card-${id}`} className='userCard'>
+    <AvatarBackground profileBg={profileBg}>
+      <UserCardAvatar avatarUrl={avatar} name={name} />
+    </AvatarBackground>
 
-import Avatar from '../../../../components/Avatar/Avatar';
-import Heading from '../../../../components/Heading/Heading';
-
-const UserCard = ({ id, avatar, name, profileBg, description }) =>
-    <div data-cy={`user-card-${id}`} className='userCard'>
-      <div
-        style={{ backgroundImage: `url(${profileBg})` }}
-        className='userCard__background'
-      >
-        <Grid justify={'center'} container>
-          <Avatar
-            className='avatar__container'
-            avatarUrl={avatar}
-            alt={`${name} profile avatar`}
-          />
-        </Grid>
-      </div>
-
-      <Grid justify={'center'} container>
-        <Grid className='text-container' item>
-          <Heading variant='subtitle' color='black' type='h2'>
-            {name}
-          </Heading>
-          <Text>{description ? description : 'No description provided!'}</Text>
-        </Grid>
-      </Grid>
-
-      <div className='userCard__links__container'>
-        <Grid
-          direction={'row'}
-          justify={'center'}
-          alignItems={'center'}
-          container
-        >
-          <Grid lg={4} className='text-align-c' item>
-            <Link data-cy={`user-images-${id}`} to={`/${id}/images`}>
-              <Text> Images </Text>
-            </Link>
-          </Grid>
-
-          <Grid lg={4} className='text-align-c' item>
-            <Link data-cy={`user-places-${id}`} to={`/${id}/places`}>
-              <Text> Places </Text>
-            </Link>
-          </Grid>
-
-          <Grid lg={4} className='text-align-c' item>
-            <Link data-cy={`user-profile-${id}`} to={`/${id}/profile`}>
-              <Text> Profile </Text>
-            </Link>
-          </Grid>
-        </Grid>
-      </div>
-    </div>
+    <UserCardDescription description={description} />
+    <UserCardLinks id={id} />
+  </div>
+);
 
 UserCard.propTypes = {
   id: PropTypes.number.isRequired,
