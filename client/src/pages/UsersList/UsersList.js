@@ -26,8 +26,8 @@ const UsersList = ({
           <div className='grid-3-row'>
             {allUsersArray.map(user => (
               <UserCard
-                key={user.id}
-                id={user.id}
+                key={user._id}
+                id={user._id}
                 places={user.places}
                 name={user.name}
                 avatar={user.avatar}

@@ -8,13 +8,11 @@ import Text from '../../../../components/Text/Text';
 import Avatar from '../../../../components/Avatar/Avatar';
 import Heading from '../../../../components/Heading/Heading';
 
-const UserCard = ({ id, avatar, name, profileBg, description }) => {
-  return (
+const UserCard = ({ id, avatar, name, profileBg, description }) =>
     <div data-cy={`user-card-${id}`} className='userCard'>
       <div
         style={{ backgroundImage: `url(${profileBg})` }}
         className='userCard__background'
-        alt={`${name} profile background`}
       >
         <Grid justify={'center'} container>
           <Avatar
@@ -61,13 +59,6 @@ const UserCard = ({ id, avatar, name, profileBg, description }) => {
         </Grid>
       </div>
     </div>
-  );
-};
-
-UserCard.defaultProps = {
-  description: 'No description!',
-  name: 'Unnamed'
-};
 
 UserCard.propTypes = {
   id: PropTypes.number.isRequired,

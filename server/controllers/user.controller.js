@@ -16,12 +16,16 @@ const getUserProfile = async (req, res, next) => {
 
 const createNewUser = async (req, res, next) => {
   const errors = validationResult(req);
+  const { name, email, password } = req.body;
+  const avatar = gravatar.url(email, {
+    s: '200',
+    r: 'pg',
+    d: 'mm'
+  });
+
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
   }
-  console.log(req.body);
-
-  const { name, email, password } = req.body;
 
   try {
     let user = await User.findOne({ email });
@@ -31,13 +35,8 @@ const createNewUser = async (req, res, next) => {
         .json({ errors: [{ msg: 'User already exists.' }] });
     }
 
-    const avatar = gravatar.url(email, {
-      s: '200',
-      r: 'pg',
-      d: 'mm'
-    });
-
     user = new User({
+      id,
       name,
       password,
       avatar,
@@ -60,7 +59,6 @@ const createNewUser = async (req, res, next) => {
       res.json({token});
     });
   } catch (err) {
-    console.error(err);
     res.status(500).send('Server error.');
   }
 };
