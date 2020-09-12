@@ -36,7 +36,6 @@ const createNewUser = async (req, res, next) => {
     }
 
     user = new User({
-      id,
       name,
       password,
       avatar,

@@ -7,7 +7,8 @@ module.exports = function(req, res, next) {
   if (!token) return res.status(401).json({ msg: 'No token, unauthorized.' });
 
   try {
-    req.user = jwt.verify(token, process.env.jwtSecret);
+    const {user} = jwt.verify(token, process.env.jwtSecret);
+    req.user = user;
     next();
   } catch (err) {
     res.status(401).json({ msg: 'Invalid token.' });

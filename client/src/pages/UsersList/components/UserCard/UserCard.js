@@ -8,10 +8,10 @@ import UserCardLinks from '../UserCardLinks/UserCardLinks';
 const UserCard = ({ id, avatar, name, profileBg, description }) => (
   <div data-cy={`user-card-${id}`} className='userCard'>
     <AvatarBackground profileBg={profileBg}>
-      <UserCardAvatar avatarUrl={avatar} name={name} />
+      <UserCardAvatar avatarUrl={avatar} />
     </AvatarBackground>
 
-    <UserCardDescription description={description} />
+    <UserCardDescription name={name} description={description} />
     <UserCardLinks id={id} />
   </div>
 );
