@@ -1,12 +1,15 @@
-import React, {useEffect} from 'react';
-import {compose} from 'redux';
-import {connect} from 'react-redux';
-import {withRouter} from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
-import {fetchUserImagesRequest} from '../../../../redux/actions/images.actions';
+import { fetchUserImagesRequest } from '../../../../redux/actions/images.actions';
 import SpinnerBuffer from '../../../../components/Spinner/SpinnerBuffer';
 import UserImageCard from '../../../../components/UserImage/UserImageCard';
-import {checkIfEmptyIsMounted, checkIsLoadedIsFetched} from '../../../../utils/checkIfReadyToMount';
+import {
+  checkIfEmptyIsMounted,
+  checkIsLoadedIsFetched
+} from '../../../../utils/checkIfReadyToMount';
 import NotFoundData from '../../../../components/NotFoundData/NotFoundData';
 
 const UserImagesList = ({
@@ -24,7 +27,7 @@ const UserImagesList = ({
   return (
     <section data-cy='user-images-list' className='grid-3-row'>
       {checkIsLoadedIsFetched(isComponentMounted, isDataFetched) ? (
-        <React.Fragment>
+        <>
           {imagesUser.map(image => (
             <UserImageCard
               key={image.id}
@@ -36,7 +39,7 @@ const UserImagesList = ({
               description={image.description}
             />
           ))}
-        </React.Fragment>
+        </>
       ) : (
         <SpinnerBuffer />
       )}

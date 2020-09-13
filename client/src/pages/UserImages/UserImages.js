@@ -5,11 +5,11 @@ import NavShared from '../../components/Nav/Nav';
 import UserInfoList from './components/UserInfoList/UserInfoList';
 
 const UserImages = () => (
-  <React.Fragment>
+  <>
     <NavShared variant='black' />
     <UserInfoList />
-    <UserImagesList />
-  </React.Fragment>
+    {/*<UserImagesList />*/}
+  </>
 );
 
 export default UserImages;

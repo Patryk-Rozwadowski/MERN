@@ -22,7 +22,7 @@ const UsersList = ({
     <>
       <NavShared variant='black' />
       <section data-cy='users-list-container' className='users__container'>
-        {checkIsLoadedIsFetched(isComponentMounted, isDataFetched) ? (
+        {checkIsLoadedIsFetched(isComponentMounted, isDataFetched, allUsersArray) ? (
           <div className='grid-3-row'>
             {allUsersArray.map(user => (
               <UserCard

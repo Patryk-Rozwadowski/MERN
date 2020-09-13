@@ -1,5 +1,5 @@
 import React from 'react';
-import {PropTypes} from 'prop-types';
+import { PropTypes } from 'prop-types';
 import UserCardAvatar from './Components/Avatar/Avatar';
 import AvatarBackground from '../AvatarBackground/AvatarBackground';
 import UserCardDescription from '../UserCardDescription/UserCardDescription';
