@@ -11,6 +11,25 @@
     &:hover {
       color: lighten(totoo-color('accent'), 20%);
     }
+
+    &-active {
+      position: relative;
+      color: lighten(totoo-color('accent'), 20%);
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        height: 1px;
+        background-color: #fff;
+        animation: active 1s forwards;
+      }
+    }
+  }
+
+  @keyframes active {
+    from {width: 0;}
+    to {width: 100%;}
   }
 
   &-transparent {

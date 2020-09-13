@@ -10,10 +10,10 @@ const NavLink = ({
   ...otherProps
 }) => {
   return (
-    <React.Fragment>
+    <>
       <NavLinkRouter
         to={to}
-        activeClassName=''
+        activeClassName='link-active'
         className='link'
         data-cy={`nav-link-${dataCy}`}
         exact={exact}
@@ -21,7 +21,7 @@ const NavLink = ({
       >
         {children}
       </NavLinkRouter>
-    </React.Fragment>
+    </>
   );
 };
 
