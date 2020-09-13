@@ -3,7 +3,10 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import { fetchUserImagesRequest } from '../../../../redux/actions/images.actions';
+import {
+  fetchAllUsersImages,
+  fetchUserImagesRequest
+} from '../../../../redux/actions/images.actions';
 import SpinnerBuffer from '../../../../components/Spinner/SpinnerBuffer';
 import UserImageCard from '../../../../components/UserImage/UserImageCard';
 import {
@@ -13,22 +16,22 @@ import {
 import NotFoundData from '../../../../components/NotFoundData/NotFoundData';
 
 const UserImagesList = ({
-  imagesUser,
-  fetchUserImages,
+                          imagesListAllUsers,
+  fetchAllUsersImages,
   isComponentMounted,
   isDataFetched,
   match
 }) => {
   useEffect(() => {
     const userId = match.params.id;
-    fetchUserImages(userId);
-  }, [fetchUserImages, match.params.id]);
+    fetchAllUsersImages();
+  }, [fetchAllUsersImages, match.params.id]);
 
   return (
-    <section data-cy='user-images-list' className='grid-3-row'>
-      {checkIsLoadedIsFetched(isComponentMounted, isDataFetched) ? (
-        <>
-          {imagesUser.map(image => (
+    <>
+      {checkIsLoadedIsFetched(isComponentMounted, isDataFetched, imagesListAllUsers) ? (
+        <section data-cy='user-images-list' className='images'>
+          {imagesListAllUsers.map(image => (
             <UserImageCard
               key={image.id}
               author={image.author}
@@ -39,29 +42,29 @@ const UserImagesList = ({
               description={image.description}
             />
           ))}
-        </>
+        </section>
       ) : (
         <SpinnerBuffer />
       )}
 
-      {checkIfEmptyIsMounted(imagesUser, isComponentMounted) && (
+      {checkIfEmptyIsMounted(imagesListAllUsers, isComponentMounted) && (
         <NotFoundData text='Not found any images' />
       )}
-    </section>
+    </>
   );
 };
 
 const mapStateToProps = ({ imagesReducer }) => {
-  const { imagesUser, isComponentMounted, isDataFetched } = imagesReducer;
+  const { imagesListAllUsers, isComponentMounted, isDataFetched } = imagesReducer;
   return {
-    imagesUser,
+    imagesListAllUsers,
     isComponentMounted,
     isDataFetched
   };
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchUserImages: id => dispatch(fetchUserImagesRequest(id))
+  fetchAllUsersImages: () => dispatch(fetchAllUsersImages())
 });
 
 export default compose(
