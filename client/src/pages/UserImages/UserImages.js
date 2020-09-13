@@ -7,11 +7,8 @@ import UserInfoList from './components/UserInfoList/UserInfoList';
 const UserImages = () => (
   <>
     <NavShared variant='black' />
-    <div>
-        <UserInfoList />
-        <UserImagesList />
-    </div>
-
+    <UserInfoList />
+    <UserImagesList />
   </>
 );
 

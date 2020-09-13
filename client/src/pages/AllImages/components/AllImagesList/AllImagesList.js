@@ -1,14 +1,17 @@
-import React, {useEffect} from 'react';
-import {compose} from 'redux';
-import {connect} from 'react-redux';
-import {withRouter} from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
-import {fetchAllUsersImages} from '../../../../redux/actions/images.actions';
+import { fetchAllUsersImages } from '../../../../redux/actions/images.actions';
 import SpinnerBuffer from '../../../../components/Spinner/SpinnerBuffer';
 
 import UserImageCard from '../../../../components/UserImage/UserImageCard';
 import NotFoundData from '../../../../components/NotFoundData/NotFoundData';
-import {checkIfEmptyIsMounted, checkIsLoadedIsFetched} from '../../../../utils/checkIfReadyToMount';
+import {
+  checkIfEmptyIsMounted,
+  checkIsLoadedIsFetched
+} from '../../../../utils/checkIfReadyToMount';
 
 const AllImagesList = ({
   fetchingAllUsersImages,
@@ -18,11 +21,15 @@ const AllImagesList = ({
 }) => {
   useEffect(() => {
     fetchingAllUsersImages();
-  }, [fetchingAllUsersImages]);
+  }, [fetchingAllUsersImages, isDataFetched]);
 
   return (
     <>
-      {checkIsLoadedIsFetched(isComponentMounted, isDataFetched, imagesListAllUsers) ? (
+      {checkIsLoadedIsFetched(
+        isComponentMounted,
+        isDataFetched,
+        imagesListAllUsers
+      ) ? (
         <section className='images'>
           {imagesListAllUsers.map(image => (
             <UserImageCard

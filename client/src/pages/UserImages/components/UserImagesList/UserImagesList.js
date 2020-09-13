@@ -16,7 +16,7 @@ import {
 import NotFoundData from '../../../../components/NotFoundData/NotFoundData';
 
 const UserImagesList = ({
-                          imagesListAllUsers,
+  imagesListAllUsers,
   fetchAllUsersImages,
   isComponentMounted,
   isDataFetched,
@@ -29,7 +29,11 @@ const UserImagesList = ({
 
   return (
     <>
-      {checkIsLoadedIsFetched(isComponentMounted, isDataFetched, imagesListAllUsers) ? (
+      {checkIsLoadedIsFetched(
+        isComponentMounted,
+        isDataFetched,
+        imagesListAllUsers
+      ) ? (
         <section data-cy='user-images-list' className='images'>
           {imagesListAllUsers.map(image => (
             <UserImageCard
@@ -55,7 +59,11 @@ const UserImagesList = ({
 };
 
 const mapStateToProps = ({ imagesReducer }) => {
-  const { imagesListAllUsers, isComponentMounted, isDataFetched } = imagesReducer;
+  const {
+    imagesListAllUsers,
+    isComponentMounted,
+    isDataFetched
+  } = imagesReducer;
   return {
     imagesListAllUsers,
     isComponentMounted,

@@ -17,7 +17,7 @@ const UserInfoList = ({
   fetchuserProfileInformations,
   isDataFetched,
   isComponentMounted,
-                        children
+  children
 }) => {
   useEffect(() => {
     const userId = match.params.id;
@@ -32,9 +32,7 @@ const UserInfoList = ({
         isDataFetched,
         userInformations
       ) ? (
-        <UserInfo userInformations={userInformations} >
-          {children}
-        </UserInfo>
+        <UserInfo userInformations={userInformations}>{children}</UserInfo>
       ) : (
         <SpinnerBuffer />
       )}

@@ -1,7 +1,7 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import starSVG from '../../../../../../assets/star.svg';
-import commentSVG from '../../../../../../assets/comment.svg';
+import starSVG from '../../../../../../assets/FeedIcons/star.svg';
+import commentSVG from '../../../../../../assets/FeedIcons/comment.svg';
 
 const FeedIcons = () => (
   <Grid xs={4} item>
