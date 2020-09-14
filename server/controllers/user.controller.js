@@ -28,11 +28,17 @@ const createNewUser = async (req, res, next) => {
   }
 
   try {
-    let user = await User.findOne({ email });
-    if (user) {
+    let userEmailAlreadyExists = await User.findOne({ email });
+    let userNameAlreadyExists = await User.findOne({ name });
+
+    if (userEmailAlreadyExists) {
       return res
         .status(400)
         .json({ errors: [{ msg: 'User already exists.' }] });
+    } else if (userNameAlreadyExists) {
+      return res
+        .status(400)
+        .json({ errors: [{ msg: 'User with this name already exists.' }] });
     }
 
     user = new User({
@@ -53,10 +59,15 @@ const createNewUser = async (req, res, next) => {
       }
     };
 
-    jwt.sign(payload, process.env.jwtSecret, {expiresIn: 360000}, (err, token) => {
-      if(err) throw err;
-      res.json({token});
-    });
+    jwt.sign(
+      payload,
+      process.env.jwtSecret,
+      { expiresIn: 360000 },
+      (err, token) => {
+        if (err) throw err;
+        res.json({ token });
+      }
+    );
   } catch (err) {
     res.status(500).send('Server error.');
   }
