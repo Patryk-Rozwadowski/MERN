@@ -9,6 +9,7 @@ const usersRoutes = require('./routes/users.routes');
 const userRoute = require('./routes/user.routes');
 const userImagesRoute = require('./routes/userImages.routes');
 const authRoute = require('./routes/auth');
+const loginRoute = require('./routes/login.routes');
 
 const port = 8000;
 const api = 'api';
@@ -22,9 +23,10 @@ app.use(cors());
 
 app.use(`/${api}/users`, usersRoutes);
 app.use(`/${api}/images`, imagesRoutes);
-app.use(`/${api}`, userRoute);
 app.use(`/${api}/:uid/images`, userImagesRoute);
-app.use(`/${api}/auth`, authRoute)
+app.use(`/${api}/auth`, authRoute);
+app.use(`/${api}/register`, userRoute);
+app.use(`/${api}/login`, loginRoute);
 
 app.listen(8000, () => {
   console.log(`Server is running on port: ${port}`);
