@@ -20,9 +20,31 @@ ToToo is photo sharing social networking service. It gives photographers the opp
 
 ##### For better understanding SASS folder you can check sassdoc for documentation
 ### Available Scripts:
-- ##### In the project directory, you can run: yarn start for easy start dev server and backend server.
+- ##### in root directory, install all dependecies for client and server side:
+````
+yarn install:all
+````
+
+- ##### in root directory, install only for client side:
+````
+yarn install:client
+````
+
+
+- ##### in root directory, install only for server side:
+````
+yarn install:server
+````
+
+
+- ##### In the root directory, you can run: yarn start for easy start dev server and backend server.
 ````
 yarn start
+````
+
+- ##### In the root directory, run cypress tests with:
+````
+yarn run test:cypress
 ````
 - ##### Compile comments from sass folder into documentation.
 ```
