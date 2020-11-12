@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const auth = require('../middleware/auth');
+const auth = require('../../middleware/auth');
 
-const User = require('../models/User/User');
+const User = require('../../models/User/User');
 /*
     @route      GET /api/auth
     @desc       json web token authorization with middleware

@@ -11,6 +11,7 @@ const User = require('../models/User/User');
 const getUserProfile = async (req, res, next) => {
   const userId = await req.params.uid;
   const userProfile = await User.findOne({ _id: userId });
+  if(!userProfile) return;
   res.json(userProfile);
 };
 
