@@ -179,11 +179,4 @@ allImages = (req, res) => {
   res.json(data);
 };
 
-userImages = (req, res) => {
-  const userId = req.params.uid;
-  const userImages = data.filter(img => img.creator === userId);
-  res.json(userImages);
-};
-
 exports.allImages = allImages;
-exports.userImages = userImages;
