@@ -1,9 +1,9 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 
-const Text = ({ variant, color, children }) => {
-  return <p className={`section__${variant}-${color}`}>{children}</p>;
-};
+const Text = ({ variant, color, children }) => (
+  <p className={`section__${variant}-${color}`}>{children}</p>
+);
 
 Text.defaultProps = {
   variant: 'text',

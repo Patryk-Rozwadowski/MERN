@@ -1,0 +1,25 @@
+.button-upload {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+
+  & + label {
+    @include flex-center-updown;
+    padding: 1px 15px;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    background-color: totoo-color('accent');
+    display: inline-block;
+    cursor: pointer;
+    border-radius: $border-radius;
+    font-family: font-pick('primary'), sans-serif;
+
+    & > p {
+      margin-left: 10px;
+    }
+  }
+}

@@ -1,16 +1,11 @@
-import Button from "../../../../components/Button/Button";
-import React from "react";
+import React from 'react';
+import Button from '../../../../components/Button/Button';
+import ButtonUpload from '../../../../components/ButtonUpload/ButtonUpload';
 
-const UploadImageDropBox = () =>
-    <div className='upload__upload'>
-        <Button
-            type='submit'
-            variant={'transparent'}
-            dataCy={'upload-file'}
-        >
-            Upload
-        </Button>
-    </div>
-
+const UploadImageDropBox = () => (
+  <div className='upload__upload'>
+    <ButtonUpload id='image-upload' label='Choose your image' />
+  </div>
+);
 
 export default UploadImageDropBox;

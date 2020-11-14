@@ -5,4 +5,4 @@ const ImageSchema = new Schema({
     img: { data: Buffer, contentType: String }
 });
 
-module.exports = mongoose.model('ImageSchema', ImageSchema);
+module.exports = mongoose.model('Image', ImageSchema);
